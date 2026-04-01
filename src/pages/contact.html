@@ -9,62 +9,115 @@
 	<body>
 		<header class="header"></header>
 
-		<main>
-			<section class="contact-section">
-				<div class="container">
-					<h1 class="contact-title">Contact Us</h1>
-					<p class="contact-subtitle">
-						We'd love to hear from you. Please fill out the form below.
-					</p>
+		<main class="contact-page">
+			<section class="contact-header">
+				<h1 class="main-title">CONTACT</h1>
+				<p class="subtitle">
+					Get a quote and book a free consultation for your <br />
+					special day or our academy services
+				</p>
 
-					<form id="contactForm" class="contact-form">
-						<div class="form-group">
-							<label for="userName">Full Name</label>
-							<input
-								type="text"
-								id="userName"
-								name="name"
-								placeholder="Your Name"
-								required
-							/>
-						</div>
-
-						<div class="form-group">
-							<label for="userEmail">Email Address</label>
-							<input
-								type="email"
-								id="userEmail"
-								name="email"
-								placeholder="email@example.com"
-								required
-							/>
-						</div>
-
-						<div class="form-group">
-							<label for="subject">Subject</label>
-							<select id="subject" name="subject">
-								<option value="general">General Inquiry</option>
-								<option value="classes">Classes</option>
-								<option value="services">Services</option>
-							</select>
-						</div>
-
-						<div class="form-group">
-							<label for="message">Message</label>
-							<textarea
-								id="message"
-								name="message"
-								rows="5"
-								placeholder="How can we help you?"
-								required
-							></textarea>
-						</div>
-
-						<button type="submit" class="btn-submit">Send Message</button>
-					</form>
-
-					<div id="formFeedback" class="form-feedback"></div>
+				<div class="social-links">
+					<a href="tel:+10000000000"
+						><img
+							src="../assets/icons/contact-icons/phone.svg"
+							alt="phoneIcon"
+						/>
+						+1 0000000000</a
+					>
+					<a href="#"
+						><img
+							src="../assets/icons/contact-icons/whatsApp.svg"
+							alt="whatsAppIcon"
+						/>
+						+1 0000000000</a
+					>
+					<a href="#"
+						><img src="../assets/icons/contact-icons/ig.svg" alt="igIcon" />
+						carlabeatrizs_</a
+					>
 				</div>
+			</section>
+
+			<section class="form-container">
+				<div class="tab-nav">
+					<button class="tab-btn active">Services</button>
+					<button class="tab-btn">Classes</button>
+				</div>
+
+				<form id="detailedContactForm" class="beauty-form">
+					<div class="form-section">
+						<h3>Event Type</h3>
+						<div class="selection-group">
+							<label class="select-box">
+								<input type="radio" name="event_type" value="wedding" checked />
+								<span
+									>Wedding <img src="../assets/icons/check.svg" alt="check"
+								/></span>
+							</label>
+							<label class="select-box">
+								<input type="radio" name="event_type" value="party" />
+								<span>Party</span>
+							</label>
+							<label class="select-box">
+								<input type="radio" name="event_type" value="photoshoot" />
+								<span>Photoshoot</span>
+							</label>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-section">
+							<h3>Event Date</h3>
+							<input type="date" class="input-field" />
+							<label class="checkbox-label"
+								><input type="checkbox" /> Not decided</label
+							>
+						</div>
+						<div class="form-section">
+							<h3>Event Time</h3>
+							<select class="input-field">
+								<option>Full day</option>
+								<option>Morning</option>
+								<option>Afternoon</option>
+							</select>
+							<label class="checkbox-label"
+								><input type="checkbox" /> Not decided</label
+							>
+						</div>
+					</div>
+
+					<div class="form-section">
+						<h3>Name</h3>
+						<input type="text" placeholder="Your name" class="input-field" />
+					</div>
+
+					<div class="form-section">
+						<h3>Contact</h3>
+						<div class="radio-group">
+							<label class="radio-label"
+								><input type="radio" name="contact_method" checked />
+								Call</label
+							>
+							<input
+								type="tel"
+								placeholder="+1 Your mobile number"
+								class="input-field tel-input"
+							/>
+							<label class="radio-label"
+								><input type="radio" name="contact_method" /> WhatsApp</label
+							>
+							<label class="radio-label"
+								><input type="radio" name="contact_method" /> SMS</label
+							>
+							<label class="radio-label"
+								><input type="radio" name="contact_method" /> Email</label
+							>
+						</div>
+					</div>
+
+					<button type="submit" class="btn-next">Next</button>
+				</form>
 			</section>
 		</main>
 
