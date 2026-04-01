@@ -25,6 +25,9 @@ $colors: (
 // ? Font variables
 $fonts: (
 	primary: (
+		"Montserrat",
+		"Avenir",
+		"Avenir Next",
 		"Nunito Sans",
 		sans-serif,
 	),
@@ -95,11 +98,10 @@ $text-styles: (
 
 // ? Weights variables
 $weights: (
-	// many weights are available
 	light: 300,
 	regular: 400,
 	medium: 500,
-	bold: 700
+	bold: 700,
 );
 
 // ? Spacing variables
