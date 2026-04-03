@@ -378,48 +378,42 @@
 						<button type="submit" class="btn-submit">Submit</button>
 					</div>
 
-					<!-- Step 2: Party Photo Fields -->
-
-					<div id="step-2-party-photo" style="display: none">
-						<button type="button" class="btn-back">< Back</button>
-
-						<div class="form-section">
-							<h3>Service</h3>
-						</div>
-
-						<button type="submit" class="btn-submit">Submit</button>
-					</div>
-
-					<!-- Thank You Screen -->
-					<div id="thank-you-screen" style="display: none; text-align: center">
-						<h2>
-							Thanks <span id="userNameDisplay">Name</span>, <br />
-							we will contact you soon!
-						</h2>
-						<p>
-							We will call at <span id="userTimeDisplay">time</span> to confirm
-							the appointment details with you.
-						</p>
-
-						<div class="receipt-card"></div>
-
-						<button type="button" class="btn-home">Home</button>
-					</div>
-
 					<!--! Party Fields -->
-					<div
-						id="party-fields"
-						class="dynamic-section"
-						style="display: none"
-					></div>
+					<!-- Step1: Party Fields -->
+					<div id="party-step-1" class="dynamic-section" style="display: none">
+						<button type="button" class="btn-next">Next</button>
+					</div>
+
+					<!-- Step2: Party Fields -->
+					<div id="party-step-2" class="dynamic-section" style="display: none">
+						<button type="submit" class="btn-next">Submit</button>
+					</div>
 
 					<!--! Photoshoot Fields -->
 					<div
-						id="photoshoot-fields"
+						id="photoshoot-step-1"
 						class="dynamic-section"
 						style="display: none"
-					></div>
+					>
+						<button type="submit" class="btn-submit">Submit</button>
+					</div>
 				</form>
+
+				<!--! Thank You Screen -->
+				<div id="thank-you-screen" style="display: none; text-align: center">
+					<h2>
+						Thanks <span id="userNameDisplay">Name</span>, <br />
+						we will contact you soon!
+					</h2>
+					<p>
+						We will call at <span id="userTimeDisplay">time</span> to confirm
+						the appointment details with you.
+					</p>
+
+					<div class="receipt-card"></div>
+
+					<button type="button" class="btn-home">Home</button>
+				</div>
 			</section>
 		</main>
 
