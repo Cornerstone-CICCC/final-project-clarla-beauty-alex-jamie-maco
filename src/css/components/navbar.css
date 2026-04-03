@@ -1,3 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap");
+/* 
+TODOs
+- Center border right
+- Scale or change on hover
+- Margin 
 
+*/
+nav {
+  margin: 40px 0 0 0;
+  padding: 0;
+  background-color: transparent;
+  position: sticky;
+  top: 40px;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #725a58;
+  font-size: 20px;
+  width: 100%;
+  height: 30px;
+  padding: 0 30px;
+  border-right: 2px solid #a06d67;
+  transition: all 0.3s ease;
+}
+nav ul li a img {
+  width: 30px;
+  height: 30px;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+nav ul li:last-child a, nav ul li:nth-child(4) a {
+  border-right: none;
+}
+nav ul li img:not(a) {
+  max-width: 110px;
+}
 
 /*# sourceMappingURL=navbar.css.map */

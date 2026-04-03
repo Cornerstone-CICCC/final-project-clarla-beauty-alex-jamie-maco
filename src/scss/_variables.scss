@@ -24,10 +24,30 @@ $colors: (
 
 // ? Font variables
 $fonts: (
-  primary: 'Nunito Sans', sans-serif,
-  heading: 'Baskervville', serif
+  primary: ('Nunito Sans', sans-serif),
+  heading: ('Baskervville', serif)
 );
+
+
 // ? Text sizes variables
+$text-sizes : (
+  h1: 80px,
+  h2: 68px,
+  h3: 48px,
+  h4: 36px,
+  h5: 32px,
+  h6: 24px,
+
+  button: 20px,
+  button-sm: 18px,
+
+  body: 18px,
+  body-sm: 16px,
+
+  caption: 14px,
+  signature: 54px,
+);
+
 $text-styles: (
   h1-cap: (size: 80px, line: 130px),
   h1: (size: 80px, line: 120px),

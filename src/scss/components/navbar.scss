@@ -1,0 +1,59 @@
+@use "../variables" as vr;
+
+/* 
+TODOs
+- Center border right
+- Scale or change on hover
+- Margin 
+
+*/
+nav {
+  margin: 40px 0 0 0;
+  padding: 0;
+  background-color: transparent;
+  position: sticky;
+  top: 40px; // TODO: Change when hover to other navbar
+  // UL
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // img
+
+    // li
+    li {
+      list-style: none;
+
+      
+
+      // a
+      a {
+        text-decoration: none;
+        color: map-get($map: vr.$colors, $key: bold-main);
+        font-size: map-get($map: vr.$text-sizes, $key: button);
+        width: 100%;
+        height: 30px;
+        padding: 0 30px;
+        border-right: 2px solid map-get($map: vr.$colors, $key: comp-brown);
+        transition: map-get($map: vr.$transitions, $key: default);
+        img {
+          width: 30px;
+          height: 30px;
+        }
+
+        &:hover {
+          // transform: scale(105%);
+          text-decoration: underline;
+        }
+      }
+
+      &:last-child a, &:nth-child(4) a {
+        border-right: none;
+      }
+
+      img:not(a) {
+        max-width: 110px;
+      }
+    }
+  }
+}
