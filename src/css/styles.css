@@ -310,7 +310,7 @@
   margin: 8px 0 16px 0;
 }
 
-.btn-next {
+.btn-next, .btn-submit {
   display: block;
   width: 200px;
   margin: 48px auto 0;
@@ -324,10 +324,123 @@
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
-.btn-next:hover {
+.btn-next:hover, .btn-submit:hover {
   background-color: #b99692;
   border-color: #b99692;
   color: #fff;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
+  font-size: 16px;
+  color: #535353;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 48px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+.btn-back:hover {
+  color: #e3b6b1;
+}
+
+.premium-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 40px;
+  margin-top: 8px;
+}
+@media (max-width: 768px) {
+  .premium-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guest-services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.guest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #a3a3a3;
+}
+.guest-row:last-child {
+  border-bottom: none;
+}
+.guest-row .guest-type {
+  flex: 1;
+  font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
+  font-size: 18px;
+  color: #191919;
+}
+.guest-row .guest-options {
+  display: flex;
+  gap: 24px;
+  flex: 1.5;
+  justify-content: flex-end;
+}
+.guest-row .guest-options .checkbox-label {
+  margin-top: 0;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  border: 1px solid #a3a3a3;
+  background: #fff;
+  height: 40px;
+  margin-right: 32px;
+}
+.counter button {
+  background: none;
+  border: none;
+  width: 35px;
+  height: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  color: #535353;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.counter button:hover {
+  background-color: #f8f6f4;
+  color: #e3b6b1;
+}
+.counter .counter-input {
+  width: 40px;
+  height: 100%;
+  text-align: center;
+  border: none;
+  border-left: 1px solid #a3a3a3;
+  border-right: 1px solid #a3a3a3;
+  font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
+  font-size: 16px;
+  color: #191919;
+  -moz-appearance: textfield;
+}
+.counter .counter-input::-webkit-outer-spin-button, .counter .counter-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.counter .counter-input:focus {
+  outline: none;
+}
+
+.textarea-field {
+  height: auto;
+  resize: vertical;
+  padding-top: 16px;
 }
 
 *,

@@ -367,3 +367,142 @@
 		color: #fff;
 	}
 }
+
+// ==========================================
+// 5. Step 2 & Dynamic Fields Styling
+// ==========================================
+
+// Back Button
+.btn-back {
+	background: none;
+	border: none;
+	font-family: map.get($fonts, primary);
+	font-size: 16px;
+	color: map.get($colors, d-neut-dark-g);
+	cursor: pointer;
+	padding: 0;
+	margin-bottom: map.get($spacing, sp-6);
+	display: flex;
+	align-items: center;
+	gap: map.get($spacing, sp-1);
+	transition: map.get($transitions, default);
+
+	&:hover {
+		color: map.get($colors, accent);
+	}
+}
+
+// Premium Service Grid (2 columns)
+.premium-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr; // Creates 2 equal columns
+	gap: 16px 40px; // 16px vertical gap, 40px horizontal gap
+	margin-top: map.get($spacing, sp-2);
+
+	@media (max-width: map.get($breakpoints, tablet)) {
+		grid-template-columns: 1fr; // Stacks to 1 column on mobile
+	}
+}
+
+// Guest Services (The + / - Counters)
+.guest-services-container {
+	display: flex;
+	flex-direction: column;
+	gap: map.get($spacing, sp-4);
+	margin-top: map.get($spacing, sp-2);
+}
+
+.guest-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom: map.get($spacing, sp-3);
+	border-bottom: 1px solid map.get($colors, d-neut-mid-g); // Thin dividing line
+
+	&:last-child {
+		border-bottom: none;
+	}
+
+	.guest-type {
+		flex: 1; // Takes up the left side
+		font-family: map.get($fonts, primary);
+		font-size: 18px;
+		color: map.get($colors, d-neut-black);
+	}
+
+	.guest-options {
+		display: flex;
+		gap: map.get($spacing, sp-4);
+		flex: 1.5; // Gives the checkboxes a bit more room
+		justify-content: flex-end;
+
+		// Shrinks the gap between the checkbox and its label slightly for this row
+		.checkbox-label {
+			margin-top: 0;
+		}
+	}
+}
+
+// The +/- Box
+.counter {
+	display: flex;
+	align-items: center;
+	border: 1px solid map.get($colors, d-neut-mid-g);
+	background: #fff;
+	height: 40px;
+	margin-right: map.get($spacing, sp-5);
+
+	button {
+		background: none;
+		border: none;
+		width: 35px;
+		height: 100%;
+		font-size: 20px;
+		cursor: pointer;
+		color: map.get($colors, d-neut-dark-g);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:hover {
+			background-color: map.get($colors, l-neut-pale-w);
+			color: map.get($colors, accent);
+		}
+	}
+
+	.counter-input {
+		width: 40px;
+		height: 100%;
+		text-align: center;
+		border: none;
+		border-left: 1px solid map.get($colors, d-neut-mid-g);
+		border-right: 1px solid map.get($colors, d-neut-mid-g);
+		font-family: map.get($fonts, primary);
+		font-size: 16px;
+		color: map.get($colors, d-neut-black);
+
+		// CSS trick to hide the default browser up/down arrows in number inputs
+		-moz-appearance: textfield;
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+// Textarea (Anything you want us to know?)
+.textarea-field {
+	height: auto; // Overrides the 50px height set on .input-field
+	resize: vertical; // Lets the user drag it taller, but not wider
+	padding-top: map.get($spacing, sp-3);
+}
+
+// Submit Button (Copies your Next button styling)
+.btn-submit {
+	@extend .btn-next;
+}
