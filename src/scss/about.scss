@@ -80,7 +80,7 @@
     margin-bottom: map.get($spacing, sp-5);
   }
 
-button {
+  button {
     font-family: map.get($fonts, heading);
     font-size: map.get(map.get($text-styles, button-sm), size);
     line-height: 1;
@@ -149,7 +149,7 @@ button {
 // Media Query
 @media (max-width: 768px) {
   .about__header {
-    padding: 40px 24px 0;
+    padding: 40px map.get($spacing, sp-4) 0;
     margin-bottom: 24px;
 
     h1 {
@@ -191,7 +191,7 @@ button {
 
   .about__content {
     text-align: left;
-    padding: 40px 24px 64px;
+    padding: 40px map.get($spacing, sp-4) 64px;
 
     h3 {
       font-size: 32px;
@@ -214,7 +214,7 @@ button {
   }
 
   .about__brands {
-    padding: 40px 24px;
+    padding: 40px map.get($spacing, sp-4);
     
     h3 {
       font-size: 32px;
@@ -236,14 +236,14 @@ button {
       justify-self: center;
       opacity: 0.6;
 
-      &:nth-child(1) { order: 1; } // MAC
-      &:nth-child(2) { order: 2; } // Lancome
-      &:nth-child(3) { order: 3; } // Inglot
-      &:nth-child(6) { order: 4; } // Tarte
-      &:nth-child(5) { order: 5; } // Charlotte Tilbury
-      &:nth-child(7) { order: 6; } // Anastasia
-      &:nth-child(4) { order: 7; } // Laura Mercier
-      &:nth-child(8) { order: 8; } // Kryolan
+      &:nth-child(1) { order: 1; }
+      &:nth-child(2) { order: 2; }
+      &:nth-child(3) { order: 3; }
+      &:nth-child(6) { order: 4; }
+      &:nth-child(5) { order: 5; }
+      &:nth-child(7) { order: 6; }
+      &:nth-child(4) { order: 7; }
+      &:nth-child(8) { order: 8; }
     }
 
     img:nth-child(7) {
