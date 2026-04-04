@@ -41,15 +41,19 @@
   margin: 0 auto;
   display: flex;
   gap: 40px;
+  align-items: center;
 }
 
 // image
 .about__image {
-  flex: 0 0 400px;
+  flex: 1;
+  max-width: 400px;
+  width: 100%;
 }
 
 .about__image img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -60,9 +64,7 @@
   h3 {
     font-family: map.get($fonts, heading);
     font-size: map.get(map.get($text-styles, h3), size);
-
     line-height: 1.3;
-
     font-weight: map.get($weights, regular);
     color: map.get($colors, bold-main);
     max-width: 604px;
@@ -79,23 +81,31 @@
   }
 
 button {
-  font-family: map.get($fonts, heading);
-  font-size: map.get(map.get($text-styles, button-sm), size);
-  line-height: 1;
-  padding: map.get($spacing, sp-4) map.get($spacing, sp-5);
-  border: 0.8px solid #5E4A49;
-  background: transparent;
-  cursor: pointer;
-  transition: map.get($transitions, default);
-  color: #5E4A49;
-  display: inline-block;
+    font-family: map.get($fonts, heading);
+    font-size: map.get(map.get($text-styles, button-sm), size);
+    line-height: 1;
+    
+    width: 160px;
+    height: 62px;
+    padding: 0;
+    
+    border: 0.8px solid #5E4A49;
+    
+    background: transparent;
+    cursor: pointer;
+    transition: map.get($transitions, default);
+    color: #5E4A49;
 
-  &:hover {
-    background: map.get($colors, comp-dark-p);
-    border-color: map.get($colors, comp-dark-p);
-    color: #fff;
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: map.get($colors, comp-dark-p);
+      border-color: map.get($colors, comp-dark-p);
+      color: #fff;
+    }
   }
-}
 }
 
 // brands
@@ -117,56 +127,127 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: map.get($spacing, sp-5);
-
   max-width: 904px;
   margin: 0 auto;
-
   justify-items: center;
   align-items: center;
 
   img {
-    width: 120px;
+    width: 100%;
+    max-width: 120px;
     height: 40px;
     object-fit: contain;
     opacity: 0.7;
   }
 
   img:nth-child(7) {
-  transform: scale(1.3);
-  margin-top: 4px;
+    transform: scale(1.3);
+    margin-top: 4px;
   }
 }
 
-
+// Media Query
 @media (max-width: 768px) {
-  .about__container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .about__header {
+    padding: 40px 24px 0;
+    margin-bottom: 24px;
+
+    h1 {
+      font-size: 32px;
+      letter-spacing: 0.1em;
+      white-space: normal;
+    }
   }
 
-  .about__image img {
-    max-width: 260px;
+  .about__main {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 0;
+    background: #FAE9E7;
+    overflow: hidden;
+  }
+
+  .about__container {
+    width: 100%;
+    max-width: none;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+
+  .about__image {
+    width: 100%;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
   }
 
   .about__content {
-    max-width: 100%;
+    text-align: left;
+    padding: 40px 24px 64px;
+
+    h3 {
+      font-size: 32px;
+      line-height: 1.3;
+      margin: 0 0 24px;
+      max-width: 327px;
+      word-break: keep-all;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 32px;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
-  .about__content h3 {
-    max-width: 100%;
+  .about__brands {
+    padding: 40px 24px;
+    
+    h3 {
+      font-size: 32px;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
   }
 
-  .about__content button {
-    margin: 0 auto;
-    display: block;
-  }
+  .brands {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+    padding: 0;
 
-  .about__container {
-    gap: 24px;
-  }
+    img {
+      width: 110.46px;
+      height: 52.56px;
+      object-fit: contain;
+      justify-self: center;
+      opacity: 0.6;
 
-  .about__content p {
-    margin-bottom: 24px;
+      &:nth-child(1) { order: 1; } // MAC
+      &:nth-child(2) { order: 2; } // Lancome
+      &:nth-child(3) { order: 3; } // Inglot
+      &:nth-child(6) { order: 4; } // Tarte
+      &:nth-child(5) { order: 5; } // Charlotte Tilbury
+      &:nth-child(7) { order: 6; } // Anastasia
+      &:nth-child(4) { order: 7; } // Laura Mercier
+      &:nth-child(8) { order: 8; } // Kryolan
+    }
+
+    img:nth-child(7) {
+      transform: scale(1.2);
+    }
   }
 }
