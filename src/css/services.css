@@ -201,49 +201,68 @@
 }
 
 @media (max-width: 768px) {
-  /* 1. Reset everything that breaks the layout */
-  .services__header,
-  .services__main {
-    width: 100% !important;
-    position: static !important; /* Disables relative positioning and left/right */
-    margin: 0 !important; /* Completely reset negative margins */
-    left: auto !important;
-    right: auto !important;
-    overflow: hidden; /* Prevent any internal content from leaking out */
+  .services {
+    overflow-x: hidden;
+    width: 100%;
   }
   .services__header {
-    padding: 48px 20px 40px;
-    background-color: #F8F6F4;
+    width: 100% !important;
+    position: static !important;
+    margin: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    padding: 48px 20px 40px !important;
+    background-color: #f8f6f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    box-sizing: border-box !important;
   }
   .services__header h1 {
     font-size: 32px;
     letter-spacing: 0.1em;
     margin: 0;
   }
+  .services__header .header-divider {
+    width: 120px;
+    margin: 16px auto;
+  }
   .services__header p {
     font-size: 16px;
-    margin-top: 16px;
+    max-width: 327px;
+    margin: 0 auto;
+    line-height: 1.5;
   }
   .services__main {
-    padding: 0 !important; /* Removes the pink gap above the image */
-    background-color: #FAE9E7;
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #fae9e7;
+    overflow: hidden;
   }
   .services__container {
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
   }
   .service-item {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
   }
   .service-item__image {
-    width: 100%;
-    aspect-ratio: 390/391; /* Keeps correct square-ish ratio */
+    width: 100% !important;
+    aspect-ratio: 390/391 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .service-item__image img {
     width: 100%;
@@ -252,8 +271,8 @@
     display: block;
   }
   .service-item__content {
-    width: 100%;
-    padding: 32px 20px 64px;
+    width: 100% !important;
+    padding: 32px 20px 64px !important;
     box-sizing: border-box;
   }
   .service-item__content h3 {
@@ -262,18 +281,31 @@
   }
   .service-item__content .service-item__info {
     display: flex;
-    flex-direction: column; /* Stack price and time */
+    flex-direction: column !important;
     gap: 8px;
     margin-bottom: 24px;
+  }
+  .service-item__content .service-item__info span {
+    font-size: 16px;
+    justify-content: flex-start;
   }
   .service-item__content .service-item__sub-desc {
     font-size: 24px;
     line-height: 1.2;
     margin-bottom: 12px;
-    max-width: 260px; /* Forces break in 'service!' */
+    max-width: 250px;
+  }
+  .service-item__content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 32px !important;
+    word-break: keep-all;
+  }
+  .service-item__content p br {
+    display: none;
   }
   .service-item__content button {
-    width: 100%; /* Fills the space horizontally */
+    width: 100% !important;
     height: 62px;
   }
 }/*# sourceMappingURL=services.css.map */
