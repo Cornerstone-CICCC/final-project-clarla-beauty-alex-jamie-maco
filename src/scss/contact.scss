@@ -515,82 +515,66 @@
 // ==========================================
 
 #thank-you-screen {
-	padding-top: map.get($spacing, sp-6);
-	padding-bottom: map.get($spacing, sp-6);
+	background-color: map.get($colors, l-neut-pink);
+	// padding: map.get($spacing, sp-10) 0;
+	text-align: left;
 }
 
 // Titles and text outside the card
 .thank-you-title {
 	font-family: map.get($fonts, heading);
-	font-size: 40px;
+	font-size: map.get(map.get($text-styles, h3), size);
 	color: map.get($colors, bold-main);
-	margin-bottom: map.get($spacing, sp-3);
-	line-height: 1.2;
+	margin-bottom: map.get($spacing, sp-1);
+	line-height: 1.1;
 }
 
 .thank-you-subtitle {
 	font-family: map.get($fonts, primary);
-	font-size: 16px;
-	color: map.get($colors, d-neut-dark-g);
-	margin-bottom: map.get($spacing, sp-6);
+	font-size: 20px;
+	color: map.get($colors, bold-main);
+	margin-top: 0;
+	margin-bottom: map.get($spacing, sp-4);
 	line-height: 1.5;
-
-	.edit-details-link {
-		display: inline-block;
-		margin-top: map.get($spacing, sp-2);
-		color: map.get($colors, d-neut-dark-g);
-		text-decoration: underline;
-		font-size: 14px;
-		transition: map.get($transitions, default);
-
-		&:hover {
-			color: map.get($colors, accent);
-		}
-	}
 }
 
 // The Receipt Summary Card
 .receipt-card {
-	background-color: #fff;
-	max-width: 480px;
-	margin: 0 auto map.get($spacing, sp-8);
-	padding: map.get($spacing, sp-6) map.get($spacing, sp-8);
-	border: 1px solid map.get($colors, d-neut-mid-g);
-	text-align: left; // Overrides the center alignment from the parent container
+	background-color: map.get($colors, l-neut-pink);
+	max-width: 600px;
+	margin: 0 auto;
+	padding: map.get($spacing, sp-5) map.get($spacing, sp-2);
+	border: 1px solid map.get($colors, comp-brown);
 
 	.receipt-header {
-		margin-bottom: map.get($spacing, sp-4);
-
 		h4 {
 			font-family: map.get($fonts, heading);
-			font-size: 24px;
+			font-size: 32px; // Larger title
 			color: map.get($colors, bold-main);
-			border-bottom: 1px solid map.get($colors, d-neut-mid-g);
-			padding-bottom: map.get($spacing, sp-2);
 		}
 	}
 
 	.receipt-price {
-		background-color: map.get($colors, l-neut-pale-w);
-		padding: map.get($spacing, sp-4);
-		text-align: center;
-		margin-bottom: map.get($spacing, sp-5);
-
+		margin-bottom: map.get($spacing, sp-6);
 		p {
 			font-family: map.get($fonts, primary);
-			font-size: 14px;
+			font-size: 16px; // body-sm
 			color: map.get($colors, d-neut-dark-g);
 			margin-bottom: map.get($spacing, sp-1);
 		}
-
 		h3 {
 			font-family: map.get($fonts, heading);
-			font-size: 28px;
-			color: map.get($colors, d-neut-black);
+			font-size: 40px;
+			color: map.get($colors, bold-main);
+			font-weight: map.get($weights, regular);
 		}
 	}
 
+	// Details block
 	.receipt-details {
+		padding: map.get($spacing, sp-6) map.get($spacing, sp-8);
+		text-align: left;
+
 		.detail-block {
 			margin-bottom: map.get($spacing, sp-4);
 
@@ -600,13 +584,10 @@
 
 			h5 {
 				font-family: map.get($fonts, primary);
-				font-size: 14px;
-				font-weight: map.get(
-					$weights,
-					bold
-				); // Assuming you have bold in your weights map
-				color: map.get($colors, d-neut-dark-g);
-				margin-bottom: map.get($spacing, sp-1);
+				font-size: 18px;
+				font-weight: map.get($weights, bold);
+				color: map.get($colors, bold-main);
+				margin-bottom: map.get($spacing, sp-2);
 			}
 
 			p,
@@ -616,18 +597,16 @@
 				color: map.get($colors, d-neut-black);
 			}
 
-			// Custom bullet points for the services list
+			// Remove hyphen bullets, refine list spacing
 			ul {
 				list-style-type: none;
 				padding: 0;
 				margin: 0;
 
 				li {
-					margin-bottom: 4px;
-
+					margin-bottom: map.get($spacing, sp-1);
 					&::before {
-						content: "- ";
-						color: map.get($colors, d-neut-black);
+						content: none; // Remove the hyphen list style
 					}
 				}
 			}
@@ -635,8 +614,27 @@
 	}
 }
 
-// Home Button
-.btn-home {
-	@extend .btn-next; // Reuses the exact same styling as the Next/Submit buttons
-	margin: 0 auto; // Ensures it stays perfectly centered at the bottom
+.receipt-card-footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+
+	// Home Button
+	.btn-home {
+		@extend .btn-next;
+		margin: map.get($spacing, sp-8) auto 0;
+		width: 200px;
+	}
+
+	.thank-you-footer-logo {
+		margin-top: map.get($spacing, sp-6);
+		img {
+			width: 95px;
+			height: auto;
+		}
+	}
+
+	.social-links {
+		font-size: map.get(map.get($text-styles, body-sm), size);
+	}
 }

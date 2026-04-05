@@ -320,7 +320,7 @@
   margin: 8px 0 16px 0;
 }
 
-.btn-next, .btn-home, .btn-submit {
+.btn-next, .receipt-card-footer .btn-home, .btn-submit {
   display: block;
   width: 200px;
   margin: 48px auto 0;
@@ -334,7 +334,7 @@
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
-.btn-next:hover, .btn-home:hover, .btn-submit:hover {
+.btn-next:hover, .receipt-card-footer .btn-home:hover, .btn-submit:hover {
   background-color: #b99692;
   border-color: #b99692;
   color: #fff;
@@ -454,71 +454,57 @@
 }
 
 #thank-you-screen {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  background-color: #fae9e7;
+  text-align: left;
 }
 
 .thank-you-title {
   font-family: "Baskervville", serif;
-  font-size: 40px;
+  font-size: 48px;
   color: #725a58;
-  margin-bottom: 16px;
-  line-height: 1.2;
+  margin-bottom: 4px;
+  line-height: 1.1;
 }
 
 .thank-you-subtitle {
   font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
-  font-size: 16px;
-  color: #535353;
-  margin-bottom: 48px;
+  font-size: 20px;
+  color: #725a58;
+  margin-top: 0;
+  margin-bottom: 24px;
   line-height: 1.5;
-}
-.thank-you-subtitle .edit-details-link {
-  display: inline-block;
-  margin-top: 8px;
-  color: #535353;
-  text-decoration: underline;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-.thank-you-subtitle .edit-details-link:hover {
-  color: #e3b6b1;
 }
 
 .receipt-card {
-  background-color: #fff;
-  max-width: 480px;
-  margin: 0 auto 96px;
-  padding: 48px 96px;
-  border: 1px solid #a3a3a3;
-  text-align: left;
-}
-.receipt-card .receipt-header {
-  margin-bottom: 24px;
+  background-color: #fae9e7;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px 8px;
+  border: 1px solid #a06d67;
 }
 .receipt-card .receipt-header h4 {
   font-family: "Baskervville", serif;
-  font-size: 24px;
+  font-size: 32px;
   color: #725a58;
-  border-bottom: 1px solid #a3a3a3;
-  padding-bottom: 8px;
 }
 .receipt-card .receipt-price {
-  background-color: #f8f6f4;
-  padding: 24px;
-  text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 .receipt-card .receipt-price p {
   font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #535353;
   margin-bottom: 4px;
 }
 .receipt-card .receipt-price h3 {
   font-family: "Baskervville", serif;
-  font-size: 28px;
-  color: #191919;
+  font-size: 40px;
+  color: #725a58;
+  font-weight: 400;
+}
+.receipt-card .receipt-details {
+  padding: 48px 96px;
+  text-align: left;
 }
 .receipt-card .receipt-details .detail-block {
   margin-bottom: 24px;
@@ -528,10 +514,10 @@
 }
 .receipt-card .receipt-details .detail-block h5 {
   font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
-  color: #535353;
-  margin-bottom: 4px;
+  color: #725a58;
+  margin-bottom: 8px;
 }
 .receipt-card .receipt-details .detail-block p,
 .receipt-card .receipt-details .detail-block ul {
@@ -548,10 +534,25 @@
   margin-bottom: 4px;
 }
 .receipt-card .receipt-details .detail-block ul li::before {
-  content: "- ";
-  color: #191919;
+  content: none;
 }
 
-.btn-home {
-  margin: 0 auto;
+.receipt-card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.receipt-card-footer .btn-home {
+  margin: 96px auto 0;
+  width: 200px;
+}
+.receipt-card-footer .thank-you-footer-logo {
+  margin-top: 48px;
+}
+.receipt-card-footer .thank-you-footer-logo img {
+  width: 95px;
+  height: auto;
+}
+.receipt-card-footer .social-links {
+  font-size: 16px;
 }/*# sourceMappingURL=contact.css.map */
