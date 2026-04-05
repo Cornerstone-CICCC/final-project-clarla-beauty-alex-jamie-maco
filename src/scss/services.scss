@@ -1,0 +1,173 @@
+@use './variables' as *;
+@use 'sass:map';
+
+.services__header {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  padding-top: 80px; 
+  padding-bottom: 60px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  background-color: #F8F6F4; 
+
+  h1 {
+    font-family: map.get($fonts, heading);
+    font-size: 80px; 
+    line-height: 1.3; 
+    font-weight: 400; 
+    color: #725A58; 
+    letter-spacing: 0.13em; 
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .header-divider {
+    width: 200px; 
+    height: 1px;
+    background-color: #725A58;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    border: none;
+  }
+
+  p {
+    font-family: map.get($fonts, avenir-light); 
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #191919; 
+    max-width: 356px; 
+    margin: 0 auto;
+    word-break: keep-all;
+  }
+}
+
+.services__main {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  background-color: map.get($colors, l-neut-pink);
+  padding: 120px 0;
+}
+
+.services__container {
+  max-width: 1100px; 
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 120px; 
+  padding: 0 20px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px; 
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+
+  &__image {
+    flex: 0 0 320px;
+    width: 320px;
+    height: 380px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 10px;
+
+    h3 {
+      font-family: map.get($fonts, heading);
+      font-size: 32px;
+      line-height: 1.3;
+      color: map.get($colors, bold-main);
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+
+    .service-item__info {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      
+      span {
+        font-family: map.get($fonts, avenir-light);
+        font-size: 14px;
+        color: map.get($colors, comp-dark-p);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+    }
+
+    p {
+      font-family: map.get($fonts, avenir-light); 
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 300;
+      color: #191919;
+      margin-bottom: 40px;
+      max-width: 664px;
+      word-break: keep-all;
+    }
+
+    button {
+      width: 160px;
+      height: 62px;
+      border: 1px solid #5E4A49;
+      background: transparent;
+      font-family: map.get($fonts, heading);
+      font-size: 14px;
+      color: #5E4A49;
+      cursor: pointer;
+      text-transform: capitalize;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #5E4A49;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.message-box {
+  position: absolute;
+  right: 0;
+  top: 40px; 
+  width: 50px;
+  height: 50px;
+  background-color: map.get($colors, comp-dark-p);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 24px;
+  }
+}

@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap");
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../assets/fonts/avenir-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
 .about__header {
   text-align: center;
   margin-bottom: 64px;

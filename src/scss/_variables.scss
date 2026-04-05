@@ -1,6 +1,13 @@
 // Import fonts
 @import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap");
 
+@font-face {
+  font-family: 'Avenir Light';
+  src: url('../assets/fonts/avenir-light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
 // ? Color variables
 $colors: (
   // Brand color
@@ -25,7 +32,8 @@ $colors: (
 // ? Font variables
 $fonts: (
   primary: ('Nunito Sans', sans-serif),
-  heading: (Baskervville, serif)
+  heading: (Baskervville, serif),
+  avenir-light: ('Avenir Light', 'Nunito Sans', sans-serif)
 );
 // ? Text sizes variables
 $text-styles: (

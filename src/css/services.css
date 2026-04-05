@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap");
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../assets/fonts/avenir-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+.services__header {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #F8F6F4;
+}
+.services__header h1 {
+  font-family: Baskervville, serif;
+  font-size: 80px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #725A58;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.services__header .header-divider {
+  width: 200px;
+  height: 1px;
+  background-color: #725A58;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border: none;
+}
+.services__header p {
+  font-family: "Avenir Light", "Nunito Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #191919;
+  max-width: 356px;
+  margin: 0 auto;
+  word-break: keep-all;
+}
+
+.services__main {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background-color: #fae9e7;
+  padding: 120px 0;
+}
+
+.services__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  padding: 0 20px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  position: relative;
+}
+.service-item__image {
+  flex: 0 0 320px;
+  width: 320px;
+  height: 380px;
+  overflow: hidden;
+}
+.service-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.service-item__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+.service-item__content h3 {
+  font-family: Baskervville, serif;
+  font-size: 32px;
+  line-height: 1.3;
+  color: #725a58;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+.service-item__content .service-item__info {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.service-item__content .service-item__info span {
+  font-family: "Avenir Light", "Nunito Sans", sans-serif;
+  font-size: 14px;
+  color: #b99692;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.service-item__content p {
+  font-family: "Avenir Light", "Nunito Sans", sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #191919;
+  margin-bottom: 40px;
+  max-width: 664px;
+  word-break: keep-all;
+}
+.service-item__content button {
+  width: 160px;
+  height: 62px;
+  border: 1px solid #5E4A49;
+  background: transparent;
+  font-family: Baskervville, serif;
+  font-size: 14px;
+  color: #5E4A49;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+}
+.service-item__content button:hover {
+  background: #5E4A49;
+  color: #fff;
+}
+
+.message-box {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 50px;
+  height: 50px;
+  background-color: #b99692;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.message-box img {
+  width: 24px;
+}/*# sourceMappingURL=services.css.map */
