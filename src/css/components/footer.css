@@ -64,5 +64,17 @@ footer #footer-bar ul li a {
 footer #footer-bar ul li a:hover {
   text-decoration: underline;
 }
+@media (max-width: 480px) {
+  footer #footer-bar ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  footer #footer-bar ul li {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}
 
 /*# sourceMappingURL=footer.css.map */

@@ -44,4 +44,22 @@ TODOs
   max-width: 110px;
 }
 
+@media (max-width: 480px) {
+  #navbar {
+    padding: 40px 0px 10px;
+  }
+  #navbar ul {
+    gap: 20px;
+  }
+  #navbar li {
+    display: none;
+  }
+  #navbar li a {
+    border-right: transparent;
+  }
+  #navbar li:first-of-type, #navbar li:nth-child(5), #navbar li:last-of-type {
+    display: block;
+  }
+}
+
 /*# sourceMappingURL=navbar.css.map */

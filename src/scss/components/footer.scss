@@ -85,5 +85,24 @@ footer {
       }
     }
   }
+
+  @media (max-width: map-get($map: vr.$breakpoints, $key: mobile)) {
+    #footer-bar {
+      // ul {
+      //   flex-wrap: wrap;
+      //   gap: 15px;
+      // }
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        li {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
