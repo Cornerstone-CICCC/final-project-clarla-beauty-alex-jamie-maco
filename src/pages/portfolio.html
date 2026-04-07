@@ -20,7 +20,16 @@
     <main class="portfolio">
       <section class="portfolio__header">
         <h1>MY WORK</h1>
-
+        <img
+          src="../assets/icons/services/Line 10.svg"
+          alt="divider"
+          class="header-divider"
+        />
+        <p>
+          With a decade of experience, each look highlights my passion for
+          <br />
+          enhancing your individual beauty.
+        </p>
         <nav class="portfolio__tabs">
           <button type="button" class="tab-btn active">Makeup</button>
           <span class="tab-divider">/</span>
@@ -91,8 +100,11 @@
     </main>
 
     <script>
+      const portfolioTabs = document.querySelector(".portfolio__tabs");
       const tabBtns = document.querySelectorAll(".tab-btn");
       const imgs = document.querySelectorAll(".portfolio__item img");
+
+      portfolioTabs.classList.add("active-makeup");
 
       const hairList = [
         "../assets/imgs/portfolio/hairstyle/Img2.png",
@@ -124,8 +136,16 @@
           btn.classList.add("active");
 
           const isMakeup = btn.textContent === "Makeup";
-          const targetList = isMakeup ? makeupList : hairList;
 
+          if (isMakeup) {
+            portfolioTabs.classList.add("active-makeup");
+            portfolioTabs.classList.remove("active-hairstyle");
+          } else {
+            portfolioTabs.classList.add("active-hairstyle");
+            portfolioTabs.classList.remove("active-makeup");
+          }
+
+          const targetList = isMakeup ? makeupList : hairList;
           imgs.forEach((img, i) => {
             img.style.opacity = "0";
             setTimeout(() => {
