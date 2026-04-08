@@ -110,10 +110,13 @@ body {
       grid-template-columns: repeat(3, 1fr);
       align-items: center;
       gap: 20px;
+      justify-items: center;
 
       .video-card {
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
         height: auto;
+        object-fit: cover;
         transition: map-get($map: vr.$transitions, $key: default);
         cursor: pointer;
 
@@ -125,6 +128,43 @@ body {
           &:hover {
             transform: translateY(-5px);
             transition: map-get($map: vr.$transitions, $key: default);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($map: vr.$breakpoints, $key: tablet)) {
+  body {
+    header {
+      h1 {
+        font-size: map-get($map: vr.$text-sizes, $key: h3) !important;
+      }
+
+      hr {
+        width: 45% !important;
+      }
+    }
+
+    main {
+      padding: 0 !important;
+      #tags {
+        margin-top: 40px !important;
+        gap: 10px;
+      }
+
+      #video-showcase {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .video-card {
+          width: 95% !important;
+          max-width: none !important;
+          img {
+            display: block;
+            margin: 0 auto;
           }
         }
       }

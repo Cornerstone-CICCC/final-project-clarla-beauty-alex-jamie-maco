@@ -94,10 +94,13 @@ body main #video-showcase {
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   gap: 20px;
+  justify-items: center;
 }
 body main #video-showcase .video-card {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: auto;
+  object-fit: cover;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -109,6 +112,35 @@ body main #video-showcase .video-card a {
 body main #video-showcase .video-card a:hover {
   transform: translateY(-5px);
   transition: all 0.3s ease;
+}
+
+@media (max-width: 868px) {
+  body header h1 {
+    font-size: 48px !important;
+  }
+  body header hr {
+    width: 45% !important;
+  }
+  body main {
+    padding: 0 !important;
+  }
+  body main #tags {
+    margin-top: 40px !important;
+    gap: 10px;
+  }
+  body main #video-showcase {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  body main #video-showcase .video-card {
+    width: 95% !important;
+    max-width: none !important;
+  }
+  body main #video-showcase .video-card img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=beauty-tips.css.map */
