@@ -42,37 +42,37 @@
           <div class="portfolio__grid">
             <div class="portfolio__item">
               <img
-                src="../assets/imgs/portfolio/makeup/Img3.png"
+                src="../assets/imgs/portfolio/makeup/Img3.webp"
                 alt="Makeup look 1"
               />
             </div>
             <div class="portfolio__item">
               <img
-                src="../assets/imgs/portfolio/makeup/Img3-1.png"
+                src="../assets/imgs/portfolio/makeup/Img3-1.webp"
                 alt="Makeup look 2"
               />
             </div>
             <div class="portfolio__item">
               <img
-                src="../assets/imgs/portfolio/makeup/Img3-2.png"
+                src="../assets/imgs/portfolio/makeup/Img3-2.webp"
                 alt="Makeup look 3"
               />
             </div>
             <div class="portfolio__item">
               <img
-                src="../assets/imgs/portfolio/makeup/Img3-3.png"
+                src="../assets/imgs/portfolio/makeup/Img3-3.webp"
                 alt="Makeup look 4"
               />
             </div>
             <div class="portfolio__item">
               <img
-                src="../assets/imgs/portfolio/makeup/Img3-4.png"
+                src="../assets/imgs/portfolio/makeup/Img3-4.webp"
                 alt="Makeup look 5"
               />
             </div>
             <div class="portfolio__item">
               <img
-                src="../assets/imgs/portfolio/makeup/Img3-5.png"
+                src="../assets/imgs/portfolio/makeup/Img3-5.webp"
                 alt="Makeup look 6"
               />
             </div>
@@ -84,7 +84,7 @@
             </div>
             <div class="portfolio__item">
               <img
-                src="../assets/imgs/portfolio/makeup/Img3-7.png"
+                src="../assets/imgs/portfolio/makeup/Img3-7.webp"
                 alt="Makeup look 8"
               />
             </div>
@@ -112,30 +112,29 @@
       portfolioTabs.classList.add("active-makeup");
 
       const hairList = [
-        "../assets/imgs/portfolio/hairstyle/Img2.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-1.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-2.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-3.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-4.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-5.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-6.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-7.png",
-        "../assets/imgs/portfolio/hairstyle/Img2-8.png",
+        "../assets/imgs/portfolio/hairstyle/Img2.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-1.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-2.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-3.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-4.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-5.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-6.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-7.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-8.webp",
       ];
 
       const makeupList = [
-        "../assets/imgs/portfolio/makeup/Img3.png",
-        "../assets/imgs/portfolio/makeup/Img3-1.png",
-        "../assets/imgs/portfolio/makeup/Img3-2.png",
-        "../assets/imgs/portfolio/makeup/Img3-3.png",
-        "../assets/imgs/portfolio/makeup/Img3-4.png",
-        "../assets/imgs/portfolio/makeup/Img3-5.png",
-        "../assets/imgs/portfolio/makeup/Img3-6.png",
-        "../assets/imgs/portfolio/makeup/Img3-7.png",
-        "../assets/imgs/portfolio/makeup/Img3-8.png",
+        "../assets/imgs/portfolio/makeup/Img3.webp",
+        "../assets/imgs/portfolio/makeup/Img3-1.webp",
+        "../assets/imgs/portfolio/makeup/Img3-2.webp",
+        "../assets/imgs/portfolio/makeup/Img3-3.webp",
+        "../assets/imgs/portfolio/makeup/Img3-4.webp",
+        "../assets/imgs/portfolio/makeup/Img3-5.webp",
+        "../assets/imgs/portfolio/makeup/Img3-6.webp",
+        "../assets/imgs/portfolio/makeup/Img3-7.webp",
+        "../assets/imgs/portfolio/makeup/Img3-8.webp",
       ];
 
-      // 1. View More 버튼 클릭 이벤트 추가
       if (viewMoreBtn) {
         viewMoreBtn.addEventListener("click", () => {
           portfolioItems.forEach((item, index) => {
@@ -147,7 +146,6 @@
         });
       }
 
-      // 2. 탭 버튼 클릭 이벤트 (기존 코드 유지 + 초기화 추가)
       tabBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
           tabBtns.forEach((b) => b.classList.remove("active"));
@@ -163,7 +161,6 @@
             portfolioTabs.classList.remove("active-makeup");
           }
 
-          // [중요] 탭을 바꿀 때 모바일 상태라면 다시 4개만 보여주고 버튼 살리기
           if (window.innerWidth <= 768) {
             portfolioItems.forEach((item, index) => {
               if (index >= 4) {
