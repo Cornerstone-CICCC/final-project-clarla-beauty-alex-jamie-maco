@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Carla Beauty</title>
+
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/portfolio.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="portfolio">
+      <section class="portfolio__header">
+        <h1>MY WORK</h1>
+        <img
+          src="../assets/icons/services/Line 10.svg"
+          alt="divider"
+          class="header-divider"
+        />
+        <p>
+          With a decade of experience, each look highlights my passion for
+          <br />
+          enhancing your individual beauty.
+        </p>
+        <nav class="portfolio__tabs">
+          <button type="button" class="tab-btn active">Makeup</button>
+          <span class="tab-divider">/</span>
+          <button type="button" class="tab-btn">Hairstyle</button>
+        </nav>
+      </section>
+
+      <section class="portfolio__main">
+        <div class="portfolio__container">
+          <div class="portfolio__grid">
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3.webp"
+                alt="Makeup look 1"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-1.webp"
+                alt="Makeup look 2"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-2.webp"
+                alt="Makeup look 3"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-3.webp"
+                alt="Makeup look 4"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-4.webp"
+                alt="Makeup look 5"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-5.webp"
+                alt="Makeup look 6"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-6.webp"
+                alt="Makeup look 7"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-7.webp"
+                alt="Makeup look 8"
+              />
+            </div>
+            <div class="portfolio__item">
+              <img
+                src="../assets/imgs/portfolio/makeup/Img3-8.webp"
+                alt="Makeup look 9"
+              />
+            </div>
+          </div>
+          <div class="portfolio__footer">
+            <button type="button" class="view-more-btn">View More</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const portfolioTabs = document.querySelector(".portfolio__tabs");
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const imgs = document.querySelectorAll(".portfolio__item img");
+      const viewMoreBtn = document.querySelector(".view-more-btn");
+      const portfolioItems = document.querySelectorAll(".portfolio__item");
+
+      portfolioTabs.classList.add("active-makeup");
+
+      const hairList = [
+        "../assets/imgs/portfolio/hairstyle/Img2.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-1.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-2.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-3.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-4.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-5.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-6.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-7.webp",
+        "../assets/imgs/portfolio/hairstyle/Img2-8.webp",
+      ];
+
+      const makeupList = [
+        "../assets/imgs/portfolio/makeup/Img3.webp",
+        "../assets/imgs/portfolio/makeup/Img3-1.webp",
+        "../assets/imgs/portfolio/makeup/Img3-2.webp",
+        "../assets/imgs/portfolio/makeup/Img3-3.webp",
+        "../assets/imgs/portfolio/makeup/Img3-4.webp",
+        "../assets/imgs/portfolio/makeup/Img3-5.webp",
+        "../assets/imgs/portfolio/makeup/Img3-6.webp",
+        "../assets/imgs/portfolio/makeup/Img3-7.webp",
+        "../assets/imgs/portfolio/makeup/Img3-8.webp",
+      ];
+
+      if (viewMoreBtn) {
+        viewMoreBtn.addEventListener("click", () => {
+          const isExpanded = viewMoreBtn.textContent === "Show Less";
+
+          portfolioItems.forEach((item, index) => {
+            if (index >= 4) {
+              if (isExpanded) {
+                item.classList.remove("show");
+              } else {
+                item.classList.add("show");
+              }
+            }
+          });
+
+          viewMoreBtn.textContent = isExpanded ? "View More" : "Show Less";
+
+          if (isExpanded) {
+            window.scrollTo({
+              top: document.querySelector(".portfolio__grid").offsetTop - 100,
+              behavior: "smooth",
+            });
+          }
+        });
+      }
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          tabBtns.forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+
+          const isMakeup = btn.textContent === "Makeup";
+
+          if (isMakeup) {
+            portfolioTabs.classList.add("active-makeup");
+            portfolioTabs.classList.remove("active-hairstyle");
+          } else {
+            portfolioTabs.classList.add("active-hairstyle");
+            portfolioTabs.classList.remove("active-makeup");
+          }
+
+          if (window.innerWidth <= 768) {
+            portfolioItems.forEach((item, index) => {
+              if (index >= 4) {
+                item.classList.remove("show");
+              }
+            });
+            if (viewMoreBtn) {
+              viewMoreBtn.style.display = "";
+              viewMoreBtn.textContent = "View More";
+            }
+          }
+
+          const targetList = isMakeup ? makeupList : hairList;
+          imgs.forEach((img, i) => {
+            img.style.opacity = "0";
+            setTimeout(() => {
+              img.src = targetList[i];
+              img.style.opacity = "1";
+            }, 150);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

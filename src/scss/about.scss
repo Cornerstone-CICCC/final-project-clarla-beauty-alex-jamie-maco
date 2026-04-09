@@ -1,0 +1,247 @@
+@use './variables' as *;
+@use 'sass:map';
+
+.about__header {
+  text-align: center;
+  
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  margin-bottom: 0;
+  padding-bottom: 68px;
+  background-color: map.get($colors, l-neut-pale-w);
+
+  h2 {
+    font-family: map.get($fonts, heading);
+    font-size: map.get(map.get($text-styles, h3), size);
+    line-height: map.get(map.get($text-styles, h3), line);
+    letter-spacing: 0px;
+    font-weight: map.get($weights, regular);
+    color: map.get($colors, accent);
+    margin: 0;
+  }
+
+  h1 {
+    font-family: map.get($fonts, heading);
+    font-size: map.get(map.get($text-styles, h1), size);
+    line-height: 1.3;
+    font-weight: map.get($weights, regular);
+    letter-spacing: 0.13em;
+    color: map.get($colors, bold-main);
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.about__main {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  
+  background: map.get($colors, l-neut-pink);
+  padding: map.get($spacing, sp-7) 0;
+}
+
+.about__container {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  padding: 0 map.get($spacing, sp-4);
+}
+
+.about__image {
+  flex: 1;
+  max-width: 400px;
+  width: 100%;
+}
+
+.about__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about__content {
+  flex: 1;
+
+  h3 {
+    font-family: map.get($fonts, heading);
+    font-size: map.get(map.get($text-styles, h3), size);
+    line-height: 1.3;
+    font-weight: map.get($weights, regular);
+    color: map.get($colors, bold-main);
+    max-width: 604px;
+    word-break: keep-all;
+  }
+
+  p {
+    font-family: map.get($fonts, avenir-light);
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: map.get($weights, light);
+    color: #000000;
+    margin-bottom: map.get($spacing, sp-5);
+  }
+
+  button {
+    font-family: map.get($fonts, heading);
+    font-size: map.get(map.get($text-styles, button-sm), size);
+    line-height: 1;
+    
+    width: 160px;
+    height: 62px;
+    padding: 0;
+    
+    border: 0.8px solid #5E4A49;
+    
+    background: transparent;
+    cursor: pointer;
+    transition: map.get($transitions, default);
+    color: #5E4A49;
+
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: map.get($colors, comp-dark-p);
+      border-color: map.get($colors, comp-dark-p);
+      color: #fff;
+    }
+  }
+}
+
+.about__brands {
+  text-align: center;
+  padding: map.get($spacing, sp-7) map.get($spacing, sp-4);
+
+  h3 {
+    font-family: map.get($fonts, heading);
+    font-size: map.get(map.get($text-styles, h3), size);
+    font-weight: map.get($weights, regular);
+    letter-spacing: 0px;
+    margin-bottom: map.get($spacing, sp-6);
+    color: map.get($colors, bold-main);
+  }
+}
+
+.brands {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: map.get($spacing, sp-5);
+  max-width: 904px;
+  margin: 0 auto;
+  justify-items: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    max-width: 120px;
+    height: 40px;
+    object-fit: contain;
+    opacity: 0.7;
+  }
+
+  img:nth-child(7) {
+    transform: scale(1.3);
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about__header {
+    width: 100% !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 48px 24px 40px !important;
+    box-sizing: border-box !important;
+
+    h1 {
+      font-size: 32px;
+      letter-spacing: 0.1em;
+      white-space: normal;
+    }
+  }
+
+  .about__main {
+    width: 100% !important;
+    position: static !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: map.get($colors, l-neut-pink) !important;
+  }
+
+  .about__container {
+    width: 100%;
+    max-width: none;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+
+  .about__image {
+    width: 100%;
+    
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .about__content {
+    text-align: left;
+    padding: 40px 24px 64px;
+
+    h3 {
+      font-size: 32px;
+      line-height: 1.3;
+      margin: 0 0 24px;
+      max-width: 327px;
+      word-break: keep-all;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 32px;
+    }
+
+    button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .about__brands {
+    padding: 40px 24px;
+    
+    h3 {
+      font-size: 32px;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
+  }
+
+  .brands {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+
+    img {
+      width: 110.46px;
+      height: 52.56px;
+      opacity: 0.6;
+    }
+  }
+}
