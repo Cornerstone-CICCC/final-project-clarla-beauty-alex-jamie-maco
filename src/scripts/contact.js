@@ -147,4 +147,64 @@ $(document).ready(function () {
 		$("#chat-widget-options").removeClass("is-open");
 		$("#chat-widget-trigger").removeClass("hidden");
 	});
+
+	// ========================================================================
+	// SECTION 7: URL ROUTING (Navigation from Home Page to Contact Page)
+	// ========================================================================
+
+	// --- A. Send the user from the Home Page ---
+	$("#home-wedding-next").on("click", function (e) {
+		e.preventDefault();
+		window.location.href = "./pages/contact.html?goto=wedding-step-2";
+	});
+
+	$("#home-party-next").on("click", function (e) {
+		e.preventDefault();
+		window.location.href = "./pages/contact.html?goto=party-step-2";
+	});
+
+	$("#home-photo-submit").on("click", function (e) {
+		e.preventDefault();
+		window.location.href = "./pages/contact.html?goto=photoshoot-submit";
+	});
+
+	$("#home-classes-submit").on("click", function (e) {
+		e.preventDefault();
+		window.location.href = "./pages/contact.html?goto=classes-submit";
+	});
+
+	// --- B. Receive the user on the Contact Page ---
+	const urlParams = new URLSearchParams(window.location.search);
+	const gotoTarget = urlParams.get("goto");
+
+	if (gotoTarget) {
+		$("#step-1-selection").hide();
+		$(".dynamic-section").hide();
+
+		// Determine which screen to show based on the URL parameter
+		if (gotoTarget === "wedding-step-2") {
+			// Select the 'Wedding' radio button
+			$('input[name="event_type"][value="wedding"]').prop("checked", true);
+			$("#services-tab-content").show();
+			$("#step-2-wedding").show();
+		} else if (gotoTarget === "party-step-2") {
+			// Select the 'Party' radio button
+			$('input[name="event_type"][value="party"]').prop("checked", true);
+			$("#services-tab-content").show();
+			$("#party-step-2").show();
+		} else if (gotoTarget === "photoshoot-submit") {
+			// Select the 'Photoshoot' radio button and show Thank You screen
+			$('input[name="event_type"][value="photoshoot"]').prop("checked", true);
+			$("#detailedContactForm").hide();
+			$("#thank-you-screen").show();
+		} else if (gotoTarget === "classes-submit") {
+			// Switch the active tab highlight to "Classes"
+			$(".tab-btn").removeClass("active");
+			$(".tab-btn").eq(1).addClass("active");
+
+			// Show the classes Thank You screen
+			$("#detailedContactForm").hide();
+			$("#classes-thank-you-screen").show();
+		}
+	}
 });
