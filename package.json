@@ -1,28 +1,28 @@
 {
-  "name": "final-project-clarla-beauty-alex-jamie-maco",
-  "version": "1.0.0",
-  "description": "**Objective:**",
-  "main": "index.js",
-  "scripts": {
-    "dev": "live-server --port=5500",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-alex-jamie-maco.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-alex-jamie-maco/issues"
-  },
-  "homepage": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-alex-jamie-maco#readme",
-  "dependencies": {
-    "live-server": "^1.2.2"
-  },
-  "devDependencies": {
-    "@types/jquery": "^4.0.0",
-    "sass": "^1.98.0"
-  }
+	"name": "final-project-clarla-beauty-alex-jamie-maco",
+	"version": "1.0.0",
+	"description": "**Objective:**",
+	"main": "index.js",
+	"scripts": {
+		"dev": "live-server --port=5500",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-alex-jamie-maco.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-alex-jamie-maco/issues"
+	},
+	"homepage": "https://github.com/Cornerstone-CICCC/final-project-clarla-beauty-alex-jamie-maco#readme",
+	"dependencies": {
+		"live-server": "^1.2.2"
+	},
+	"devDependencies": {
+		"@types/jquery": "^4.0.0",
+		"sass": "^1.98.0"
+	}
 }

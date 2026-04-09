@@ -3,23 +3,23 @@
 
 // ? Color variables
 $colors: (
-  // Brand color
-  brand: #191919,
-  // Bold main color
-  bold-main: #725a58,
-  // Accent color
-  accent: #e3b6b1,
-  // Light neutral colors
-  l-neut-pink: #fae9e7,
-  l-neut-pale-w: #f8f6f4,
-  l-neut-paper-w: #fbfafa,
-  // Dark neutral colors
-  d-neut-mid-g: #a3a3a3,
-  d-neut-dark-g: #535353,
-  d-neut-black: #191919,
-  // Complementary colors
-  comp-dark-p: #b99692,
-  comp-brown: #a06d67
+	// Brand color
+	brand: #191919,
+	// Bold main color
+	bold-main: #725a58,
+	// Accent color
+	accent: #e3b6b1,
+	// Light neutral colors
+	l-neut-pink: #fae9e7,
+	l-neut-pale-w: #f8f6f4,
+	l-neut-paper-w: #fbfafa,
+	// Dark neutral colors
+	d-neut-mid-g: #a3a3a3,
+	d-neut-dark-g: #535353,
+	d-neut-black: #191919,
+	// Complementary colors
+	comp-dark-p: #b99692,
+	comp-brown: #a06d67
 );
 
 // ? Font variables
@@ -49,58 +49,96 @@ $text-sizes : (
 );
 
 $text-styles: (
-  h1-cap: (size: 80px, line: 130px),
-  h1: (size: 80px, line: 120px),
-  h2: (size: 68px, line: 100px),
-  h3: (size: 48px, line: 130px),
-  h4-cap: (size: 40px, line: 120px),
-  h4: (size: 36px, line: 120px),
-  h5: (size: 32px, line: 130px),
-  h6: (size: 24px, line: 130px),
-
-  button: (size: 20px, line: 150px),
-  button-sm: (size: 18px, line: 100px),
-
-  body: (size: 18px, line: 150px),
-  body-sm: (size: 16px, line: 160px),
-
-  caption: (size: 14px, line: 130px),
-  signature: (size: 54px, line: normal)
+	h1-cap: (
+		size: 80px,
+		line: 130px,
+	),
+	h1: (
+		size: 80px,
+		line: 120px,
+	),
+	h2: (
+		size: 68px,
+		line: 100px,
+	),
+	h3: (
+		size: 48px,
+		line: 130px,
+	),
+	h4-cap: (
+		size: 40px,
+		line: 120px,
+	),
+	h4: (
+		size: 36px,
+		line: 120px,
+	),
+	h5: (
+		size: 32px,
+		line: 130px,
+	),
+	h6: (
+		size: 24px,
+		line: 130px,
+	),
+	button: (
+		size: 20px,
+		line: 150px,
+	),
+	button-sm: (
+		size: 18px,
+		line: 100px,
+	),
+	body: (
+		size: 18px,
+		line: 150px,
+	),
+	body-sm: (
+		size: 16px,
+		line: 160px,
+	),
+	caption: (
+		size: 14px,
+		line: 130px,
+	),
+	signature: (
+		size: 54px,
+		line: normal,
+	),
 );
 
 // ? Weights variables
 $weights: (
-  // many weights are available
-  light: 300,
-  regular: 400,
-  medium: 500,
-  bold: 700
+	light: 300,
+	regular: 400,
+	medium: 500,
+	bold: 700,
 );
 
 // ? Spacing variables
 $spacing: (
-  // Spacing scale (0-10)
-  sp-0: 0px,
-  sp-1: 4px,
-  sp-2: 8px,
-  sp-3: 16px,
-  sp-4: 24px,
-  sp-5: 32px,
-  sp-6: 48px,
-  sp-7: 64px,
-  sp-8: 96px,
-  sp-9: 128px,
-  sp-10: 192px
+	// Spacing scale (0-10)
+	sp-0: 0px,
+	sp-1: 4px,
+	sp-2: 8px,
+	sp-3: 16px,
+	sp-4: 24px,
+	sp-5: 32px,
+	sp-6: 48px,
+	sp-7: 64px,
+	sp-8: 96px,
+	sp-9: 128px,
+	sp-10: 192px
 );
 
 // ? Shadow variables
 $shadows: (
-  shadow-1: 0px 4px 6px rgba(0, 0, 0, 0.1)
+	shadow-1: 0px 4px 6px rgba(0, 0, 0, 0.1),
 );
 
 // ? Transition variables
 $transitions: (
-  default: all 0.3s ease
+	default: all 0.3s ease,
 );
 
 // ? Breakpoint variables
