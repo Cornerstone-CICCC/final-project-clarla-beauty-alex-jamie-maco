@@ -419,6 +419,44 @@
 									>
 								</fieldset>
 							</div>
+							<div class="party-chat-widget">
+								<div class="chat-options" id="chat-widget-options">
+									<button type="button" class="option-btn opt-ig">
+										<img
+											src="../assets/imgs/message-box/ig.svg"
+											alt="Instagram"
+										/>
+									</button>
+									<button type="button" class="option-btn opt-phone">
+										<img
+											src="../assets/imgs/message-box/phone.svg"
+											alt="Phone"
+										/>
+									</button>
+									<button type="button" class="option-btn opt-wa">
+										<img
+											src="../assets/imgs/message-box/whatsApp.svg"
+											alt="WhatsApp"
+										/>
+									</button>
+									<button
+										type="button"
+										class="option-btn opt-close"
+										id="chat-widget-close"
+									>
+										<img
+											src="../assets/imgs/message-box/dismiss.svg"
+											alt="Close"
+										/>
+									</button>
+								</div>
+								<div class="chat-trigger" id="chat-widget-trigger">
+									<img
+										src="../assets/imgs/message-box/message.svg"
+										alt="message-icon"
+									/>
+								</div>
+							</div>
 
 							<fieldset class="form-section">
 								<legend>Name</legend>
@@ -427,14 +465,6 @@
 									placeholder="Your name"
 									class="input-field name-input"
 								/>
-							</fieldset>
-
-							<fieldset class="form-section">
-								<textarea
-									class="input-field textarea-field"
-									rows="4"
-									placeholder="Tell us more about the party..."
-								></textarea>
 							</fieldset>
 
 							<fieldset class="form-section">
@@ -787,7 +817,7 @@
 						</fieldset>
 
 						<!--! input  -->
-
+						<!-- class date -->
 						<fieldset class="form-section">
 							<legend>Class Date</legend>
 							<p
@@ -818,6 +848,7 @@
 							>
 						</fieldset>
 
+						<!-- questions? -->
 						<fieldset class="form-section">
 							<legend>Any questions?</legend>
 							<textarea
@@ -827,6 +858,7 @@
 							></textarea>
 						</fieldset>
 
+						<!-- name -->
 						<fieldset class="form-section">
 							<legend>Name</legend>
 							<input
@@ -836,6 +868,7 @@
 							/>
 						</fieldset>
 
+						<!-- contact -->
 						<fieldset class="form-section">
 							<legend>Contact</legend>
 							<div class="contact-options">
@@ -894,7 +927,7 @@
 				<div
 					id="thank-you-screen"
 					class="dynamic-section"
-					style="display: none; text-align: center"
+					style="display: none"
 				>
 					<h2 class="thank-you-title">
 						Thanks <span id="summary-name">Janny</span>,<br />
@@ -958,7 +991,7 @@
 									/>
 								</div>
 
-								<div class="social-links">
+								<div class="social-links footer-social-links">
 									<a href="#">
 										<img
 											src="../assets/icons/contact-icons/whatsApp.svg"
@@ -972,7 +1005,7 @@
 									</a>
 								</div>
 							</div>
-							<button type="button" class="btn-home">Home</button>
+							<button type="button" class="btn-home">Share</button>
 						</div>
 					</div>
 				</div>
@@ -981,7 +1014,7 @@
 				<div
 					id="classes-thank-you-screen"
 					class="dynamic-section"
-					style="display: none; text-align: center"
+					style="display: none"
 				>
 					<h2 class="thank-you-title">
 						Thanks <span class="summary-name-display">Janny</span>,<br />
@@ -1001,7 +1034,7 @@
 						<img
 							src="../assets/imgs/contact-thankyou.svg"
 							alt="Beauty products"
-							style="width: 100%; border-radius: 4px; margin-bottom: 40px"
+							class="classes-thank-you-screen-img"
 						/>
 
 						<div class="talk-soon-section" style="text-align: left">
@@ -1048,7 +1081,7 @@
 						</div>
 					</div>
 
-					<button type="button" class="btn-home">Home</button>
+					<button type="button" class="btn-home">Share</button>
 				</div>
 			</section>
 		</main>

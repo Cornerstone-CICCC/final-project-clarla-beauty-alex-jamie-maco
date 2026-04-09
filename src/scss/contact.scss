@@ -1,12 +1,11 @@
 @use "sass:map";
 @use "variables" as *;
 
-fieldset {
-	border: none;
-	padding: 0;
-	margin: 0;
-}
+// ========================================================================
+// 1. GLOBAL RESETS & PAGE LAYOUT
+// ========================================================================
 
+fieldset,
 legend {
 	border: none;
 	padding: 0;
@@ -19,7 +18,10 @@ legend {
 	text-align: center;
 }
 
-// 1. Header Polish
+// ========================================================================
+// 2. HEADER SECTION
+// ========================================================================
+
 .contact-header {
 	display: flex;
 	flex-direction: column;
@@ -75,6 +77,10 @@ legend {
 	}
 }
 
+// ========================================================================
+// 3. FORM CONTAINERS & TABS
+// ========================================================================
+
 .form-container {
 	background-color: map.get($colors, l-neut-pink);
 	max-width: 768px;
@@ -84,6 +90,7 @@ legend {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
+
 	legend {
 		font-family: map.get($fonts, heading);
 		font-size: map.get(map.get($text-styles, h5), size);
@@ -93,7 +100,6 @@ legend {
 	}
 }
 
-// Tab Navigation
 .tab-nav {
 	display: flex;
 	border-bottom: 1px solid map.get($colors, d-neut-mid-g);
@@ -125,14 +131,75 @@ legend {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 40px;
+}
 
-	@media (max-width: map.get($breakpoints, tablet)) {
-		grid-template-columns: 1fr;
-		gap: map.get($spacing, sp-4);
+// ========================================================================
+// 4. INPUT COMPONENTS (Text, Select, Date, Textarea)
+// ========================================================================
+
+.input-field {
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+	padding: 0 map.get($spacing, sp-3);
+	border: 1px solid map.get($colors, d-neut-mid-g);
+	background-color: #fff;
+	font-family: map.get($fonts, primary);
+	font-size: 18px;
+	appearance: none;
+	background-repeat: no-repeat;
+	background-position: right 16px center;
+	background-size: 24px;
+
+	&:focus {
+		outline: none;
+		border-color: map.get($colors, comp-dark-p);
 	}
 }
 
-// 2. Event Type Selection Polish
+.date-input[type="text"] {
+	color: map.get($colors, d-neut-mid-g);
+	background-image: url("../assets/icons/calendar.svg");
+}
+
+.date-input[type="date"] {
+	background-image: url("../assets/icons/calendar.svg");
+	color: map.get($colors, d-neut-black);
+
+	&::-webkit-calendar-picker-indicator {
+		opacity: 0;
+		cursor: pointer;
+	}
+}
+
+.time-select {
+	padding-right: 40px;
+	background-image: url("../assets/icons/Select.svg");
+	background-size: 10px;
+	color: map.get($colors, d-neut-mid-g);
+
+	&:valid {
+		color: map.get($colors, d-neut-black);
+	}
+	option {
+		color: map.get($colors, d-neut-black);
+	}
+}
+
+.tel-input {
+	margin: map.get($spacing, sp-2) 0 map.get($spacing, sp-3) 0;
+}
+
+.textarea-field {
+	height: auto;
+	resize: vertical;
+	padding-top: map.get($spacing, sp-3);
+}
+
+// ========================================================================
+// 5. RADIOS, CHECKBOXES & SELECTION BOXES
+// ========================================================================
+
 .selection-group {
 	display: flex;
 	gap: map.get($spacing, sp-2);
@@ -174,85 +241,13 @@ legend {
 				opacity: 1;
 			}
 		}
+
 		&:hover {
 			border: 1px solid map.get($colors, comp-dark-p);
 		}
 	}
 }
 
-// 3. Date Input Fields Polish
-.input-field {
-	box-sizing: border-box;
-	width: 100%;
-	height: 50px;
-	padding: 0 map.get($spacing, sp-3);
-	border: 1px solid map.get($colors, d-neut-mid-g);
-	background-color: #fff;
-	font-family: map.get($fonts, primary);
-	font-size: 18px;
-	appearance: none;
-	cursor: pointer;
-
-	background-repeat: no-repeat;
-	background-position: right 16px center;
-	background-size: 24px;
-
-	&:focus {
-		outline: none;
-		border-color: map.get($colors, comp-dark-p);
-	}
-}
-
-// 1. Style for the initial Text/Placeholder state
-.date-input[type="date"] {
-	color: map.get($colors, d-neut-mid-g);
-	background-image: url("../assets/icons/calendar.svg");
-}
-
-.date-input[type="date"] {
-	background-image: url("../assets/icons/calendar.svg");
-	color: map.get($colors, d-neut-black);
-
-	&::-webkit-calendar-picker-indicator {
-		opacity: 0;
-		cursor: pointer;
-	}
-}
-
-.time-select {
-	box-sizing: border-box;
-	width: 100%;
-	height: 50px;
-	padding: 0 map.get($spacing, sp-3);
-	padding-right: 40px;
-	border: 1px solid map.get($colors, d-neut-mid-g);
-	background-color: #fff;
-	font-family: map.get($fonts, primary);
-	font-size: 18px;
-	appearance: none;
-	cursor: pointer;
-	background-image: url("../assets/icons/Select.svg");
-	background-repeat: no-repeat;
-	background-position: right 16px center;
-	background-size: 10px;
-
-	// Default color for the placeholder
-	color: map.get($colors, d-neut-mid-g);
-
-	// When the user selects a valid option, it turns black
-	&:valid {
-		color: map.get($colors, d-neut-black);
-	}
-
-	option {
-		color: map.get($colors, d-neut-black);
-	}
-
-	&:focus {
-		outline: none;
-		border-color: map.get($colors, comp-dark-p);
-	}
-}
 .checkbox-label {
 	display: flex;
 	align-items: center;
@@ -270,9 +265,8 @@ legend {
 		height: 22px;
 		border: 1px solid map.get($colors, d-neut-mid-g);
 		background-color: #fff;
-		cursor: pointer;
-		position: relative;
 		border-radius: 2px;
+		position: relative;
 
 		&:checked {
 			background-color: map.get($colors, accent);
@@ -293,28 +287,11 @@ legend {
 	}
 }
 
-.contact-options {
-	display: flex;
-	flex-direction: column;
-	gap: map.get($spacing, sp-3);
-}
-
+.contact-options,
 .radio-group {
 	display: flex;
 	flex-direction: column;
 	gap: map.get($spacing, sp-3);
-}
-
-// 4. Radio Buttons
-.radio-label {
-	.radio-dot {
-		border: 1px solid map.get($colors, d-neut-mid-g);
-		&::after {
-			background-color: map.get($colors, bold-main);
-			width: 10px;
-			height: 10px;
-		}
-	}
 }
 
 .radio-label {
@@ -354,18 +331,19 @@ legend {
 
 	input:checked ~ .radio-dot {
 		border-color: map.get($colors, accent);
-
 		&::after {
 			opacity: 1;
 		}
 	}
 }
 
-.tel-input {
-	margin: map.get($spacing, sp-2) 0 map.get($spacing, sp-3) 0;
-}
+// ========================================================================
+// 6. BUTTONS
+// ========================================================================
 
-.btn-next {
+.btn-next,
+.btn-submit,
+.btn-home {
 	display: block;
 	width: 200px;
 	margin: map.get($spacing, sp-6) auto 0;
@@ -386,11 +364,6 @@ legend {
 	}
 }
 
-// ==========================================
-// 5. Step 2 & Dynamic Fields Styling
-// ==========================================
-
-// Back Button
 .btn-back {
 	background: none;
 	border: none;
@@ -410,19 +383,17 @@ legend {
 	}
 }
 
-// Premium Service Grid (2 columns)
+// ========================================================================
+// 7. SPECIFIC FORM BLOCKS (Grid & Guests)
+// ========================================================================
+
 .premium-grid {
 	display: grid;
-	grid-template-columns: 1fr 1fr; // Creates 2 equal columns
-	gap: 16px 40px; // 16px vertical gap, 40px horizontal gap
+	grid-template-columns: 1fr 1fr;
+	gap: 16px 40px;
 	margin-top: map.get($spacing, sp-2);
-
-	@media (max-width: map.get($breakpoints, tablet)) {
-		grid-template-columns: 1fr; // Stacks to 1 column on mobile
-	}
 }
 
-// Guest Services (The + / - Counters)
 .guest-services-container {
 	display: flex;
 	flex-direction: column;
@@ -435,14 +406,14 @@ legend {
 	align-items: center;
 	justify-content: space-between;
 	padding-bottom: map.get($spacing, sp-3);
-	border-bottom: 1px solid map.get($colors, d-neut-mid-g); // Thin dividing line
+	border-bottom: 1px solid map.get($colors, d-neut-mid-g);
 
 	&:last-child {
 		border-bottom: none;
 	}
 
 	.guest-type {
-		flex: 1; // Takes up the left side
+		flex: 1;
 		font-family: map.get($fonts, primary);
 		font-size: 18px;
 		color: map.get($colors, d-neut-black);
@@ -451,17 +422,14 @@ legend {
 	.guest-options {
 		display: flex;
 		gap: map.get($spacing, sp-4);
-		flex: 1.5; // Gives the checkboxes a bit more room
+		flex: 1.5;
 		justify-content: flex-end;
-
-		// Shrinks the gap between the checkbox and its label slightly for this row
 		.checkbox-label {
 			margin-top: 0;
 		}
 	}
 }
 
-// The +/- Box
 .counter {
 	display: flex;
 	align-items: center;
@@ -499,108 +467,173 @@ legend {
 		font-size: 16px;
 		color: map.get($colors, d-neut-black);
 
-		// CSS trick to hide the default browser up/down arrows in number inputs
 		-moz-appearance: textfield;
 		&::-webkit-outer-spin-button,
 		&::-webkit-inner-spin-button {
 			-webkit-appearance: none;
 			margin: 0;
 		}
-
 		&:focus {
 			outline: none;
 		}
 	}
 }
 
-.textarea-field {
-	height: auto;
-	resize: vertical;
-	padding-top: map.get($spacing, sp-3);
+// ========================================================================
+// 8. PARTY CHAT WIDGET
+// ========================================================================
+
+.party-chat-widget {
+	margin-bottom: map.get($spacing, sp-6);
+	width: 48px;
+
+	// The initial visible box
+	.chat-trigger {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+
+		img {
+			width: 48px;
+			height: 48px;
+		}
+
+		&:hover {
+			opacity: 0.9;
+		}
+	}
+
+	// Hide message icon when chat is open
+	.chat-trigger.hidden img {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	// The vertical list of options
+	.chat-options {
+		display: none;
+		flex-direction: column;
+
+		&.is-open {
+			display: flex;
+		}
+
+		.option-btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: none;
+			cursor: pointer;
+
+			img {
+				width: 48px;
+				height: 48px;
+			}
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+	}
 }
 
-.btn-submit {
-	@extend .btn-next;
-}
+// ========================================================================
+// 9. THANK YOU SCREENS
+// ========================================================================
 
-// ==========================================
-// 6. Thank You Screen Styling
-// ==========================================
-
-#thank-you-screen {
-	background-color: map.get($colors, l-neut-pink);
-	// padding: map.get($spacing, sp-10) 0;
+// Container alignment
+#thank-you-screen,
+#classes-thank-you-screen {
+	max-width: 680px;
+	margin: 0 auto;
 	text-align: left;
 }
 
-// Titles and text outside the card
 .thank-you-title {
 	font-family: map.get($fonts, heading);
-	font-size: map.get(map.get($text-styles, h3), size);
-	color: map.get($colors, bold-main);
-	margin-bottom: map.get($spacing, sp-1);
-	line-height: 1.1;
+	font-size: 40px;
+	color: map.get($colors, d-neut-black);
+	margin-bottom: map.get($spacing, sp-2);
+	line-height: 1.2;
 }
 
 .thank-you-subtitle {
 	font-family: map.get($fonts, primary);
-	font-size: 20px;
-	color: map.get($colors, bold-main);
+	font-size: 16px;
+	color: map.get($colors, d-neut-dark-g);
 	margin-top: 0;
-	margin-bottom: map.get($spacing, sp-4);
+	margin-bottom: map.get($spacing, sp-6);
 	line-height: 1.5;
+
+	.edit-details-link {
+		display: inline-block;
+		margin-top: map.get($spacing, sp-2);
+		color: map.get($colors, d-neut-dark-g);
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
-// The Receipt Summary Card
 .receipt-card {
-	background-color: map.get($colors, l-neut-pink);
-	max-width: 600px;
+	max-width: 680px; // Exact width requirement
 	margin: 0 auto;
-	padding: map.get($spacing, sp-5) map.get($spacing, sp-2);
+	padding: 40px;
 	border: 1px solid map.get($colors, comp-brown);
+	background-color: transparent;
 
-	.receipt-header {
-		h4 {
-			font-family: map.get($fonts, heading);
-			font-size: 32px; // Larger title
-			color: map.get($colors, bold-main);
-		}
+	// 600px * 200px image setup
+	.receipt-image {
+		width: 100%;
+		max-width: 600px;
+		height: 200px;
+		object-fit: cover; // Fills the area without distorting
+		margin-bottom: map.get($spacing, sp-6);
+		display: block;
 	}
 
 	.receipt-price {
 		margin-bottom: map.get($spacing, sp-6);
 		p {
 			font-family: map.get($fonts, primary);
-			font-size: 16px; // body-sm
-			color: map.get($colors, d-neut-dark-g);
+			font-size: 16px;
+			color: map.get($colors, d-neut-black);
 			margin-bottom: map.get($spacing, sp-1);
 		}
 		h3 {
 			font-family: map.get($fonts, heading);
-			font-size: 40px;
-			color: map.get($colors, bold-main);
+			font-size: 36px;
+			color: map.get($colors, d-neut-dark-g);
 			font-weight: map.get($weights, regular);
+			margin: 0;
 		}
 	}
 
-	// Details block
+	// Hiding the old header text as it's not in the new mockup
+	.receipt-header {
+		display: none;
+	}
+
+	// 2-Column Grid Layout
 	.receipt-details {
-		padding: map.get($spacing, sp-6) map.get($spacing, sp-8);
+		display: grid;
+		grid-template-columns: 1fr 1fr; // Creates 2 equal columns
+		gap: 32px 40px; // Vertical and horizontal gap
+		padding: map.get($spacing, sp-4) 0;
 		text-align: left;
 
 		.detail-block {
-			margin-bottom: map.get($spacing, sp-4);
-
-			&:last-child {
-				margin-bottom: 0;
-			}
+			margin-bottom: 0;
 
 			h5 {
-				font-family: map.get($fonts, primary);
-				font-size: 18px;
-				font-weight: map.get($weights, bold);
-				color: map.get($colors, bold-main);
-				margin-bottom: map.get($spacing, sp-2);
+				font-family: map.get($fonts, heading);
+				font-size: 20px;
+				font-weight: map.get($weights, regular);
+				color: map.get($colors, d-neut-black);
+				margin-bottom: map.get($spacing, sp-3);
 			}
 
 			p,
@@ -608,18 +641,20 @@ legend {
 				font-family: map.get($fonts, primary);
 				font-size: 16px;
 				color: map.get($colors, d-neut-black);
+				line-height: 1.6;
 			}
 
-			// Remove hyphen bullets, refine list spacing
 			ul {
 				list-style-type: none;
 				padding: 0;
 				margin: 0;
-
 				li {
-					margin-bottom: map.get($spacing, sp-1);
+					margin-bottom: 8px;
+					display: flex;
+
 					&::before {
-						content: none; // Remove the hyphen list style
+						content: "- "; // Adds the hyphens back
+						margin-right: 4px;
 					}
 				}
 			}
@@ -627,27 +662,228 @@ legend {
 	}
 }
 
+// Footer Layout with Share Button
 .receipt-card-footer {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	align-items: flex-end; // Pushes the button to the bottom right
+	margin-top: map.get($spacing, sp-8);
 
-	// Home Button
-	.btn-home {
-		@extend .btn-next;
-		margin: map.get($spacing, sp-8) auto 0;
-		width: 200px;
-	}
+	.receipt-card-logos {
+		display: flex;
+		flex-direction: column;
+		gap: map.get($spacing, sp-6);
 
-	.thank-you-footer-logo {
-		margin-top: map.get($spacing, sp-6);
-		img {
-			width: 95px;
+		.thank-you-footer-logo img {
+			width: 60px;
 			height: auto;
+		}
+
+		.social-links {
+			justify-content: flex-start;
+			gap: map.get($spacing, sp-4);
+			margin: 0;
+
+			a {
+				font-size: 14px;
+				color: map.get($colors, d-neut-dark-g);
+			}
 		}
 	}
 
+	// Transforms your existing button class to match the Next button style
+	.btn-home {
+		@extend .btn-next;
+		margin: 0;
+		width: 160px;
+	}
+}
+
+#classes-thank-you-screen {
+	.classes-receipt-card {
+		padding: 0;
+		border: none;
+		background-color: transparent;
+	}
+
+	.classes-thank-you-screen-img {
+		width: 100%;
+		max-width: 608px;
+		height: 383px;
+		object-fit: cover;
+		border-radius: 4px;
+		margin-bottom: map.get($spacing, sp-6);
+		display: block;
+	}
+}
+
+// ========================================================================
+// 10. MOBILE RESPONSIVE DESIGN (Media Queries)
+// ========================================================================
+
+@media (max-width: map.get($breakpoints, mobile)) {
+	// 1. Header Adjustments
+	.contact-header {
+		padding: 0 map.get($spacing, sp-4);
+
+		.main-title {
+			font-size: 32px;
+			letter-spacing: 0.05em;
+		}
+
+		.line {
+			width: 150px;
+			margin-top: map.get($spacing, sp-4);
+		}
+
+		.subtitle {
+			font-size: map.get(map.get($text-styles, body-sm), size);
+			margin-top: map.get($spacing, sp-4);
+			margin-bottom: map.get($spacing, sp-5);
+		}
+	}
+
+	// 2. Social Links
 	.social-links {
-		font-size: map.get(map.get($text-styles, body-sm), size);
+		flex-direction: row;
+		gap: map.get($spacing, sp-4);
+		padding: 0 map.get($spacing, sp-4);
+		justify-content: center;
+
+		a {
+			font-size: 0;
+			gap: 0;
+
+			img {
+				width: 28px;
+				height: 28px;
+			}
+		}
+
+		// Footer Social Links (talk-soon-screen) - keep text visible
+		&.footer-social-links {
+			a {
+				font-size: map.get(map.get($text-styles, body-sm), size);
+				gap: map.get($spacing, sp-2);
+			}
+		}
+	}
+
+	// 3. Form Container
+	.form-container {
+		margin: map.get($spacing, sp-4) map.get($spacing, sp-2);
+		padding: map.get($spacing, sp-4) map.get($spacing, sp-3);
+		gap: 24px;
+
+		legend {
+			font-size: 20px;
+			margin-bottom: map.get($spacing, sp-2);
+		}
+	}
+
+	// 4. Tab Navigation
+	.tab-nav {
+		margin-bottom: map.get($spacing, sp-3);
+
+		.tab-btn {
+			padding: map.get($spacing, sp-2) map.get($spacing, sp-3);
+			font-size: 16px;
+		}
+	}
+
+	// 5. Form Row
+	.form-row {
+		grid-template-columns: 1fr;
+		gap: map.get($spacing, sp-4);
+	}
+
+	// 6. Input Fields
+	.input-field {
+		padding: 0 map.get($spacing, sp-2);
+		font-size: 16px;
+	}
+
+	// 7. Selection Group (Event Type, Bridal Service, Premium Service)
+	.selection-group {
+		flex-direction: column;
+		gap: map.get($spacing, sp-2);
+
+		.select-box {
+			padding: 10px 12px;
+			font-size: 14px;
+		}
+	}
+
+	// 8. Premium Grid
+	.premium-grid {
+		grid-template-columns: 1fr;
+		gap: map.get($spacing, sp-3);
+	}
+
+	// 9. Buttons
+	.btn-next,
+	.btn-submit,
+	.btn-home {
+		width: 100%;
+		margin-top: map.get($spacing, sp-4);
+		padding: map.get($spacing, sp-2) map.get($spacing, sp-3);
+	}
+
+	// 10. Guest Services
+	.guest-row {
+		flex-wrap: wrap;
+		gap: map.get($spacing, sp-3);
+
+		.guest-type {
+			flex: 1 1 48%;
+		}
+
+		.separator {
+			display: none;
+		}
+
+		.guest-options {
+			flex: 1 1 100%;
+			justify-content: flex-start;
+			margin-top: map.get($spacing, sp-3);
+			padding-left: 0;
+		}
+	}
+
+	// 11. Receipt Cards
+	.receipt-card {
+		padding: map.get($spacing, sp-4) map.get($spacing, sp-3);
+		background-color: transparent;
+
+		.receipt-header h4 {
+			font-size: 20px;
+		}
+
+		.receipt-price h3 {
+			font-size: 28px;
+		}
+
+		.receipt-details {
+			padding: map.get($spacing, sp-4) 0;
+		}
+		.receipt-details {
+			grid-template-columns: 1fr; // Stacks the 2 columns into 1 on mobile
+			gap: 24px;
+			padding: map.get($spacing, sp-4) 0;
+		}
+	}
+
+	.receipt-card-footer {
+		flex-direction: column;
+		align-items: center;
+		gap: map.get($spacing, sp-6);
+
+		.receipt-card-logos {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: map.get($spacing, sp-4);
+		}
 	}
 }

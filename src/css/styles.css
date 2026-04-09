@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap");
-fieldset {
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
+fieldset,
 legend {
   border: none;
   padding: 0;
@@ -115,11 +110,61 @@ legend {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
-@media (max-width: 768px) {
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
+
+.input-field {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid #a3a3a3;
+  background-color: #fff;
+  font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
+  font-size: 18px;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 24px;
+}
+.input-field:focus {
+  outline: none;
+  border-color: #b99692;
+}
+
+.date-input[type=text] {
+  color: #a3a3a3;
+  background-image: url("../assets/icons/calendar.svg");
+}
+
+.date-input[type=date] {
+  background-image: url("../assets/icons/calendar.svg");
+  color: #191919;
+}
+.date-input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.time-select {
+  padding-right: 40px;
+  background-image: url("../assets/icons/Select.svg");
+  background-size: 10px;
+  color: #a3a3a3;
+}
+.time-select:valid {
+  color: #191919;
+}
+.time-select option {
+  color: #191919;
+}
+
+.tel-input {
+  margin: 8px 0 16px 0;
+}
+
+.textarea-field {
+  height: auto;
+  resize: vertical;
+  padding-top: 16px;
 }
 
 .selection-group {
@@ -164,69 +209,6 @@ legend {
   border: 1px solid #b99692;
 }
 
-.input-field {
-  box-sizing: border-box;
-  width: 100%;
-  height: 50px;
-  padding: 0 16px;
-  border: 1px solid #a3a3a3;
-  background-color: #fff;
-  font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
-  font-size: 18px;
-  appearance: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 24px;
-}
-.input-field:focus {
-  outline: none;
-  border-color: #b99692;
-}
-
-.date-input[type=date] {
-  color: #a3a3a3;
-  background-image: url("../assets/icons/calendar.svg");
-}
-
-.date-input[type=date] {
-  background-image: url("../assets/icons/calendar.svg");
-  color: #191919;
-}
-.date-input[type=date]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-  cursor: pointer;
-}
-
-.time-select {
-  box-sizing: border-box;
-  width: 100%;
-  height: 50px;
-  padding: 0 16px;
-  padding-right: 40px;
-  border: 1px solid #a3a3a3;
-  background-color: #fff;
-  font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
-  font-size: 18px;
-  appearance: none;
-  cursor: pointer;
-  background-image: url("../assets/icons/Select.svg");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  background-size: 10px;
-  color: #a3a3a3;
-}
-.time-select:valid {
-  color: #191919;
-}
-.time-select option {
-  color: #191919;
-}
-.time-select:focus {
-  outline: none;
-  border-color: #b99692;
-}
-
 .checkbox-label {
   display: flex;
   align-items: center;
@@ -244,9 +226,8 @@ legend {
   height: 22px;
   border: 1px solid #a3a3a3;
   background-color: #fff;
-  cursor: pointer;
-  position: relative;
   border-radius: 2px;
+  position: relative;
 }
 .checkbox-label input[type=checkbox]:checked {
   background-color: #e3b6b1;
@@ -264,25 +245,11 @@ legend {
   transform: rotate(45deg);
 }
 
-.contact-options {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
+.contact-options,
 .radio-group {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.radio-label .radio-dot {
-  border: 1px solid #a3a3a3;
-}
-.radio-label .radio-dot::after {
-  background-color: #725a58;
-  width: 10px;
-  height: 10px;
 }
 
 .radio-label {
@@ -324,11 +291,9 @@ legend {
   opacity: 1;
 }
 
-.tel-input {
-  margin: 8px 0 16px 0;
-}
-
-.btn-next, .receipt-card-footer .btn-home, .btn-submit {
+.btn-next, .receipt-card-footer .btn-home,
+.btn-submit,
+.btn-home {
   display: block;
   width: 200px;
   margin: 48px auto 0;
@@ -342,7 +307,9 @@ legend {
   transition: all 0.3s ease;
   box-sizing: border-box;
 }
-.btn-next:hover, .receipt-card-footer .btn-home:hover, .btn-submit:hover {
+.btn-next:hover,
+.btn-submit:hover,
+.btn-home:hover {
   background-color: #b99692;
   border-color: #b99692;
   color: #fff;
@@ -371,11 +338,6 @@ legend {
   grid-template-columns: 1fr 1fr;
   gap: 16px 40px;
   margin-top: 8px;
-}
-@media (max-width: 768px) {
-  .premium-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .guest-services-container {
@@ -455,45 +417,96 @@ legend {
   outline: none;
 }
 
-.textarea-field {
-  height: auto;
-  resize: vertical;
-  padding-top: 16px;
+.party-chat-widget {
+  margin-bottom: 48px;
+  width: 48px;
+}
+.party-chat-widget .chat-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.party-chat-widget .chat-trigger img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-trigger:hover {
+  opacity: 0.9;
+}
+.party-chat-widget .chat-trigger.hidden img {
+  opacity: 0;
+  pointer-events: none;
+}
+.party-chat-widget .chat-options {
+  display: none;
+  flex-direction: column;
+}
+.party-chat-widget .chat-options.is-open {
+  display: flex;
+}
+.party-chat-widget .chat-options .option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+.party-chat-widget .chat-options .option-btn img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-options .option-btn:hover {
+  opacity: 0.8;
 }
 
-#thank-you-screen {
-  background-color: #fae9e7;
+#thank-you-screen,
+#classes-thank-you-screen {
+  max-width: 680px;
+  margin: 0 auto;
   text-align: left;
 }
 
 .thank-you-title {
   font-family: "Baskervville", serif;
-  font-size: 48px;
-  color: #725a58;
-  margin-bottom: 4px;
-  line-height: 1.1;
+  font-size: 40px;
+  color: #191919;
+  margin-bottom: 8px;
+  line-height: 1.2;
 }
 
 .thank-you-subtitle {
   font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
-  font-size: 20px;
-  color: #725a58;
+  font-size: 16px;
+  color: #535353;
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
   line-height: 1.5;
+}
+.thank-you-subtitle .edit-details-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #535353;
+  text-decoration: none;
+}
+.thank-you-subtitle .edit-details-link:hover {
+  text-decoration: underline;
 }
 
 .receipt-card {
-  background-color: #fae9e7;
-  max-width: 600px;
+  max-width: 680px;
   margin: 0 auto;
-  padding: 32px 8px;
+  padding: 40px;
   border: 1px solid #a06d67;
+  background-color: transparent;
 }
-.receipt-card .receipt-header h4 {
-  font-family: "Baskervville", serif;
-  font-size: 32px;
-  color: #725a58;
+.receipt-card .receipt-image {
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 48px;
+  display: block;
 }
 .receipt-card .receipt-price {
   margin-bottom: 48px;
@@ -501,37 +514,42 @@ legend {
 .receipt-card .receipt-price p {
   font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
   font-size: 16px;
-  color: #535353;
+  color: #191919;
   margin-bottom: 4px;
 }
 .receipt-card .receipt-price h3 {
   font-family: "Baskervville", serif;
-  font-size: 40px;
-  color: #725a58;
+  font-size: 36px;
+  color: #535353;
   font-weight: 400;
+  margin: 0;
+}
+.receipt-card .receipt-header {
+  display: none;
 }
 .receipt-card .receipt-details {
-  padding: 48px 96px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+  padding: 24px 0;
   text-align: left;
 }
 .receipt-card .receipt-details .detail-block {
-  margin-bottom: 24px;
-}
-.receipt-card .receipt-details .detail-block:last-child {
   margin-bottom: 0;
 }
 .receipt-card .receipt-details .detail-block h5 {
-  font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #725a58;
-  margin-bottom: 8px;
+  font-family: "Baskervville", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #191919;
+  margin-bottom: 16px;
 }
 .receipt-card .receipt-details .detail-block p,
 .receipt-card .receipt-details .detail-block ul {
   font-family: "Montserrat", "Avenir", "Avenir Next", "Nunito Sans", sans-serif;
   font-size: 16px;
   color: #191919;
+  line-height: 1.6;
 }
 .receipt-card .receipt-details .detail-block ul {
   list-style-type: none;
@@ -539,32 +557,183 @@ legend {
   margin: 0;
 }
 .receipt-card .receipt-details .detail-block ul li {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
+  display: flex;
 }
 .receipt-card .receipt-details .detail-block ul li::before {
-  content: none;
+  content: "- ";
+  margin-right: 4px;
 }
 
 .receipt-card-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 96px;
 }
-.receipt-card-footer .btn-home {
-  margin: 96px auto 0;
-  width: 200px;
+.receipt-card-footer .receipt-card-logos {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
-.receipt-card-footer .thank-you-footer-logo {
-  margin-top: 48px;
-}
-.receipt-card-footer .thank-you-footer-logo img {
-  width: 95px;
+.receipt-card-footer .receipt-card-logos .thank-you-footer-logo img {
+  width: 60px;
   height: auto;
 }
-.receipt-card-footer .social-links {
-  font-size: 16px;
+.receipt-card-footer .receipt-card-logos .social-links {
+  justify-content: flex-start;
+  gap: 24px;
+  margin: 0;
+}
+.receipt-card-footer .receipt-card-logos .social-links a {
+  font-size: 14px;
+  color: #535353;
+}
+.receipt-card-footer .btn-home {
+  margin: 0;
+  width: 160px;
 }
 
+#classes-thank-you-screen .classes-receipt-card {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+#classes-thank-you-screen .classes-thank-you-screen-img {
+  width: 100%;
+  max-width: 608px;
+  height: 383px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 48px;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .contact-header {
+    padding: 0 24px;
+  }
+  .contact-header .main-title {
+    font-size: 32px;
+    letter-spacing: 0.05em;
+  }
+  .contact-header .line {
+    width: 150px;
+    margin-top: 24px;
+  }
+  .contact-header .subtitle {
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+  }
+  .social-links {
+    flex-direction: row;
+    gap: 24px;
+    padding: 0 24px;
+    justify-content: center;
+  }
+  .social-links a {
+    font-size: 0;
+    gap: 0;
+  }
+  .social-links a img {
+    width: 28px;
+    height: 28px;
+  }
+  .social-links.footer-social-links a {
+    font-size: 16px;
+    gap: 8px;
+  }
+  .form-container {
+    margin: 24px 8px;
+    padding: 24px 16px;
+    gap: 24px;
+  }
+  .form-container legend {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .tab-nav {
+    margin-bottom: 16px;
+  }
+  .tab-nav .tab-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .input-field {
+    padding: 0 8px;
+    font-size: 16px;
+  }
+  .selection-group {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .selection-group .select-box {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  .premium-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .btn-next, .receipt-card-footer .btn-home,
+  .btn-submit,
+  .btn-home {
+    width: 100%;
+    margin-top: 24px;
+    padding: 8px 16px;
+  }
+  .guest-row {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .guest-row .guest-type {
+    flex: 1 1 48%;
+  }
+  .guest-row .separator {
+    display: none;
+  }
+  .guest-row .guest-options {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    margin-top: 16px;
+    padding-left: 0;
+  }
+  .receipt-card {
+    padding: 24px 16px;
+    background-color: transparent;
+  }
+  .receipt-card .receipt-header h4 {
+    font-size: 20px;
+  }
+  .receipt-card .receipt-price h3 {
+    font-size: 28px;
+  }
+  .receipt-card .receipt-details {
+    padding: 24px 0;
+  }
+  .receipt-card .receipt-details {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 0;
+  }
+  .receipt-card-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+  }
+  .receipt-card-footer .receipt-card-logos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+}
 *,
 *::before,
 *::after {
