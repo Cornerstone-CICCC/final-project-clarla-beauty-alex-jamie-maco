@@ -165,12 +165,12 @@
   width: 171px;
   height: 62px;
   padding: 0;
-  border: 1px solid #5E4A49;
+  border: 1px solid #5e4a49;
   background: transparent;
   font-family: Baskervville, serif;
   font-size: 20px;
   line-height: 1.5;
-  color: #5E4A49;
+  color: #5e4a49;
   cursor: pointer;
   text-transform: capitalize;
   display: flex;
@@ -179,9 +179,9 @@
   transition: all 0.3s ease;
 }
 .service-item__content button:hover {
-  background-color: #B99692;
+  background-color: #b99692;
   color: #fff;
-  border-color: #B99692;
+  border-color: #b99692;
 }
 .service-item .message-box {
   position: absolute;
@@ -202,6 +202,53 @@
 
 .mobile-br {
   display: none;
+}
+
+.party-chat-widget {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  margin-bottom: 48px;
+  width: 48px;
+  z-index: 2;
+}
+.party-chat-widget .chat-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.party-chat-widget .chat-trigger img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-trigger:hover {
+  opacity: 0.9;
+}
+.party-chat-widget .chat-trigger.hidden img {
+  opacity: 0;
+  pointer-events: none;
+}
+.party-chat-widget .chat-options {
+  display: none;
+  flex-direction: column;
+}
+.party-chat-widget .chat-options.is-open {
+  display: flex;
+}
+.party-chat-widget .chat-options .option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+.party-chat-widget .chat-options .option-btn img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-options .option-btn:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {

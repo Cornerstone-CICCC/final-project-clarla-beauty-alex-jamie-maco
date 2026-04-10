@@ -14,7 +14,7 @@ legend {
 
 .contact-page {
   background-color: map.get($colors, l-neut-pale-w);
-  padding: map.get($spacing, sp-10) 0;
+  padding: map.get($spacing, sp-6) 0;
   text-align: center;
 }
 
@@ -480,11 +480,11 @@ legend {
 }
 
 .separator {
-	width: 2px;
-	height: 24px;
-	margin-left: map.get($spacing, sp-3);
-	margin-right: map.get($spacing, sp-5);
-	background-color: map.get($colors, accent);
+  width: 2px;
+  height: 24px;
+  margin-left: map.get($spacing, sp-3);
+  margin-right: map.get($spacing, sp-5);
+  background-color: map.get($colors, accent);
 }
 
 // ========================================================================
@@ -492,9 +492,9 @@ legend {
 // ========================================================================
 
 .party-chat-widget {
-	position: fixed;
-	bottom: 50px;
-	right: 0;
+  position: fixed;
+  bottom: 50px;
+  right: 0;
   margin-bottom: map.get($spacing, sp-6);
   width: 48px;
 
@@ -732,6 +732,11 @@ legend {
 // ========================================================================
 // 10. MOBILE RESPONSIVE DESIGN (Media Queries)
 // ========================================================================
+@media (max-width: map.get($breakpoints, tablet)) {
+  .party-chat-widget {
+    display: none !important;
+  }
+}
 
 @media (max-width: map.get($breakpoints, mobile)) {
   // 1. Header Adjustments

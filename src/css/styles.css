@@ -14,7 +14,7 @@ legend {
 
 .contact-page {
   background-color: #f8f6f4;
-  padding: 192px 0;
+  padding: 48px 0;
   text-align: center;
 }
 
@@ -626,6 +626,11 @@ legend {
   display: block;
 }
 
+@media (max-width: 868px) {
+  .party-chat-widget {
+    display: none !important;
+  }
+}
 @media (max-width: 480px) {
   .contact-header {
     padding: 0 24px;

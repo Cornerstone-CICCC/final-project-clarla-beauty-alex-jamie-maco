@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/pages/classes-details.css" />
     <link rel="stylesheet" href="../css/components/navbar.css" />
     <link rel="stylesheet" href="../css/components/footer.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <nav id="navbar">
@@ -71,6 +72,32 @@
       </div>
     </header>
     <main>
+      <div class="party-chat-widget">
+        <div class="chat-options" id="chat-widget-options">
+          <button type="button" class="option-btn opt-ig">
+            <img src="../assets/imgs/message-box/ig.svg" alt="Instagram" />
+          </button>
+          <button type="button" class="option-btn opt-phone">
+            <img src="../assets/imgs/message-box/phone.svg" alt="Phone" />
+          </button>
+          <button type="button" class="option-btn opt-wa">
+            <img src="../assets/imgs/message-box/whatsApp.svg" alt="WhatsApp" />
+          </button>
+          <button
+            type="button"
+            class="option-btn opt-close"
+            id="chat-widget-close"
+          >
+            <img src="../assets/imgs/message-box/dismiss.svg" alt="Close" />
+          </button>
+        </div>
+        <div class="chat-trigger" id="chat-widget-trigger">
+          <img
+            src="../assets/imgs/message-box/message.svg"
+            alt="message-icon"
+          />
+        </div>
+      </div>
       <div id="class">
         <div id="class-details">
           <img
@@ -244,5 +271,6 @@
       </nav>
       <p>Copyright 2024, Carla Beauty</p>
     </footer>
+    <script src="../scripts/script.js"></script>
   </body>
 </html>

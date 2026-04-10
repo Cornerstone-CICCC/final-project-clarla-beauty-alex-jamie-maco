@@ -5,6 +5,10 @@
   font-weight: 300;
   font-style: normal;
 }
+body {
+  overflow-x: hidden;
+}
+
 .portfolio__header {
   width: 100vw;
   position: relative;
@@ -164,12 +168,59 @@
   align-items: center;
   justify-content: center;
   background: transparent !important;
-  border: 0.8px solid #5E4A49 !important;
+  border: 0.8px solid #5e4a49 !important;
   cursor: pointer;
   font-family: Baskervville, serif;
   font-size: 20px;
-  color: #5E4A49 !important;
+  color: #5e4a49 !important;
   letter-spacing: 0.05em;
+}
+
+.party-chat-widget {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  margin-bottom: 48px;
+  width: 48px;
+  z-index: 2;
+}
+.party-chat-widget .chat-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.party-chat-widget .chat-trigger img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-trigger:hover {
+  opacity: 0.9;
+}
+.party-chat-widget .chat-trigger.hidden img {
+  opacity: 0;
+  pointer-events: none;
+}
+.party-chat-widget .chat-options {
+  display: none;
+  flex-direction: column;
+}
+.party-chat-widget .chat-options.is-open {
+  display: flex;
+}
+.party-chat-widget .chat-options .option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+.party-chat-widget .chat-options .option-btn img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-options .option-btn:hover {
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -218,7 +269,8 @@
   .portfolio__tabs.active-hairstyle::after {
     transform: translateX(140px);
   }
-  .portfolio__tabs .tab-btn, .portfolio__tabs .tab-divider {
+  .portfolio__tabs .tab-btn,
+  .portfolio__tabs .tab-divider {
     font-size: 20px !important;
     font-family: Baskervville, serif;
     font-weight: 400;
@@ -258,8 +310,11 @@
     font-size: 18px;
     margin: 0 auto;
     background: transparent !important;
-    border: 0.8px solid #5E4A49 !important;
-    color: #5E4A49 !important;
+    border: 0.8px solid #5e4a49 !important;
+    color: #5e4a49 !important;
+  }
+  .party-chat-widget {
+    display: none !important;
   }
 }
 

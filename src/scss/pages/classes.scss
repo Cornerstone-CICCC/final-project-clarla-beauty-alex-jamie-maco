@@ -176,6 +176,64 @@ body {
   }
 }
 
+.party-chat-widget {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  margin-bottom: map-get($map: vr.$spacing, $key: sp-6);
+  width: 48px;
+
+  // The initial visible box
+  .chat-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    img {
+      width: 48px;
+      height: 48px;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  // Hide message icon when chat is open
+  .chat-trigger.hidden img {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  // The vertical list of options
+  .chat-options {
+    display: none;
+    flex-direction: column;
+
+    &.is-open {
+      display: flex;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 48px;
+        height: 48px;
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
 // media query for mobile
 @media (max-width: map-get($map: vr.$breakpoints, $key: tablet)) {
   header {
@@ -241,5 +299,9 @@ body {
         display: flex !important;
       }
     }
+  }
+  
+  .party-chat-widget {
+    display: none !important;
   }
 }

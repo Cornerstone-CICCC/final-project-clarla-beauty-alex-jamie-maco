@@ -222,26 +222,4 @@ $(document).ready(function () {
 		$("#detailedContactForm").show();
 		$("#classes-tab-content").show();
 	});
-
-	// ========================================================================
-	// SECTION 5: PARTY CHAT WIDGET
-	// ========================================================================
-
-	// 1. Toggle widget and swap the trigger icon
-	$("#chat-widget-trigger").on("click", function () {
-		const $options = $("#chat-widget-options");
-		const $trigger = $(this);
-
-		// Toggle the open state
-		$options.toggleClass("is-open");
-
-		// Hide/show message icon
-		$trigger.toggleClass("hidden");
-	});
-
-	// 2. Close the widget ONLY when the specific close button (X) is clicked
-	$("#chat-widget-close").on("click", function () {
-		$("#chat-widget-options").removeClass("is-open");
-		$("#chat-widget-trigger").removeClass("hidden");
-	});
 });

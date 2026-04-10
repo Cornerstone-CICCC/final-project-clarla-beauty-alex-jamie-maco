@@ -156,6 +156,52 @@ body main #more-info .info-element {
   gap: 5px;
 }
 
+.party-chat-widget {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  margin-bottom: 48px;
+  width: 48px;
+}
+.party-chat-widget .chat-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.party-chat-widget .chat-trigger img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-trigger:hover {
+  opacity: 0.9;
+}
+.party-chat-widget .chat-trigger.hidden img {
+  opacity: 0;
+  pointer-events: none;
+}
+.party-chat-widget .chat-options {
+  display: none;
+  flex-direction: column;
+}
+.party-chat-widget .chat-options.is-open {
+  display: flex;
+}
+.party-chat-widget .chat-options .option-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+.party-chat-widget .chat-options .option-btn img {
+  width: 48px;
+  height: 48px;
+}
+.party-chat-widget .chat-options .option-btn:hover {
+  opacity: 0.8;
+}
+
 @media (max-width: 868px) {
   header {
     padding: 0px 25px !important;
@@ -207,6 +253,9 @@ body main #more-info .info-element {
   }
   main .class #more-info {
     display: flex !important;
+  }
+  .party-chat-widget {
+    display: none !important;
   }
 }
 
