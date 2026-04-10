@@ -1,3 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap");
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../assets/fonts/avenir-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+/* 
+TODOs
+- Center border right
+- Scale or change on hover
+- Margin 
 
+*/
+#navbar {
+  padding: 40px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #f8f6f4;
+  position: sticky;
+  z-index: 100;
+  top: 0px;
+  transition: all 0.3s ease;
+}
+#navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#navbar ul li {
+  list-style: none;
+}
+#navbar ul li a {
+  text-decoration: none;
+  color: #725a58;
+  font-size: 20px;
+  width: 100%;
+  height: 30px;
+  padding: 0 30px;
+  border-right: 2px solid #a06d67;
+  transition: all 0.3s ease;
+}
+#navbar ul li a img {
+  width: 30px;
+  height: 30px;
+}
+#navbar ul li a:hover {
+  text-decoration: underline;
+}
+#navbar ul li #ham-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#navbar ul li #ham-btn:hover {
+  transform: scale(110%);
+}
+#navbar ul li #ham-btn.ham-active {
+  transform: rotate(90deg);
+}
+#navbar ul li:last-child a, #navbar ul li:nth-child(4) a {
+  border-right: none;
+}
+#navbar ul li img:not(a) {
+  max-width: 110px;
+}
+#navbar.scrolled {
+  height: 70px;
+  padding: 0px 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+#navbar.scrolled ul li img:not(#ham-btn img) {
+  height: 40px;
+}
+
+@media (max-width: 868px) {
+  #navbar {
+    padding: 40px 0px 10px;
+  }
+  #navbar ul {
+    gap: 20px;
+    width: 100%;
+  }
+  #navbar li {
+    display: none;
+  }
+  #navbar li a {
+    border-right: none !important;
+  }
+  #navbar li:first-of-type, #navbar li:nth-child(5), #navbar li:last-of-type {
+    display: block;
+  }
+  #navbar li:last-of-type a {
+    padding: 0;
+  }
+  #navbar.scrolled {
+    height: 60px;
+    padding: 0 0px;
+  }
+  #navbar.scrolled ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  #navbar.scrolled ul li img:not(#ham-btn img) {
+    height: 35px;
+  }
+}
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f8f6f4;
+  z-index: 90;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+.mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+}
+.mobile-menu ul {
+  list-style: none;
+  text-align: center;
+}
+.mobile-menu ul li {
+  margin: 20px 0;
+}
+.mobile-menu ul li a {
+  text-decoration: none;
+  font-family: Baskervville, serif;
+  font-size: 2rem;
+  color: #725a58;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
 
 /*# sourceMappingURL=navbar.css.map */

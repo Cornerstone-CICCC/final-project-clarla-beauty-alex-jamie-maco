@@ -77,6 +77,103 @@ $(document).ready(function () {
 		$("#step-1-selection").show();
 	});
 
+	//  > Contact Method Radio Buttons (Call, WhatsApp, SMS, Email)
+	const contactRadios = document.querySelectorAll('.mode-selector');
+	const contactTemplates = {
+		call: `<input type="tel" placeholder="+1 Your mobile number" class="input-field tel-input" />`,
+		whatsapp: `<input type="tel" placeholder="+1 Your WhatsApp number" class="input-field tel-input" />`,
+		sms: `<input type="tel" placeholder="+1 Your mobile number for SMS" class="input-field tel-input" />`,
+		email: `<input type="email" placeholder="Your email address" class="input-field email-input" />`
+	};
+
+	contactRadios.forEach(radio => {
+		if (radio.checked && contactTemplates[radio.value]) {
+			radio.closest('.radio-label').insertAdjacentHTML('afterend', contactTemplates[radio.value]);
+		}
+
+		radio.addEventListener('change', () => {
+			const container = radio.closest('.contact-options');
+
+			container.querySelectorAll('.input-field.tel-input, .input-field.email-input').forEach(input => input.remove());
+
+			if (radio.checked && contactTemplates[radio.value]) {
+				const label = radio.closest('.radio-label');
+				label.insertAdjacentHTML('afterend', contactTemplates[radio.value]);
+			}
+		});
+	});
+
+	// > Date not decided checkbox logic
+	$(".not-decided-check").on("change", function () {
+		const $section = $(this).closest(".form-section");
+		const $dateInput = $section.find(".date-input, .time-select");
+
+		if ($(this).is(':checked')) {
+			$dateInput.val('');
+			$dateInput.prop('disabled', true);
+			$dateInput.attr('type', 'text');
+		} else {
+			$dateInput.prop('disabled', false);
+		}
+	});
+
+	// > More people service add or take away logic
+	$(".btn-cntr").on("click", function () {
+		const $counterInput = $(this).siblings(".counter-input");
+		let currentValue = parseInt($counterInput.val());
+
+		if ($(this).hasClass("btn-plus") && currentValue < parseInt($counterInput.attr("max"))) {
+			currentValue += 1;
+		} else if ($(this).hasClass("btn-minus") && currentValue > parseInt($counterInput.attr("min"))) {
+			currentValue -= 1;
+		}
+
+		$counterInput.val(currentValue);
+	});
+
+	// function initAutocomplete() {
+	// 	const input = document.querySelector('.location-input');
+
+	// 	const options = {
+	// 		componentRestrictions: { country: "ca" }, // Solo Canadá
+	// 		fields: ["address_components", "geometry", "name"],
+	// 		strictBounds: false,
+	// 	};
+
+	// 	const autocomplete = new google.maps.places.Autocomplete(input, options);
+
+	// 	autocomplete.addListener("place_changed", () => {
+	// 		const place = autocomplete.getPlace();
+	// 		if (!place.geometry) {
+	// 			console.log("No details available for input: '" + place.name + "'");
+	// 			return;
+	// 		}
+	// 		console.log("Selected Location:", place.name);
+	// 	});
+	// }
+
+	// window.onload = initAutocomplete;
+
+	// > Not decided checkbox logic for location input
+	$(".not-decided-check").on("change", function () {
+		const $parent = $(this).closest(".address-container");
+		const $locationInput = $parent.find(".location-input");
+
+		if ($(this).is(":checked")) {
+			$locationInput
+				.val("")
+				.prop("disabled", true)
+				.css("opacity", "0.5");
+
+			// ? Close maps dropdown if open 
+			$(".pac-container").hide();
+		} else {
+			$locationInput
+				.prop("disabled", false)
+				.css("opacity", "1");
+		}
+	});
+
 	// --- D. "Submit" Button Logic -> Services Thank You Screen ---
 	// Target the specific submit buttons inside services (excluding the classes submit button)
 	$("#detailedContactForm .btn-submit")

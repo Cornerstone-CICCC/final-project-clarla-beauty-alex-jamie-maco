@@ -1,1094 +1,1106 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Contact Us | BC Beauty</title>
-		<link rel="stylesheet" href="../css/contact.css" />
-		<link rel="stylesheet" href="../css/styles.css" />
-	</head>
-	<body>
-		<header class="header"></header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | BC Beauty</title>
+    <link rel="stylesheet" href="../css/contact.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&libraries=places"></script>
+  </head>
+  <body>
+    <header class="header"></header>
 
-		<main class="contact-page">
-			<section class="contact-header">
-				<h1 class="main-title">CONTACT</h1>
-				<div class="line"></div>
-				<p class="subtitle">
-					Get a quote and book a free consultation for your <br />
-					special day or our academy services
-				</p>
+    <main class="contact-page">
+      <!-- > Contact widget -->
+      <div class="party-chat-widget">
+        <div class="chat-options" id="chat-widget-options">
+          <button type="button" class="option-btn opt-ig">
+            <img src="../assets/imgs/message-box/ig.svg" alt="Instagram" />
+          </button>
+          <button type="button" class="option-btn opt-phone">
+            <img src="../assets/imgs/message-box/phone.svg" alt="Phone" />
+          </button>
+          <button type="button" class="option-btn opt-wa">
+            <img src="../assets/imgs/message-box/whatsApp.svg" alt="WhatsApp" />
+          </button>
+          <button
+            type="button"
+            class="option-btn opt-close"
+            id="chat-widget-close"
+          >
+            <img src="../assets/imgs/message-box/dismiss.svg" alt="Close" />
+          </button>
+        </div>
+        <div class="chat-trigger" id="chat-widget-trigger">
+          <img
+            src="../assets/imgs/message-box/message.svg"
+            alt="message-icon"
+          />
+        </div>
+      </div>
 
-				<div class="social-links">
-					<a href="tel:+10000000000">
-						<img src="../assets/icons/contact-icons/phone.svg" alt="phone" /> +1
-						0000000000
-					</a>
-					<a href="#">
-						<img
-							src="../assets/icons/contact-icons/whatsApp.svg"
-							alt="whatsApp"
-						/>
-						+1 0000000000
-					</a>
-					<a href="#">
-						<img src="../assets/icons/contact-icons/ig.svg" alt="ig" />
-						carlabeatrizs_
-					</a>
-				</div>
-			</section>
+      <section class="contact-header">
+        <h1 class="main-title">CONTACT</h1>
+        <div class="line"></div>
+        <p class="subtitle">
+          Get a quote and book a free consultation for your <br />
+          special day or our academy services
+        </p>
 
-			<!--   Select Type   -->
-			<section class="form-container">
-				<div class="tab-nav">
-					<button class="tab-btn active">Services</button>
-					<button class="tab-btn">Classes</button>
-				</div>
+        <div class="social-links">
+          <a href="tel:+10000000000">
+            <img src="../assets/icons/contact-icons/phone.svg" alt="phone" /> +1
+            0000000000
+          </a>
+          <a href="#">
+            <img
+              src="../assets/icons/contact-icons/whatsApp.svg"
+              alt="whatsApp"
+            />
+            +1 0000000000
+          </a>
+          <a href="#">
+            <img src="../assets/icons/contact-icons/ig.svg" alt="ig" />
+            carlabeatrizs_
+          </a>
+        </div>
+      </section>
 
-				<!-- -- Event Type -- -->
-				<form id="detailedContactForm" class="beauty-form">
-					<!-- ============================================= 
+      <!--   Select Type   -->
+      <section class="form-container">
+        <div class="tab-nav">
+          <button class="tab-btn active">Services</button>
+          <button class="tab-btn">Classes</button>
+        </div>
+
+        <!-- -- Event Type -- -->
+        <!-- > Form -->
+        <form id="detailedContactForm" class="beauty-form">
+          <!-- ============================================= 
                               Services 
-					     ============================================= -->
-					<div id="services-tab-content">
-						<div class="form-section" id="step-1-selection">
-							<legend>Event Type</legend>
-							<div class="selection-group">
-								<label class="select-box">
-									<input
-										type="radio"
-										name="event_type"
-										value="wedding"
-										checked
-									/>
-									<span
-										>Wedding <img src="../assets/icons/check.svg" alt="check"
-									/></span>
-								</label>
-								<label class="select-box">
-									<input type="radio" name="event_type" value="party" />
-									<span
-										>Party <img src="../assets/icons/check.svg" alt="check"
-									/></span>
-								</label>
-								<label class="select-box">
-									<input type="radio" name="event_type" value="photoshoot" />
-									<span
-										>Photoshoot
-										<img src="../assets/icons/check.svg" alt="check"
-									/></span>
-								</label>
-							</div>
-						</div>
+				  ============================================= -->
+          <div id="services-tab-content">
+            <div class="form-section" id="step-1-selection">
+              <legend>Event Type</legend>
+              <div class="selection-group">
+                <label class="select-box">
+                  <input
+                    type="radio"
+                    name="event_type"
+                    value="wedding"
+                    checked
+                  />
+                  <span
+                    >Wedding <img src="../assets/icons/check.svg" alt="check"
+                  /></span>
+                </label>
+                <label class="select-box">
+                  <input type="radio" name="event_type" value="party" />
+                  <span
+                    >Party <img src="../assets/icons/check.svg" alt="check"
+                  /></span>
+                </label>
+                <label class="select-box">
+                  <input type="radio" name="event_type" value="photoshoot" />
+                  <span
+                    >Photoshoot
+                    <img src="../assets/icons/check.svg" alt="check"
+                  /></span>
+                </label>
+              </div>
+            </div>
 
-						<!--! Wedding Fields -->
-						<!-- Step 1 Wedding -->
-						<div id="step-1-wedding" class="dynamic-section">
-							<!-- Event Date & Time -->
-							<div class="form-row">
-								<fieldset class="form-section">
-									<legend>Event Date</legend>
-									<input
-										type="text"
-										class="input-field date-input"
-										placeholder="Select Date"
-										onfocus="this.type = 'date'"
-										onblur="
-											if (this.value == '') {
-												this.type = 'text';
-											}
-										"
-										required
-									/>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Not decided</label
-									>
-								</fieldset>
-								<fieldset class="form-section">
-									<legend>Event Time</legend>
-									<select class="input-field time-select">
-										<option value="">Full day</option>
-										<option value="morning">Morning</option>
-										<option value="afternoon">Afternoon</option>
-									</select>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Not decided</label
-									>
-								</fieldset>
-							</div>
+            <!--! Wedding Fields -->
+            <!-- Step 1 Wedding -->
+            <div id="step-1-wedding" class="dynamic-section">
+              <!-- Event Date & Time -->
+              <div class="form-row">
+                <fieldset class="form-section">
+                  <legend>Event Date</legend>
+                  <input
+                    type="text"
+                    class="input-field date-input"
+                    placeholder="Select Date"
+                    onfocus="this.type = 'date'"
+                    onblur="
+                      if (this.value == '') {
+                        this.type = 'text';
+                      }
+                    "
+                    required
+                  />
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </fieldset>
+                <fieldset class="form-section">
+                  <legend>Event Time</legend>
+                  <select class="input-field time-select">
+                    <option value="">Full day</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                  </select>
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </fieldset>
+              </div>
 
-							<!-- Name -->
-							<fieldset class="form-section">
-								<legend>Name</legend>
-								<input
-									type="text"
-									placeholder="Your name"
-									class="input-field name-input"
-								/>
-							</fieldset>
+              <!-- Name -->
+              <fieldset class="form-section">
+                <legend>Name</legend>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="input-field name-input"
+                />
+              </fieldset>
 
-							<!-- Contact Type -->
-							<fieldset class="form-section">
-								<legend>Contact</legend>
-								<div class="contact-options">
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="contact_method"
-											value="call"
-											checked
-										/>
-										<span class="radio-dot"></span>
-										<span>Call</span>
-									</label>
-									<input
-										type="tel"
-										placeholder="+1 Your mobile number"
-										class="input-field tel-input"
-									/>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="contact_method"
-											value="whatsapp"
-										/>
-										<span class="radio-dot"></span>
-										<span>WhatsApp</span>
-									</label>
-									<label class="radio-label">
-										<input type="radio" name="contact_method" value="sms" />
-										<span class="radio-dot"></span>
-										<span>SMS</span>
-									</label>
-									<label class="radio-label">
-										<input type="radio" name="contact_method" value="email" />
-										<span class="radio-dot"></span>
-										<span>Email</span>
-									</label>
-								</div>
-							</fieldset>
+              <!-- Contact Type -->
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <div class="contact-options">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="contact_method"
+                      value="call"
+                      class="mode-selector"
+                      checked
+                    />
+                    <span class="radio-dot"></span>
+                    <span>Call</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="contact_method"
+                      value="whatsapp"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>WhatsApp</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="contact_method"
+                      value="sms"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>SMS</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="contact_method"
+                      value="email"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>Email</span>
+                  </label>
+                </div>
+              </fieldset>
 
-							<!-- Call Time -->
-							<fieldset class="form-section">
-								<legend>When do you want us to call?</legend>
-								<div class="radio-group">
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="call_time"
-											value="no_preference"
-											checked
-										/>
-										<span class="radio-dot"></span>
-										<span>I don't mind</span>
-									</label>
-									<label class="radio-label">
-										<input type="radio" name="call_time" value="morning" />
-										<span class="radio-dot"></span>
-										<span>Morning</span>
-									</label>
-									<label class="radio-label">
-										<input type="radio" name="call_time" value="afternoon" />
-										<span class="radio-dot"></span>
-										<span>Afternoon</span>
-									</label>
-									<label class="radio-label">
-										<input type="radio" name="call_time" value="evening" />
-										<span class="radio-dot"></span>
-										<span>Evening</span>
-									</label>
-								</div>
-							</fieldset>
-							<button type="button" class="btn-next" id="btn-to-step-2">
-								Next
-							</button>
-						</div>
+              <!-- Call Time -->
+              <fieldset class="form-section">
+                <legend>When do you want us to call?</legend>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="call_time"
+                      value="no_preference"
+                      checked
+                    />
+                    <span class="radio-dot"></span>
+                    <span>I don't mind</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="call_time" value="morning" />
+                    <span class="radio-dot"></span>
+                    <span>Morning</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="call_time" value="afternoon" />
+                    <span class="radio-dot"></span>
+                    <span>Afternoon</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="call_time" value="evening" />
+                    <span class="radio-dot"></span>
+                    <span>Evening</span>
+                  </label>
+                </div>
+              </fieldset>
+              <button type="button" class="btn-next" id="btn-to-step-2">
+                Next
+              </button>
+            </div>
 
-						<!-- Step 2: Wedding Fields -->
-						<div
-							class="dynamic-section"
-							id="step-2-wedding"
-							style="display: none"
-						>
-							<button type="button" class="btn-back">< Back</button>
+            <!-- Step 2: Wedding Fields -->
+            <div
+              class="dynamic-section"
+              id="step-2-wedding"
+              style="display: none"
+            >
+              <button type="button" class="btn-back">< Back</button>
 
-							<fieldset class="form-section">
-								<legend>Bridal Service</legend>
-								<div class="selection-group">
-									<label class="select-box">
-										<input
-											type="checkbox"
-											name="bridal_service"
-											value="makeup"
-										/>
-										<span
-											>Makeup <img src="../assets/icons/check.svg" alt="check"
-										/></span>
-									</label>
-									<label class="select-box">
-										<input type="checkbox" name="bridal_service" value="hair" />
-										<span
-											>Hair <img src="../assets/icons/check.svg" alt="check"
-										/></span>
-									</label>
-								</div>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Bridal Service</legend>
+                <div class="selection-group">
+                  <label class="select-box">
+                    <input
+                      type="checkbox"
+                      name="bridal_service"
+                      value="makeup"
+                    />
+                    <span
+                      >Makeup <img src="../assets/icons/check.svg" alt="check"
+                    /></span>
+                  </label>
+                  <label class="select-box">
+                    <input type="checkbox" name="bridal_service" value="hair" />
+                    <span
+                      >Hair <img src="../assets/icons/check.svg" alt="check"
+                    /></span>
+                  </label>
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Event Location</legend>
-								<div class="contact-options">
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="event_location"
-											value="not_decided"
-											checked
-										/>
-										<span class="radio-dot"></span>
-										<span>Not decided</span>
-									</label>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="event_location"
-											value="in_studio"
-										/>
-										<span class="radio-dot"></span>
-										<span>In studio</span>
-									</label>
-								</div>
-								<input
-									type="text"
-									placeholder="Your location"
-									class="input-field location-input"
-								/>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Event Location</legend>
+                <!-- <div class="contact-options">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="event_location"
+                      value="not_decided"
+                      checked
+                    />
+                    <span class="radio-dot"></span>
+                    <span>Not decided</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="event_location"
+                      value="in_studio"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>In studio</span>
+                  </label>
+                </div> -->
+                <div class="address-container">
+                  <input
+                    type="text"
+                    placeholder="Your location"
+                    class="input-field location-input"
+                  />
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Premium service</legend>
-								<div class="premium-grid">
-									<label class="checkbox-label"
-										><input type="checkbox" /> Deep skin cleaning</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Bleach body hair</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Hydromassage</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Hair blowout</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Waxing</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Foot and hand SPA</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Relaxing massage</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Camouflage (body exfoliation and
-										hydration)</label
-									>
-								</div>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Premium service</legend>
+                <div class="premium-grid">
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Deep skin cleaning</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Bleach body hair</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Hydromassage</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Hair blowout</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Waxing</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Foot and hand SPA</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Relaxing massage</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Camouflage (body exfoliation and
+                    hydration)</label
+                  >
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Anyone else need service?</legend>
-								<div class="guest-services-container">
-									<div class="guest-row">
-										<span class="guest-type">Groom</span>
-										<div class="counter">
-											<button type="button" class="btn-minus">-</button>
-											<input
-												type="number"
-												value="0"
-												min="0"
-												class="counter-input"
-												readonly
-											/>
-											<button type="button" class="btn-plus">+</button>
-										</div>
-										<div class="separator"></div>
-										<div class="guest-options groom-options">
-											<label class="checkbox-label"
-												><input type="checkbox" /> Makeup</label
-											>
-										</div>
-									</div>
+              <fieldset class="form-section">
+                <legend>Anyone else need service?</legend>
+                <div class="guest-services-container">
+                  <div class="guest-row">
+                    <span class="guest-type">Groom</span>
+                    <div class="counter">
+                      <button type="button" class="btn-minus btn-cntr">
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="5"
+                        class="counter-input"
+                        readonly
+                      />
+                      <button type="button" class="btn-plus btn-cntr">+</button>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="guest-options groom-options">
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Makeup</label
+                      >
+                    </div>
+                  </div>
 
-									<div class="guest-row">
-										<span class="guest-type">Bridesmaid</span>
-										<div class="counter">
-											<button type="button" class="btn-minus">-</button>
-											<input
-												type="number"
-												value="0"
-												min="0"
-												class="counter-input"
-												readonly
-											/>
-											<button type="button" class="btn-plus">+</button>
-										</div>
-										<div class="separator"></div>
-										<div class="guest-options">
-											<label class="checkbox-label"
-												><input type="checkbox" /> Hairstyle</label
-											>
-											<label class="checkbox-label"
-												><input type="checkbox" /> Makeup</label
-											>
-										</div>
-									</div>
+                  <div class="guest-row">
+                    <span class="guest-type">Bridesmaid</span>
+                    <div class="counter">
+                      <button type="button" class="btn-minus btn-cntr">
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="5"
+                        class="counter-input"
+                        readonly
+                      />
+                      <button type="button" class="btn-plus btn-cntr">+</button>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="guest-options">
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Hairstyle</label
+                      >
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Makeup</label
+                      >
+                    </div>
+                  </div>
 
-									<div class="guest-row">
-										<span class="guest-type">Flower girl</span>
-										<div class="counter">
-											<button type="button" class="btn-minus">-</button>
-											<input
-												type="number"
-												value="0"
-												min="0"
-												class="counter-input"
-												readonly
-											/>
-											<button type="button" class="btn-plus">+</button>
-										</div>
-										<div class="separator"></div>
-										<div class="guest-options">
-											<label class="checkbox-label"
-												><input type="checkbox" /> Hairstyle</label
-											>
-											<label class="checkbox-label"
-												><input type="checkbox" /> Makeup</label
-											>
-										</div>
-									</div>
-								</div>
-							</fieldset>
+                  <div class="guest-row">
+                    <span class="guest-type">Flower girl</span>
+                    <div class="counter">
+                      <button type="button" class="btn-minus btn-cntr">
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="5"
+                        class="counter-input"
+                        readonly
+                      />
+                      <button type="button" class="btn-plus btn-cntr">+</button>
+                    </div>
+                    <div class="separator"></div>
+                    <div class="guest-options">
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Hairstyle</label
+                      >
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Makeup</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Anything you want us to know?</legend>
-								<textarea
-									class="input-field textarea-field"
-									rows="4"
-									placeholder="Type here..."
-								></textarea>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Anything you want us to know?</legend>
+                <textarea
+                  class="input-field textarea-field"
+                  rows="4"
+                  placeholder="Type here..."
+                ></textarea>
+              </fieldset>
 
-							<button type="submit" class="btn-submit">Submit</button>
-						</div>
+              <button type="submit" class="btn-submit">Submit</button>
+            </div>
 
-						<!--! Party Fields -->
-						<!-- Step1: Party Fields -->
-						<div
-							id="party-step-1"
-							class="dynamic-section"
-							style="display: none"
-						>
-							<div class="form-row">
-								<fieldset class="form-section">
-									<legend>Event Date</legend>
-									<input
-										type="text"
-										class="input-field date-input"
-										placeholder="Select Date"
-										onfocus="this.type = 'date'"
-										onblur="
-											if (this.value == '') {
-												this.type = 'text';
-											}
-										"
-										required
-									/>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Not decided</label
-									>
-								</fieldset>
-								<fieldset class="form-section">
-									<legend>Event Time</legend>
-									<select class="input-field time-select" required>
-										<option value="" disabled selected hidden>Full day</option>
-										<option value="morning">Morning</option>
-										<option value="afternoon">Afternoon</option>
-									</select>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Not decided</label
-									>
-								</fieldset>
-							</div>
-							<div class="party-chat-widget">
-								<div class="chat-options" id="chat-widget-options">
-									<button type="button" class="option-btn opt-ig">
-										<img
-											src="../assets/imgs/message-box/ig.svg"
-											alt="Instagram"
-										/>
-									</button>
-									<button type="button" class="option-btn opt-phone">
-										<img
-											src="../assets/imgs/message-box/phone.svg"
-											alt="Phone"
-										/>
-									</button>
-									<button type="button" class="option-btn opt-wa">
-										<img
-											src="../assets/imgs/message-box/whatsApp.svg"
-											alt="WhatsApp"
-										/>
-									</button>
-									<button
-										type="button"
-										class="option-btn opt-close"
-										id="chat-widget-close"
-									>
-										<img
-											src="../assets/imgs/message-box/dismiss.svg"
-											alt="Close"
-										/>
-									</button>
-								</div>
-								<div class="chat-trigger" id="chat-widget-trigger">
-									<img
-										src="../assets/imgs/message-box/message.svg"
-										alt="message-icon"
-									/>
-								</div>
-							</div>
+            <!--! Party Fields -->
+            <!-- Step1: Party Fields -->
+            <div
+              id="party-step-1"
+              class="dynamic-section"
+              style="display: none"
+            >
+              <div class="form-row">
+                <fieldset class="form-section">
+                  <legend>Event Date</legend>
+                  <input
+                    type="text"
+                    class="input-field date-input"
+                    placeholder="Select Date"
+                    onfocus="this.type = 'date'"
+                    onblur="
+                      if (this.value == '') {
+                        this.type = 'text';
+                      }
+                    "
+                    required
+                  />
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </fieldset>
+                <fieldset class="form-section">
+                  <legend>Event Time</legend>
+                  <select class="input-field time-select" required>
+                    <option value="" disabled selected hidden>Full day</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                  </select>
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </fieldset>
+              </div>
 
-							<fieldset class="form-section">
-								<legend>Name</legend>
-								<input
-									type="text"
-									placeholder="Your name"
-									class="input-field name-input"
-								/>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Name</legend>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="input-field name-input"
+                />
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Contact</legend>
-								<div class="contact-options">
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="party_contact_method"
-											value="call"
-											checked
-										/>
-										<span class="radio-dot"></span>
-										<span>Call</span>
-									</label>
-									<input
-										type="tel"
-										placeholder="+1 Your mobile number"
-										class="input-field tel-input"
-									/>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="party_contact_method"
-											value="whatsapp"
-										/>
-										<span class="radio-dot"></span>
-										<span>WhatsApp</span>
-									</label>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="party_contact_method"
-											value="sms"
-										/>
-										<span class="radio-dot"></span>
-										<span>SMS</span>
-									</label>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="party_contact_method"
-											value="email"
-										/>
-										<span class="radio-dot"></span>
-										<span>Email</span>
-									</label>
-								</div>
-							</fieldset>
+              <!-- Contact Type -->
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <div class="contact-options">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="party_contact_method"
+                      value="call"
+                      class="mode-selector"
+                      checked
+                    />
+                    <span class="radio-dot"></span>
+                    <span>Call</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="party_contact_method"
+                      value="whatsapp"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>WhatsApp</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="party_contact_method"
+                      value="sms"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>SMS</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="party_contact_method"
+                      value="email"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>Email</span>
+                  </label>
+                </div>
+              </fieldset>
 
-							<button type="button" class="btn-next">Next</button>
-						</div>
+              <button type="button" class="btn-next">Next</button>
+            </div>
 
-						<!-- Step2: Party Fields -->
-						<div
-							id="party-step-2"
-							class="dynamic-section"
-							style="display: none"
-						>
-							<button type="button" class="btn-back">< Back</button>
+            <!-- Step2: Party Fields -->
+            <div
+              id="party-step-2"
+              class="dynamic-section"
+              style="display: none"
+            >
+              <button type="button" class="btn-back">< Back</button>
 
-							<fieldset class="form-section">
-								<legend>Service</legend>
-								<div class="selection-group">
-									<label class="select-box">
-										<input
-											type="checkbox"
-											name="party_service"
-											value="makeup"
-										/>
-										<span
-											>Makeup <img src="../assets/icons/check.svg" alt="check"
-										/></span>
-									</label>
-									<label class="select-box">
-										<input type="checkbox" name="party_service" value="hair" />
-										<span
-											>Hair <img src="../assets/icons/check.svg" alt="check"
-										/></span>
-									</label>
-								</div>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Service</legend>
+                <div class="selection-group">
+                  <label class="select-box">
+                    <input
+                      type="checkbox"
+                      name="party_service"
+                      value="makeup"
+                    />
+                    <span
+                      >Makeup <img src="../assets/icons/check.svg" alt="check"
+                    /></span>
+                  </label>
+                  <label class="select-box">
+                    <input type="checkbox" name="party_service" value="hair" />
+                    <span
+                      >Hair <img src="../assets/icons/check.svg" alt="check"
+                    /></span>
+                  </label>
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Event Location</legend>
-								<div class="contact-options">
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="party_event_location"
-											value="not_decided"
-											checked
-										/>
-										<span class="radio-dot"></span>
-										<span>Not decided</span>
-									</label>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="party_event_location"
-											value="in_studio"
-										/>
-										<span class="radio-dot"></span>
-										<span>In studio</span>
-									</label>
-								</div>
-								<input
-									type="text"
-									placeholder="Your location"
-									class="input-field location-input"
-								/>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Event Location</legend>
+                <div class="address-container">
+                  <input
+                    type="text"
+                    placeholder="Your location"
+                    class="input-field location-input"
+                  />
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Premium service</legend>
-								<div class="premium-grid">
-									<label class="checkbox-label"
-										><input type="checkbox" /> Deep skin cleaning</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Bleach body hair</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Hydromassage</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Hair blowout</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Waxing</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Foot and hand SPA</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Relaxing massage</label
-									>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Camouflage (body exfoliation and
-										hydration)</label
-									>
-								</div>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Premium service</legend>
+                <div class="premium-grid">
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Deep skin cleaning</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Bleach body hair</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Hydromassage</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Hair blowout</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Waxing</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Foot and hand SPA</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Relaxing massage</label
+                  >
+                  <label class="checkbox-label"
+                    ><input type="checkbox" /> Camouflage (body exfoliation and
+                    hydration)</label
+                  >
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Anyone else need services?</legend>
-								<div class="guest-services-container">
-									<div class="guest-row">
-										<span class="guest-type">Women</span>
-										<div class="counter">
-											<button type="button" class="btn-minus">-</button>
-											<input
-												type="number"
-												value="0"
-												min="0"
-												class="counter-input"
-												readonly
-											/>
-											<button type="button" class="btn-plus">+</button>
-										</div>
-										<div class="guest-options">
-											<label class="checkbox-label"
-												><input type="checkbox" /> Makeup</label
-											>
-											<label class="checkbox-label"
-												><input type="checkbox" /> Hair</label
-											>
-										</div>
-									</div>
+              <fieldset class="form-section">
+                <legend>Anyone else need services?</legend>
+                <div class="guest-services-container">
+                  <div class="guest-row">
+                    <span class="guest-type">Women</span>
+                    <div class="counter">
+                      <button type="button" class="btn-minus btn-cntr">
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="5"
+                        class="counter-input"
+                        readonly
+                      />
+                      <button type="button" class="btn-plus btn-cntr">+</button>
+                    </div>
+                    <div class="guest-options">
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Makeup</label
+                      >
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Hair</label
+                      >
+                    </div>
+                  </div>
 
-									<div class="guest-row">
-										<span class="guest-type">Men</span>
-										<div class="counter">
-											<button type="button" class="btn-minus">-</button>
-											<input
-												type="number"
-												value="0"
-												min="0"
-												class="counter-input"
-												readonly
-											/>
-											<button type="button" class="btn-plus">+</button>
-										</div>
-										<div class="guest-options">
-											<label class="checkbox-label"
-												><input type="checkbox" /> Makeup</label
-											>
-											<label class="checkbox-label"
-												><input type="checkbox" /> Hair</label
-											>
-										</div>
-									</div>
-								</div>
-							</fieldset>
+                  <div class="guest-row">
+                    <span class="guest-type">Men</span>
+                    <div class="counter">
+                      <button type="button" class="btn-minus btn-cntr">
+                        -
+                      </button>
+                      <input
+                        type="number"
+                        value="0"
+                        min="0"
+                        max="5"
+                        class="counter-input"
+                        readonly
+                      />
+                      <button type="button" class="btn-plus btn-cntr">+</button>
+                    </div>
+                    <div class="guest-options">
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Makeup</label
+                      >
+                      <label class="checkbox-label"
+                        ><input type="checkbox" /> Hair</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Anything you want us to know?</legend>
-								<textarea
-									class="input-field textarea-field"
-									rows="4"
-									placeholder="Type here..."
-								></textarea>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Anything you want us to know?</legend>
+                <textarea
+                  class="input-field textarea-field"
+                  rows="4"
+                  placeholder="Type here..."
+                ></textarea>
+              </fieldset>
 
-							<button type="submit" class="btn-submit">Submit</button>
-						</div>
+              <button type="submit" class="btn-submit">Submit</button>
+            </div>
 
-						<!--! Photoshoot Fields -->
-						<div
-							id="photoshoot-step-1"
-							class="dynamic-section"
-							style="display: none"
-						>
-							<div class="form-row">
-								<fieldset class="form-section">
-									<legend>Event Date</legend>
-									<input
-										type="text"
-										class="input-field date-input"
-										placeholder="Select Date"
-										onfocus="this.type = 'date'"
-										onblur="
-											if (this.value == '') {
-												this.type = 'text';
-											}
-										"
-										required
-									/>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Not decided</label
-									>
-								</fieldset>
-								<fieldset class="form-section">
-									<legend>Event Time</legend>
-									<select class="input-field time-select" required>
-										<option value="" disabled selected hidden>Full day</option>
-										<option value="morning">Morning</option>
-										<option value="afternoon">Afternoon</option>
-									</select>
-									<label class="checkbox-label"
-										><input type="checkbox" /> Not decided</label
-									>
-								</fieldset>
-							</div>
+            <!--! Photoshoot Fields -->
+            <div
+              id="photoshoot-step-1"
+              class="dynamic-section"
+              style="display: none"
+            >
+              <div class="form-row">
+                <fieldset class="form-section">
+                  <legend>Event Date</legend>
+                  <input
+                    type="text"
+                    class="input-field date-input"
+                    placeholder="Select Date"
+                    onfocus="this.type = 'date'"
+                    onblur="
+                      if (this.value == '') {
+                        this.type = 'text';
+                      }
+                    "
+                    required
+                  />
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </fieldset>
+                <fieldset class="form-section">
+                  <legend>Event Time</legend>
+                  <select class="input-field time-select" required>
+                    <option value="" disabled selected hidden>Full day</option>
+                    <option value="morning">Morning</option>
+                    <option value="afternoon">Afternoon</option>
+                  </select>
+                  <label class="checkbox-label"
+                    ><input type="checkbox" class="not-decided-check" /> Not
+                    decided</label
+                  >
+                </fieldset>
+              </div>
 
-							<fieldset class="form-section">
-								<legend>Name</legend>
-								<input
-									type="text"
-									placeholder="Your name"
-									class="input-field name-input"
-								/>
-							</fieldset>
+              <fieldset class="form-section">
+                <legend>Name</legend>
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="input-field name-input"
+                />
+              </fieldset>
 
-							<fieldset class="form-section">
-								<legend>Contact</legend>
-								<div class="contact-options">
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="photoshoot_contact_method"
-											value="call"
-											checked
-										/>
-										<span class="radio-dot"></span>
-										<span>Call</span>
-									</label>
-									<input
-										type="tel"
-										placeholder="+1 Your mobile number"
-										class="input-field tel-input"
-									/>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="photoshoot_contact_method"
-											value="whatsapp"
-										/>
-										<span class="radio-dot"></span>
-										<span>WhatsApp</span>
-									</label>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="photoshoot_contact_method"
-											value="sms"
-										/>
-										<span class="radio-dot"></span>
-										<span>SMS</span>
-									</label>
-									<label class="radio-label">
-										<input
-											type="radio"
-											name="photoshoot_contact_method"
-											value="email"
-										/>
-										<span class="radio-dot"></span>
-										<span>Email</span>
-									</label>
-								</div>
-							</fieldset>
+              <!-- Contact Type -->
+              <fieldset class="form-section">
+                <legend>Contact</legend>
+                <div class="contact-options">
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="photoshoot_contact_method"
+                      value="call"
+                      class="mode-selector"
+                      checked
+                    />
+                    <span class="radio-dot"></span>
+                    <span>Call</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="photoshoot_contact_method"
+                      value="whatsapp"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>WhatsApp</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="photoshoot_contact_method"
+                      value="sms"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>SMS</span>
+                  </label>
+                  <label class="radio-label">
+                    <input
+                      type="radio"
+                      name="photoshoot_contact_method"
+                      value="email"
+                      class="mode-selector"
+                    />
+                    <span class="radio-dot"></span>
+                    <span>Email</span>
+                  </label>
+                </div>
+              </fieldset>
 
-							<button type="submit" class="btn-submit">Submit</button>
-						</div>
-					</div>
-					<!-- ============================================= 
+              <button type="submit" class="btn-submit">Submit</button>
+            </div>
+          </div>
+          <!-- ============================================= 
                               Classes 
 					   ============================================= -->
 
-					<div id="classes-tab-content" style="display: none">
-						<!-- ! class type  -->
-						<fieldset class="form-section">
-							<legend>Class</legend>
-							<div class="selection-group">
-								<label class="select-box">
-									<input
-										type="radio"
-										name="academy_class_type"
-										value="1_on_1_master"
-										checked
-									/>
-									<span
-										>1-on-1 Master Subscription
-										<img src="../assets/icons/check.svg" alt="check"
-									/></span>
-								</label>
-								<label class="select-box">
-									<input
-										type="radio"
-										name="academy_class_type"
-										value="1_day_workshop"
-									/>
-									<span
-										>1-day Makeup workshop
-										<img src="../assets/icons/check.svg" alt="check"
-									/></span>
-								</label>
-								<label class="select-box">
-									<input
-										type="radio"
-										name="academy_class_type"
-										value="self_makeup_beginner"
-									/>
-									<span
-										>Self-Makeup beginner class
-										<img src="../assets/icons/check.svg" alt="check"
-									/></span>
-								</label>
-							</div>
-						</fieldset>
+          <div id="classes-tab-content" style="display: none">
+            <!-- ! class type  -->
+            <fieldset class="form-section">
+              <legend>Class</legend>
+              <div class="selection-group">
+                <label class="select-box">
+                  <input
+                    type="radio"
+                    name="academy_class_type"
+                    value="1_on_1_master"
+                    checked
+                  />
+                  <span
+                    >1-on-1 Master Subscription
+                    <img src="../assets/icons/check.svg" alt="check"
+                  /></span>
+                </label>
+                <label class="select-box">
+                  <input
+                    type="radio"
+                    name="academy_class_type"
+                    value="1_day_workshop"
+                  />
+                  <span
+                    >1-day Makeup workshop
+                    <img src="../assets/icons/check.svg" alt="check"
+                  /></span>
+                </label>
+                <label class="select-box">
+                  <input
+                    type="radio"
+                    name="academy_class_type"
+                    value="self_makeup_beginner"
+                  />
+                  <span
+                    >Self-Makeup beginner class
+                    <img src="../assets/icons/check.svg" alt="check"
+                  /></span>
+                </label>
+              </div>
+            </fieldset>
 
-						<!--! input  -->
-						<!-- class date -->
-						<fieldset class="form-section">
-							<legend>Class Date</legend>
-							<p
-								class="field-subtitle"
-								style="
-									margin-top: -12px;
-									margin-bottom: 16px;
-									color: #4a4a4a;
-									font-family: &quot;Nunito Sans&quot;, sans-serif;
-								"
-							>
-								When you would like to take your class?
-							</p>
-							<input
-								type="text"
-								class="input-field date-input"
-								placeholder="Select Date"
-								onfocus="this.type = 'date'"
-								onblur="
-									if (this.value == '') {
-										this.type = 'text';
-									}
-								"
-								required
-							/>
-							<label class="checkbox-label"
-								><input type="checkbox" /> Doesn't matter</label
-							>
-						</fieldset>
+            <!--! input  -->
+            <!-- class date -->
+            <fieldset class="form-section">
+              <legend>Class Date</legend>
+              <p
+                class="field-subtitle"
+                style="
+                  margin-top: -12px;
+                  margin-bottom: 16px;
+                  color: #4a4a4a;
+                  font-family: &quot;Nunito Sans&quot;, sans-serif;
+                "
+              >
+                When you would like to take your class?
+              </p>
+              <input
+                type="text"
+                class="input-field date-input"
+                placeholder="Select Date"
+                onfocus="this.type = 'date'"
+                onblur="
+                  if (this.value == '') {
+                    this.type = 'text';
+                  }
+                "
+                required
+              />
+              <label class="checkbox-label"
+                ><input type="checkbox" class="not-decided-check" /> Doesn't
+                matter</label
+              >
+            </fieldset>
 
-						<!-- questions? -->
-						<fieldset class="form-section">
-							<legend>Any questions?</legend>
-							<textarea
-								class="input-field textarea-field"
-								rows="4"
-								placeholder="Your message"
-							></textarea>
-						</fieldset>
+            <!-- questions? -->
+            <fieldset class="form-section">
+              <legend>Any questions?</legend>
+              <textarea
+                class="input-field textarea-field"
+                rows="4"
+                placeholder="Your message"
+              ></textarea>
+            </fieldset>
 
-						<!-- name -->
-						<fieldset class="form-section">
-							<legend>Name</legend>
-							<input
-								type="text"
-								placeholder="Your name"
-								class="input-field name-input"
-							/>
-						</fieldset>
+            <!-- name -->
+            <fieldset class="form-section">
+              <legend>Name</legend>
+              <input
+                type="text"
+                placeholder="Your name"
+                class="input-field name-input"
+              />
+            </fieldset>
 
-						<!-- contact -->
-						<fieldset class="form-section">
-							<legend>Contact</legend>
-							<div class="contact-options">
-								<label class="radio-label">
-									<input
-										type="radio"
-										name="academy_contact_method"
-										value="call"
-										checked
-									/>
-									<span class="radio-dot"></span>
-									<span>Call</span>
-								</label>
-								<input
-									type="tel"
-									placeholder="+1 Your mobile number"
-									class="input-field tel-input"
-								/>
-								<label class="radio-label">
-									<input
-										type="radio"
-										name="academy_contact_method"
-										value="whatsapp"
-									/>
-									<span class="radio-dot"></span>
-									<span>WhatsApp</span>
-								</label>
-								<label class="radio-label">
-									<input
-										type="radio"
-										name="academy_contact_method"
-										value="sms"
-									/>
-									<span class="radio-dot"></span>
-									<span>SMS</span>
-								</label>
-								<label class="radio-label">
-									<input
-										type="radio"
-										name="academy_contact_method"
-										value="email"
-									/>
-									<span class="radio-dot"></span>
-									<span>Email</span>
-								</label>
-							</div>
-						</fieldset>
+            <!-- contact -->
+            <fieldset class="form-section">
+              <legend>Contact</legend>
+              <div class="contact-options">
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="academy_contact_method"
+                    value="call"
+                    class="mode-selector"
+                    checked
+                  />
+                  <span class="radio-dot"></span>
+                  <span>Call</span>
+                </label>
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="academy_contact_method"
+                    value="whatsapp"
+                    class="mode-selector"
+                  />
+                  <span class="radio-dot"></span>
+                  <span>WhatsApp</span>
+                </label>
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="academy_contact_method"
+                    value="sms"
+                    class="mode-selector"
+                  />
+                  <span class="radio-dot"></span>
+                  <span>SMS</span>
+                </label>
+                <label class="radio-label">
+                  <input
+                    type="radio"
+                    name="academy_contact_method"
+                    value="email"
+                    class="mode-selector"
+                  />
+                  <span class="radio-dot"></span>
+                  <span>Email</span>
+                </label>
+              </div>
+            </fieldset>
 
-						<button type="button" class="btn-submit" id="btn-classes-submit">
-							Next
-						</button>
-					</div>
-				</form>
+            <button type="button" class="btn-submit" id="btn-classes-submit">
+              Next
+            </button>
+          </div>
+        </form>
 
-				<!--! Service : Thank You Screen -->
-				<div
-					id="thank-you-screen"
-					class="dynamic-section"
-					style="display: none"
-				>
-					<h2 class="thank-you-title">
-						Thanks <span id="summary-name">Janny</span>,<br />
-						we will contact you soon!
-					</h2>
-					<p class="thank-you-subtitle">
-						We will call at <span id="summary-phone">+1 000 000 0000</span> to
-						confirm the appointment details with you.<br />
-						<a href="#" class="edit-details-link">Edit details &gt;</a>
-					</p>
+        <!--! Service : Thank You Screen -->
+        <div
+          id="thank-you-screen"
+          class="dynamic-section"
+          style="display: none"
+        >
+          <h2 class="thank-you-title">
+            Thanks <span id="summary-name">Janny</span>,<br />
+            we will contact you soon!
+          </h2>
+          <p class="thank-you-subtitle">
+            We will call at <span id="summary-phone">+1 000 000 0000</span> to
+            confirm the appointment details with you.<br />
+            <a href="#" class="edit-details-link">Edit details &gt;</a>
+          </p>
 
-					<div class="receipt-card" style="text-align: left">
-						<img
-							src="../assets/imgs/contact-thankyou.svg"
-							alt="contact-thankyou"
-							class="receipt-image"
-						/>
+          <div class="receipt-card" style="text-align: left">
+            <img
+              src="../assets/imgs/contact-thankyou.svg"
+              alt="contact-thankyou"
+              class="receipt-image"
+            />
 
-						<div class="receipt-price">
-							<p>Total estimated price:</p>
-							<h3>CAD <span id="summary-price">1,000 - 1,200</span></h3>
-						</div>
+            <div class="receipt-price">
+              <p>Total estimated price:</p>
+              <h3>CAD <span id="summary-price">1,000 - 1,200</span></h3>
+            </div>
 
-						<div class="receipt-header">
-							<h4><span id="summary-event-type">Bridal</span> service</h4>
-						</div>
+            <div class="receipt-header">
+              <h4><span id="summary-event-type">Bridal</span> service</h4>
+            </div>
 
-						<div class="receipt-details">
-							<div class="detail-block">
-								<h5>Basic services</h5>
-								<ul id="summary-basic-services">
-									<li>Makeup</li>
-									<li>Hair</li>
-								</ul>
-							</div>
+            <div class="receipt-details">
+              <div class="detail-block">
+                <h5>Basic services</h5>
+                <ul id="summary-basic-services">
+                  <li>Makeup</li>
+                  <li>Hair</li>
+                </ul>
+              </div>
 
-							<div class="detail-block">
-								<h5>Premium services</h5>
-								<ul id="summary-premium-services">
-									<li>Deep skin cleaning</li>
-								</ul>
-							</div>
+              <div class="detail-block">
+                <h5>Premium services</h5>
+                <ul id="summary-premium-services">
+                  <li>Deep skin cleaning</li>
+                </ul>
+              </div>
 
-							<div class="detail-block">
-								<h5>Additional attendees</h5>
-								<p id="summary-attendees">Women: 2 makeup + 2 hairstyle</p>
-							</div>
+              <div class="detail-block">
+                <h5>Additional attendees</h5>
+                <p id="summary-attendees">Women: 2 makeup + 2 hairstyle</p>
+              </div>
 
-							<div class="detail-block">
-								<h5>Event Location</h5>
-								<p id="summary-location">In studio</p>
-							</div>
-						</div>
+              <div class="detail-block">
+                <h5>Event Location</h5>
+                <p id="summary-location">In studio</p>
+              </div>
+            </div>
 
-						<div class="receipt-card-footer">
-							<div class="receipt-card-logos">
-								<div class="thank-you-footer-logo sp-6">
-									<img
-										src="../assets/imgs/logotype/logo.svg"
-										alt="Footer logo"
-									/>
-								</div>
+            <div class="receipt-card-footer">
+              <div class="receipt-card-logos">
+                <div class="thank-you-footer-logo sp-6">
+                  <img
+                    src="../assets/imgs/logotype/logo.svg"
+                    alt="Footer logo"
+                  />
+                </div>
 
-								<div class="social-links footer-social-links">
-									<a href="#">
-										<img
-											src="../assets/icons/contact-icons/whatsApp.svg"
-											alt="whatsApp"
-										/>
-										+1 0000000000
-									</a>
-									<a href="#">
-										<img src="../assets/icons/contact-icons/ig.svg" alt="ig" />
-										carlabeatrizs_
-									</a>
-								</div>
-							</div>
-							<button type="button" class="btn-home">Share</button>
-						</div>
-					</div>
-				</div>
+                <div class="social-links footer-social-links">
+                  <a href="#">
+                    <img
+                      src="../assets/icons/contact-icons/whatsApp.svg"
+                      alt="whatsApp"
+                    />
+                    +1 0000000000
+                  </a>
+                  <a href="#">
+                    <img src="../assets/icons/contact-icons/ig.svg" alt="ig" />
+                    carlabeatrizs_
+                  </a>
+                </div>
+              </div>
+              <button type="button" class="btn-home">Share</button>
+            </div>
+          </div>
+        </div>
 
-				<!--! Classes : Thank You Screen -->
-				<div
-					id="classes-thank-you-screen"
-					class="dynamic-section"
-					style="display: none"
-				>
-					<h2 class="thank-you-title">
-						Thanks <span class="summary-name-display">Janny</span>,<br />
-						we will contact you soon!
-					</h2>
+        <!--! Classes : Thank You Screen -->
+        <div
+          id="classes-thank-you-screen"
+          class="dynamic-section"
+          style="display: none"
+        >
+          <h2 class="thank-you-title">
+            Thanks <span class="summary-name-display">Janny</span>,<br />
+            we will contact you soon!
+          </h2>
 
-					<p class="thank-you-subtitle" style="margin-bottom: 40px">
-						We will call
-						<span id="classes-summary-phone">+1-0000000000</span> to get back to
-						your enquiry
-					</p>
+          <p class="thank-you-subtitle" style="margin-bottom: 40px">
+            We will call
+            <span id="classes-summary-phone">+1-0000000000</span> to get back to
+            your enquiry
+          </p>
 
-					<div
-						class="receipt-card"
-						style="border: none; padding: 0; background: transparent"
-					>
-						<img
-							src="../assets/imgs/contact-thankyou.svg"
-							alt="Beauty products"
-							class="classes-thank-you-screen-img"
-						/>
+          <div
+            class="receipt-card"
+            style="border: none; padding: 0; background: transparent"
+          >
+            <img
+              src="../assets/imgs/contact-thankyou.svg"
+              alt="Beauty products"
+              class="classes-thank-you-screen-img"
+            />
 
-						<div class="talk-soon-section" style="text-align: left">
-							<h3
-								style="
-									font-family: &quot;Baskervville&quot;, serif;
-									font-size: 28px;
-									color: #333;
-									margin-bottom: 24px;
-									font-weight: normal;
-								"
-							>
-								Talk soon <span class="summary-name-display">Janny</span> :)
-							</h3>
+            <div class="talk-soon-section" style="text-align: left">
+              <h3
+                style="
+                  font-family: &quot;Baskervville&quot;, serif;
+                  font-size: 28px;
+                  color: #333;
+                  margin-bottom: 24px;
+                  font-weight: normal;
+                "
+              >
+                Talk soon <span class="summary-name-display">Janny</span> :)
+              </h3>
 
-							<div
-								class="social-links"
-								style="
-									display: flex;
-									flex-direction: column;
-									gap: 16px;
-									align-items: flex-start;
-								"
-							>
-								<a href="tel:+10000000000" style="color: #666">
-									<img
-										src="../assets/icons/contact-icons/phone.svg"
-										alt="phone"
-									/>
-									+1 0000000000
-								</a>
-								<a href="#" style="color: #666">
-									<img
-										src="../assets/icons/contact-icons/whatsApp.svg"
-										alt="whatsApp"
-									/>
-									+1 0000000000
-								</a>
-								<a href="#" style="color: #666">
-									<img src="../assets/icons/contact-icons/ig.svg" alt="ig" />
-									carlabeatrizs_
-								</a>
-							</div>
-						</div>
-					</div>
+              <div
+                class="social-links"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 16px;
+                  align-items: flex-start;
+                "
+              >
+                <a href="tel:+10000000000" style="color: #666">
+                  <img
+                    src="../assets/icons/contact-icons/phone.svg"
+                    alt="phone"
+                  />
+                  +1 0000000000
+                </a>
+                <a href="#" style="color: #666">
+                  <img
+                    src="../assets/icons/contact-icons/whatsApp.svg"
+                    alt="whatsApp"
+                  />
+                  +1 0000000000
+                </a>
+                <a href="#" style="color: #666">
+                  <img src="../assets/icons/contact-icons/ig.svg" alt="ig" />
+                  carlabeatrizs_
+                </a>
+              </div>
+            </div>
+          </div>
 
-					<button type="button" class="btn-home">Share</button>
-				</div>
-			</section>
-		</main>
+          <button type="button" class="btn-home">Share</button>
+        </div>
+      </section>
+    </main>
 
-		<footer class="footer"></footer>
+    <footer class="footer"></footer>
 
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script src="../scripts/contact.js"></script>
-	</body>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <script src="../scripts/contact.js"></script>
+  </body>
 </html>

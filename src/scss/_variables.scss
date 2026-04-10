@@ -35,7 +35,27 @@ $fonts: (
   heading: (Baskervville, serif),
   avenir-light: ('Avenir Light', 'Nunito Sans', sans-serif)
 );
+
+
 // ? Text sizes variables
+$text-sizes : (
+  h1: 80px,
+  h2: 68px,
+  h3: 48px,
+  h4: 36px,
+  h5: 32px,
+  h6: 24px,
+
+  button: 20px,
+  button-sm: 18px,
+
+  body: 18px,
+  body-sm: 16px,
+
+  caption: 14px,
+  signature: 54px,
+);
+
 $text-styles: (
 	h1-cap: (
 		size: 80px,
@@ -131,7 +151,7 @@ $transitions: (
 
 // ? Breakpoint variables
 $breakpoints: (
-	mobile: 480px,
-	tablet: 768px,
-	desktop: 1024px,
+  mobile: 480px,
+  tablet: 868px,
+  desktop: 1024px
 );

@@ -1,0 +1,175 @@
+@use "../variables" as vr;
+
+/* 
+TODOs
+- Center border right
+- Scale or change on hover
+- Margin 
+
+*/
+#navbar {
+  // padding: 40px 60px 0 60px;
+  padding: 40px 0 0 0 ;
+  display: flex; // 1. Convertimos el navbar en flex
+  align-items: center; // 2. Centramos verticalmente su contenido (el ul)
+  justify-content: center;
+  width: 100%;
+  // background-color: transparent;
+  background-color: map-get($map: vr.$colors, $key: l-neut-pale-w);
+  position: sticky;
+  z-index: 100;
+  top: 0px; // TODO: Change when hover to other navbar
+  transition: map-get($map: vr.$transitions, $key: default);
+  // UL
+  ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // img
+
+    // li
+    li {
+      list-style: none;
+
+      // a
+      a {
+        text-decoration: none;
+        color: map-get($map: vr.$colors, $key: bold-main);
+        font-size: map-get($map: vr.$text-sizes, $key: button);
+        width: 100%;
+        height: 30px;
+        padding: 0 30px;
+        border-right: 2px solid map-get($map: vr.$colors, $key: comp-brown);
+        transition: map-get($map: vr.$transitions, $key: default);
+        img {
+          width: 30px;
+          height: 30px;
+        }
+
+        &:hover {
+          // transform: scale(105%);
+          text-decoration: underline;
+        }
+      }
+
+      #ham-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        transition: map-get($map: vr.$transitions, $key: default);
+        &:hover {
+          transform: scale(110%);
+        }
+
+        &.ham-active {
+          transform: rotate(90deg);
+        }
+      }
+
+      &:last-child a,
+      &:nth-child(4) a {
+        border-right: none;
+      }
+
+      img:not(a) {
+        max-width: 110px;
+      }
+    }
+  }
+  &.scrolled {
+    height: 70px; // Altura reducida
+    padding: 0px 60px; // Reducimos padding para comprimir el navbar
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); // Opcional: una sombra sutil
+
+    ul li img:not(#ham-btn img) {
+      height: 40px; // Logo más pequeño
+    }
+  }
+}
+
+// > media query for mobile
+@media (max-width: map-get($map: vr.$breakpoints, $key: tablet)) {
+  #navbar {
+    padding: 40px 0px 10px;
+    ul {
+      gap: 20px;
+      width: 100%;
+    }
+    li {
+      display: none;
+      a {
+        border-right: none !important;
+      }
+
+      &:first-of-type,
+      &:nth-child(5),
+      &:last-of-type {
+        display: block;
+      }
+
+      &:last-of-type {
+        a {
+          padding: 0;
+        }
+      }
+    }
+    &.scrolled {
+      height: 60px;
+      padding: 0 0px;
+
+      ul {
+        height: 100%; 
+        display: flex;
+        align-items: center; 
+      }
+      ul li img:not(#ham-btn img) {
+        height: 35px;
+      }
+    }
+  }
+}
+
+// > mobile nav
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: map-get(vr.$colors, l-neut-pale-w);
+  z-index: 90;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden; // Hide the menu by default
+  transition: all 0.3s ease;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ul {
+    list-style: none;
+    text-align: center;
+
+    li {
+      margin: 20px 0;
+
+      a {
+        text-decoration: none;
+        font-family: map-get(vr.$fonts, heading);
+        font-size: 2rem;
+        color: map-get(vr.$colors, bold-main);
+      }
+    }
+  }
+}
+
+// Clase para evitar que el usuario haga scroll con el menú abierto
+.no-scroll {
+  overflow: hidden;
+}

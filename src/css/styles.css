@@ -349,7 +349,7 @@ legend {
 .guest-services-container {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 8px;
   margin-top: 8px;
 }
 
@@ -357,8 +357,9 @@ legend {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 16px 24px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #a3a3a3;
+  background-color: #fbfafa;
 }
 .guest-row:last-child {
   border-bottom: none;
@@ -382,10 +383,9 @@ legend {
 .counter {
   display: flex;
   align-items: center;
-  border: 1px solid #a3a3a3;
-  background: #fff;
+  background-color: #fae9e7;
   height: 40px;
-  margin-right: 32px;
+  margin-right: 8px;
 }
 .counter button {
   background: none;
@@ -406,10 +406,9 @@ legend {
 .counter .counter-input {
   width: 40px;
   height: 100%;
+  background: none;
   text-align: center;
   border: none;
-  border-left: 1px solid #a3a3a3;
-  border-right: 1px solid #a3a3a3;
   font-family: "Nunito Sans", sans-serif;
   font-size: 16px;
   color: #191919;
@@ -423,7 +422,18 @@ legend {
   outline: none;
 }
 
+.separator {
+  width: 2px;
+  height: 24px;
+  margin-left: 16px;
+  margin-right: 32px;
+  background-color: #e3b6b1;
+}
+
 .party-chat-widget {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
   margin-bottom: 48px;
   width: 48px;
 }
@@ -740,6 +750,55 @@ legend {
     gap: 24px;
   }
 }
+@keyframes fadeInInput {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tel-input,
+.email-input {
+  animation: fadeInInput 0.3s ease-out forwards !important;
+  margin: 8px 0 16px 0;
+  transition: border-color all 0.3s ease;
+}
+
+.date-input,
+.time-select,
+.location-input {
+  transition: opacity 0.5s ease, background-color 0.5s ease, filter 0.5s ease, border-color 0.5s ease;
+  opacity: 1;
+  filter: grayscale(0%);
+}
+.date-input:disabled,
+.time-select:disabled,
+.location-input:disabled {
+  opacity: 0.5;
+  background-color: #f8f6f4;
+  filter: grayscale(100%);
+  cursor: not-allowed;
+  border-color: #a3a3a3;
+}
+
+.address-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.location-input {
+  background-image: url("../assets/icons/search.svg");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: right 16px center;
+  padding-right: 48px !important;
+}
+
 *,
 *::before,
 *::after {

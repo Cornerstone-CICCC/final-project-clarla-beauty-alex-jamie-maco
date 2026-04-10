@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:wght@400;700&display=swap");
+@font-face {
+  font-family: "Avenir Light";
+  src: url("../assets/fonts/avenir-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8f6f4;
+}
+body header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0;
+}
+body header h1 {
+  font-family: Baskervville, serif;
+  font-size: 80px;
+  font-weight: 500;
+  color: #725a58;
+}
+body header .go-back-btn {
+  display: flex;
+  align-self: flex-start;
+  margin-left: 80px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  color: #725a58;
+  font-weight: 300;
+}
+body header .go-back-btn a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+body header .go-back-btn a img {
+  width: 12px;
+  height: auto;
+}
+body header .go-back-btn a:hover {
+  text-decoration: underline;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 60px;
+  background-color: #fae9e7;
+}
+body #class {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  width: 80%;
+}
+body #class #class-details {
+  display: flex;
+  flex-direction: column;
+}
+body #class #class-details .class-image {
+  width: 373px;
+  height: auto;
+  object-fit: cover;
+}
+body #class #info-class {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body #class #info-class h2 {
+  font-family: Baskervville, serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #725a58;
+  margin-bottom: 20px;
+}
+body #class #info-class .details-class {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+body #class #info-class h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 24px;
+  color: #191919;
+  font-weight: 300;
+  margin-top: 20px;
+}
+body #class #info-class h3:first-of-type {
+  margin-top: 0;
+}
+body #class #info-class p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #191919;
+  line-height: 25px;
+  margin-bottom: 50px;
+}
+body #class #info-class ul {
+  margin-bottom: 20px;
+}
+body #class #info-class ul li {
+  list-style-position: inside;
+  margin-left: 5px;
+  color: #191919;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+}
+body #class #info-class ul:last-of-type {
+  margin-bottom: 30px;
+}
+body .details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 20px 30px;
+  border: 2px solid rgba(160, 109, 103, 0.5);
+}
+body .details h2 {
+  font-family: Baskervville, serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #725a58;
+}
+body .details .detail {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  color: #191919;
+  font-weight: 300;
+}
+body .details .detail p {
+  margin: 0;
+}
+body .join-btn {
+  border: 1px solid #725a58;
+  color: #725a58;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 30px;
+  text-align: center;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+body .join-btn:hover {
+  background-color: #725a58;
+  color: #f8f6f4;
+}
+body .mobile {
+  display: none;
+}
+
+@media (max-width: 868px) {
+  header .go-back-btn {
+    margin-left: 20px !important;
+    margin-bottom: 30px;
+  }
+  header h1 {
+    font-size: 36px !important;
+  }
+  main {
+    padding: 0 0 60px !important;
+  }
+  #class {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  #class .desktop {
+    display: none !important;
+  }
+  #class .class-details,
+  #class .class-image {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .details {
+    border: none !important;
+  }
+  .details h2 {
+    display: none !important;
+  }
+  #info-class {
+    padding: 0 20px !important;
+  }
+  .mobile {
+    display: flex !important;
+    width: 100% !important;
+  }
+  .mobile.join-btn {
+    display: block !important;
+    width: 90% !important;
+  }
+}
+
+/*# sourceMappingURL=classes-details.css.map */
