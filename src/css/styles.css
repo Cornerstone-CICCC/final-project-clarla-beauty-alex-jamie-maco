@@ -119,9 +119,13 @@ main > section {
   align-items: center;
   gap: 16px;
 }
-#classes .individual-class .class-title img {
+#classes .individual-class .class-title img .award-icon {
   width: 32px;
   height: 32px;
+}
+#classes .individual-class .class-title img .arrow-icon {
+  width: 40px;
+  height: 40px;
 }
 #classes .individual-class .class-title h4 {
   font-family: Baskervville, serif;
