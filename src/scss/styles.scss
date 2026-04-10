@@ -170,18 +170,9 @@ header {
 			align-items: center;
 			gap: 16px;
 
-			img .award-icon {
-				width: 32px;
-				height: 32px;
-			}
-			img .arrow-icon {
-				width: 40px;
-				height: 40px;
-			}
-
 			h4 {
 				font-family: map.get($fonts, heading);
-				font-size: 48px; // Exact size from specs
+				font-size: 48px;
 				font-weight: map.get($weights, regular);
 				color: map.get($colors, bold-main);
 				line-height: 1.3;
@@ -196,21 +187,22 @@ header {
 			color: map.get($colors, d-neut-dark-g);
 			padding-left: 48px; // Aligns text under the heading (skipping the 32px icon + 16px gap)
 		}
-
-		// Arrow icon on the right side
-		> a {
-			img {
-				width: 24px;
-				height: 24px;
-				opacity: 0.5;
-				transition: map.get($transitions, default);
-			}
-			&:hover img {
-				opacity: 1;
-			}
-		}
 	}
 
+	.award-icon {
+		width: 32px;
+		height: 32px;
+	}
+	.arrow-icon {
+		width: 40px;
+		height: 40px;
+		opacity: 0.5;
+		transition: map.get($transitions, default);
+
+		&:hover {
+			opacity: 1;
+		}
+	}
 	// "All Classes" Button
 	.all-classes-btn {
 		display: inline-block;

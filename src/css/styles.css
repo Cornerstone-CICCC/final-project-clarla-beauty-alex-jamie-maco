@@ -119,14 +119,6 @@ main > section {
   align-items: center;
   gap: 16px;
 }
-#classes .individual-class .class-title img .award-icon {
-  width: 32px;
-  height: 32px;
-}
-#classes .individual-class .class-title img .arrow-icon {
-  width: 40px;
-  height: 40px;
-}
 #classes .individual-class .class-title h4 {
   font-family: Baskervville, serif;
   font-size: 48px;
@@ -142,13 +134,17 @@ main > section {
   color: #535353;
   padding-left: 48px;
 }
-#classes .individual-class > a img {
-  width: 24px;
-  height: 24px;
+#classes .award-icon {
+  width: 32px;
+  height: 32px;
+}
+#classes .arrow-icon {
+  width: 40px;
+  height: 40px;
   opacity: 0.5;
   transition: all 0.3s ease;
 }
-#classes .individual-class > a:hover img {
+#classes .arrow-icon:hover {
   opacity: 1;
 }
 #classes .all-classes-btn {
