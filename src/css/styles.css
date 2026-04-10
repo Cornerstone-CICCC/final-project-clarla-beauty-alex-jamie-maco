@@ -183,7 +183,6 @@ main > section {
   z-index: 2;
   width: 100%;
   height: auto;
-  object-fit: cover;
-}
-
-/*# sourceMappingURL=styles.css.map */
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=styles.css.map */

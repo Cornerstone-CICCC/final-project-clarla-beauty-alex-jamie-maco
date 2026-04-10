@@ -139,7 +139,8 @@
   width: 100%;
   max-width: 120px;
   height: 40px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   opacity: 0.7;
 }
 .brands img:nth-child(7) {
@@ -219,6 +220,4 @@
     height: 52.56px;
     opacity: 0.6;
   }
-}
-
-/*# sourceMappingURL=about.css.map */
+}/*# sourceMappingURL=about.css.map */

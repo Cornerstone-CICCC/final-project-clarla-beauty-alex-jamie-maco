@@ -126,7 +126,9 @@ legend {
   background-color: #fff;
   font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-repeat: no-repeat;
   background-position: right 16px center;
   background-size: 24px;
@@ -226,7 +228,8 @@ legend {
   cursor: pointer;
 }
 .checkbox-label input[type=checkbox] {
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   -webkit-appearance: none;
   width: 22px;
   height: 22px;
@@ -510,7 +513,8 @@ legend {
   width: 100%;
   max-width: 600px;
   height: 200px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-bottom: 48px;
   display: block;
 }
@@ -610,7 +614,8 @@ legend {
   width: 100%;
   max-width: 608px;
   height: 383px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 4px;
   margin-bottom: 48px;
   display: block;
@@ -739,6 +744,4 @@ legend {
     align-items: center;
     gap: 24px;
   }
-}
-
-/*# sourceMappingURL=contact.css.map */
+}/*# sourceMappingURL=contact.css.map */
