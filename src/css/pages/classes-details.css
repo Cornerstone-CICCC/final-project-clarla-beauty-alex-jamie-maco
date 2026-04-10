@@ -53,35 +53,86 @@ body main {
   padding: 60px 60px;
   background-color: #fae9e7;
 }
-body main #class {
+body #class {
   display: flex;
   flex-direction: row;
   gap: 80px;
   width: 80%;
 }
-body main #class #class-details {
+body #class #class-details {
   display: flex;
   flex-direction: column;
 }
-body main #class #class-details .class-image {
+body #class #class-details .class-image {
   width: 373px;
   height: auto;
   object-fit: cover;
 }
-body main #class #class-details .details {
+body #class #info-class {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+body #class #info-class h2 {
+  font-family: "Baskervville", serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: #725a58;
+  margin-bottom: 20px;
+}
+body #class #info-class .details-class {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+body #class #info-class h3 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 24px;
+  color: #191919;
+  font-weight: 300;
+  margin-top: 20px;
+}
+body #class #info-class h3:first-of-type {
+  margin-top: 0;
+}
+body #class #info-class p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: #191919;
+  line-height: 25px;
+  margin-bottom: 50px;
+}
+body #class #info-class ul {
+  margin-bottom: 20px;
+}
+body #class #info-class ul li {
+  list-style-position: inside;
+  margin-left: 5px;
+  color: #191919;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+}
+body #class #info-class ul:last-of-type {
+  margin-bottom: 30px;
+}
+body .details {
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 40px 20px 30px;
   border: 2px solid rgba(160, 109, 103, 0.5);
 }
-body main #class #class-details .details h2 {
+body .details h2 {
   font-family: "Baskervville", serif;
   font-size: 36px;
   font-weight: 500;
   color: #725a58;
 }
-body main #class #class-details .details .detail {
+body .details .detail {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -90,10 +141,10 @@ body main #class #class-details .details .detail {
   color: #191919;
   font-weight: 300;
 }
-body main #class #class-details .details .detail p {
+body .details .detail p {
   margin: 0;
 }
-body main #class #class-details .details a {
+body .join-btn {
   border: 1px solid #725a58;
   color: #725a58;
   text-decoration: none;
@@ -103,60 +154,54 @@ body main #class #class-details .details a {
   width: 100%;
   transition: all 0.3s ease;
 }
-body main #class #class-details .details a:hover {
+body .join-btn:hover {
   background-color: #725a58;
   color: #f8f6f4;
 }
-body main #class #info-class {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+body .mobile {
+  display: none;
 }
-body main #class #info-class h2 {
-  font-family: "Baskervville", serif;
-  font-size: 36px;
-  font-weight: 500;
-  color: #725a58;
-  margin-bottom: 20px;
-}
-body main #class #info-class .details-class {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  margin-bottom: 20px;
-}
-body main #class #info-class h3 {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 24px;
-  color: #191919;
-  font-weight: 300;
-  margin-top: 20px;
-}
-body main #class #info-class h3:first-of-type {
-  margin-top: 0;
-}
-body main #class #info-class p {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  color: #191919;
-  line-height: 25px;
-  margin-bottom: 50px;
-}
-body main #class #info-class ul {
-  margin-bottom: 20px;
-}
-body main #class #info-class ul li {
-  list-style-position: inside;
-  margin-left: 5px;
-  color: #191919;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 25px;
-}
-body main #class #info-class ul:last-of-type {
-  margin-bottom: 30px;
+
+@media (max-width: 868px) {
+  header .go-back-btn {
+    margin-left: 20px !important;
+    margin-bottom: 30px;
+  }
+  header h1 {
+    font-size: 36px !important;
+  }
+  main {
+    padding: 0 0 60px !important;
+  }
+  #class {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  #class .desktop {
+    display: none !important;
+  }
+  #class .class-details,
+  #class .class-image {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .details {
+    border: none !important;
+  }
+  .details h2 {
+    display: none !important;
+  }
+  #info-class {
+    padding: 0 20px !important;
+  }
+  .mobile {
+    display: flex !important;
+    width: 100% !important;
+  }
+  .mobile.join-btn {
+    display: block !important;
+    width: 90% !important;
+  }
 }
 
 /*# sourceMappingURL=classes-details.css.map */
