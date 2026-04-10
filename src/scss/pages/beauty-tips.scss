@@ -12,129 +12,130 @@
 body {
   background-color: map-get($map: vr.$colors, $key: l-neut-pale-w);
 
-  // * Header
-  header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 40px 0;
+}
 
-    h1 {
-      font-family: map-get($map: vr.$fonts, $key: heading);
-      font-size: map-get($map: vr.$text-sizes, $key: h1);
-      font-weight: map-get($map: vr.$weights, $key: medium);
-      color: map-get($map: vr.$colors, $key: bold-main);
-    }
+// * Header
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 40px 0;
 
-    hr {
-      width: 15%;
-      border-top: 1px solid map-get($map: vr.$colors, $key: accent);
-      border-bottom: 1px solid map-get($map: vr.$colors, $key: accent);
-      background-color: transparent;
-      margin-bottom: 40px;
-    }
-
-    p {
-      font-family: map-get($map: vr.$fonts, $key: primary);
-      font-size: map-get($map: vr.$text-sizes, $key: body);
-      color: map-get($map: vr.$colors, $key: brand);
-      line-height: 30px;
-    }
-  }
-
-  .button-anchor {
-    background-color: transparent;
-    border: 1px solid map-get($map: vr.$colors, $key: bold-main);
+  h1 {
+    font-family: map-get($map: vr.$fonts, $key: heading);
+    font-size: map-get($map: vr.$text-sizes, $key: h1);
+    font-weight: map-get($map: vr.$weights, $key: medium);
     color: map-get($map: vr.$colors, $key: bold-main);
-    text-decoration: none;
-    font-size: map-get($map: vr.$text-sizes, $key: button);
-    padding: 20px 30px;
-    text-align: center;
-    width: fit-content;
-    cursor: pointer;
-    transition: map-get($map: vr.$transitions, $key: default);
-
-    &:first-of-type {
-      margin-top: 40px;
-    }
-
-    &:last-of-type {
-      margin-bottom: 40px;
-    }
-
-    &:hover {
-      background-color: map-get($map: vr.$colors, $key: bold-main);
-      color: map-get($map: vr.$colors, $key: l-neut-pale-w);
-    }
   }
 
-  main {
+  hr {
+    width: 15%;
+    border-top: 1px solid map-get($map: vr.$colors, $key: accent);
+    border-bottom: 1px solid map-get($map: vr.$colors, $key: accent);
+    background-color: transparent;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-family: map-get($map: vr.$fonts, $key: primary);
+    font-size: map-get($map: vr.$text-sizes, $key: body);
+    color: map-get($map: vr.$colors, $key: brand);
+    line-height: 30px;
+  }
+}
+
+.button-anchor {
+  background-color: transparent;
+  border: 1px solid map-get($map: vr.$colors, $key: bold-main);
+  color: map-get($map: vr.$colors, $key: bold-main);
+  text-decoration: none;
+  font-size: map-get($map: vr.$text-sizes, $key: button);
+  padding: 20px 30px;
+  text-align: center;
+  width: fit-content;
+  cursor: pointer;
+  transition: map-get($map: vr.$transitions, $key: default);
+
+  &:first-of-type {
+    margin-top: 40px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+
+  &:hover {
+    background-color: map-get($map: vr.$colors, $key: bold-main);
+    color: map-get($map: vr.$colors, $key: l-neut-pale-w);
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 60px;
+  background-color: map-get($map: vr.$colors, $key: l-neut-pink);
+
+  #tags {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 60px;
-    background-color: map-get($map: vr.$colors, $key: l-neut-pink);
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 40px;
 
-    #tags {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      margin-bottom: 40px;
+    .tag {
+      font-family: map-get($map: vr.$fonts, $key: heading);
+      font-size: map-get($map: vr.$text-sizes, $key: h6);
+      color: map-get($map: vr.$colors, $key: brand);
+      border: none;
+      background-color: transparent;
+      padding: 5px 10px;
 
-      .tag {
-        font-family: map-get($map: vr.$fonts, $key: heading);
-        font-size: map-get($map: vr.$text-sizes, $key: h6);
-        color: map-get($map: vr.$colors, $key: brand);
-        border: none;
-        background-color: transparent;
-        padding: 5px 10px;
+      cursor: pointer;
+      transition: map-get($map: vr.$transitions, $key: default);
 
-        cursor: pointer;
-        transition: map-get($map: vr.$transitions, $key: default);
+      &:hover:not(.active) {
+        transform: translateY(-5px);
+      }
 
-        &:hover:not(.active) {
-          transform: translateY(-5px);
-        }
-
-        &.active {
-          color: map-get($map: vr.$colors, $key: bold-main);
-          font-weight: map-get($map: vr.$weights, $key: bold);
-          cursor: default;
-        }
+      &.active {
+        color: map-get($map: vr.$colors, $key: bold-main);
+        font-weight: map-get($map: vr.$weights, $key: bold);
+        cursor: default;
       }
     }
+  }
 
-    #video-showcase {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      align-items: center;
-      gap: 20px;
-      justify-items: center;
+  #video-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 20px;
+    justify-items: center;
 
-      .video-card {
+    .video-card {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: cover;
+      transition: map-get($map: vr.$transitions, $key: default);
+      cursor: pointer;
+
+      img {
         width: 100%;
-        max-width: 300px;
         height: auto;
-        object-fit: cover;
-        transition: map-get($map: vr.$transitions, $key: default);
-        cursor: pointer;
+        display: block;
+      }
 
-        img {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
 
-        a {
-          display: block;
-          width: 100%;
-          height: 100%;
-
-          &:hover {
-            transform: translateY(-5px);
-            transition: map-get($map: vr.$transitions, $key: default);
-          }
+        &:hover {
+          transform: translateY(-5px);
+          transition: map-get($map: vr.$transitions, $key: default);
         }
       }
     }
@@ -142,41 +143,47 @@ body {
 }
 
 @media (max-width: map-get($map: vr.$breakpoints, $key: tablet)) {
-  body {
-    header {
-      h1 {
-        font-size: map-get($map: vr.$text-sizes, $key: h3) !important;
-      }
+  header {
+    h1 {
+      font-size: map-get($map: vr.$text-sizes, $key: h3) !important;
+    }
 
-      hr {
-        width: 45% !important;
+    hr {
+      width: 45% !important;
+    }
+  }
+
+  main {
+    padding: 0 !important;
+    #tags {
+      margin-top: 40px !important;
+      gap: 0 !important;
+      .tag {
+        font-size: map-get($map: vr.$text-sizes, $key: h6) !important;
       }
     }
 
-    main {
-      padding: 0 !important;
-      #tags {
-        margin-top: 40px !important;
-        gap: 0 !important;
-        .tag {
-          font-size: map-get($map: vr.$text-sizes, $key: button-sm) !important;
+    #video-showcase {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .video-card {
+        width: 95% !important;
+        max-width: none !important;
+        img {
+          display: block;
+          margin: 0 auto;
         }
       }
+    }
+  }
+}
 
-      #video-showcase {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        .video-card {
-          width: 95% !important;
-          max-width: none !important;
-          img {
-            display: block;
-            margin: 0 auto;
-          }
-        }
-      }
+@media (max-width: map-get($map: vr.$breakpoints, $key: mobile)) {
+  main #tags {
+    .tag {
+      font-size: map-get($map: vr.$text-sizes, $key: button-sm) !important;
     }
   }
 }
