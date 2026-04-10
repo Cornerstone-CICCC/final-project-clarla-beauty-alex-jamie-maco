@@ -117,6 +117,20 @@ $(document).ready(function () {
 		}
 	});
 
+	// > More people service add or take away logic
+	$(".btn-cntr").on("click", function () {
+		const $counterInput = $(this).siblings(".counter-input");
+		let currentValue = parseInt($counterInput.val());
+
+		if ($(this).hasClass("btn-plus")) {
+			currentValue += 1;
+		} else if ($(this).hasClass("btn-minus") && currentValue > parseInt($counterInput.attr("min"))) {
+			currentValue -= 1;
+		}
+		
+		$counterInput.val(currentValue);
+	});
+
 	// --- D. "Submit" Button Logic -> Services Thank You Screen ---
 	// Target the specific submit buttons inside services (excluding the classes submit button)
 	$("#detailedContactForm .btn-submit")
