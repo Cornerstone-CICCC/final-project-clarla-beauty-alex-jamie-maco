@@ -1,16 +1,28 @@
-@use './variables' as *;
-@use 'sass:map';
+@use "./variables" as *;
+@use "sass:map";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
 
 .about__header {
   text-align: center;
-  
+
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  
+
   margin-bottom: 0;
   padding-bottom: 68px;
   background-color: map.get($colors, l-neut-pale-w);
@@ -46,7 +58,7 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  
+
   background: map.get($colors, l-neut-pink);
   padding: map.get($spacing, sp-7) 0;
 }
@@ -98,19 +110,19 @@
     font-family: map.get($fonts, heading);
     font-size: map.get(map.get($text-styles, button-sm), size);
     line-height: 1;
-    
+
     width: 160px;
     height: 62px;
     padding: 0;
-    
-    border: 0.8px solid #5E4A49;
-    
+
+    border: 0.8px solid #5e4a49;
+
     background: transparent;
     cursor: pointer;
     transition: map.get($transitions, default);
-    color: #5E4A49;
+    color: #5e4a49;
 
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
@@ -251,7 +263,7 @@
 
   .about__image {
     width: 100%;
-    
+
     img {
       width: 100%;
       height: auto;
@@ -285,7 +297,7 @@
 
   .about__brands {
     padding: 40px 24px;
-    
+
     h3 {
       font-size: 32px;
       margin-top: 0;

@@ -1,10 +1,525 @@
-@use "./variables";
-@use "contact";
+@use "sass:map";
+@use "./variables" as *;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+// ========================================================================
+// 1. GLOBAL RESETS & BASE TYPOGRAPHY
+// ========================================================================
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: map.get($fonts, primary);
+	color: map.get($colors, brand);
+	background-color: map.get($colors, l-neut-pale-w);
+	scroll-behavior: smooth;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: map.get($transitions, default);
+}
+
+// Global Typography Defaults
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: map.get($fonts, heading);
+	font-weight: map.get($weights, regular);
+}
+
+p {
+	font-size: map.get(map.get($text-styles, body), size);
+	line-height: 1.6;
+	color: map.get($colors, d-neut-dark-g);
+}
+
+// Global Section Padding
+main > section {
+	padding: map.get($spacing, sp-8) map.get($spacing, sp-4);
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+// ========================================================================
+// BUTTONS
+// ========================================================================
+.service-quote-btn,
+#home-wedding-next,
+#home-party-next,
+#home-photo-submit,
+#home-classes-submit {
+	display: block;
+	text-align: center;
+	width: 200px;
+	margin: map.get($spacing, sp-6) auto 0;
+	padding: map.get($spacing, sp-3);
+	background: none;
+	border: 1px solid map.get($colors, d-neut-dark-g);
+	font-family: map.get($fonts, primary);
+	font-size: map.get(map.get($text-styles, body-sm), size);
+	color: map.get($colors, d-neut-dark-g);
+	cursor: pointer;
+	transition: map.get($transitions, default);
+	box-sizing: border-box;
+
+	&:hover {
+		background-color: map.get($colors, comp-dark-p);
+		border-color: map.get($colors, comp-dark-p);
+		color: #fff;
+	}
+}
+
+// ========================================================================
+// 2. HEADER SECTION
+// ========================================================================
+
+header {
+	// Add specific header styles here
+}
+
+// ========================================================================
+// 3. ABOUT SECTION (#about)
+// ========================================================================
+
+#about {
+	// Add specific about styles here
+}
+
+// ========================================================================
+// 4. PORTFOLIO SECTION (#portfolio)
+// ========================================================================
+
+#portfolio {
+	// Add specific portfolio styles here
+}
+
+// ========================================================================
+// 5. SERVICES SECTION (#services)
+// ========================================================================
+
+#services {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h2 {
+		font-family: map.get($fonts, heading);
+		font-size: map.get(map.get($text-styles, h1-cap), size);
+		font-weight: 300;
+		color: map.get($colors, bold-main);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+	}
+
+	hr {
+		width: 200px;
+		height: 1px;
+		background-color: map.get($colors, accent);
+		border: none;
+		margin: map.get($spacing, sp-5) auto;
+	}
+
+	p {
+		max-width: 437px;
+		font-family: map.get($fonts, avenir-light);
+		font-size: map.get(map.get($text-styles, body), size);
+		line-height: 1.6;
+		color: map.get($colors, d-neut-black);
+	}
+
+	#service-options {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 60px;
+		max-width: 1154px;
+		margin-top: map.get($spacing, sp-8);
+
+		.service,
+		.service-wedding {
+			position: relative;
+
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				position: relative;
+				z-index: 2;
+			}
+		}
+
+		.service-wedding {
+			width: 400px;
+			position: relative;
+
+			// .wedding-img {
+			// 	width: 270px;
+			// 	position: relative;
+			// 	z-index: 1;
+			// }
+
+			// .wedding-text {
+			// 	width: 300px;
+			// 	height: 70px;
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	left: 50%;
+			// 	transform: translate(-80%, 120%);
+			// 	z-index: 2;
+			// }
+		}
+
+		.service {
+			width: 300px;
+			transition: map.get($transitions, default);
+
+			.offset-border {
+				opacity: 0;
+				position: absolute;
+				top: -0px;
+				right: -20px;
+				width: 90%;
+				height: 95%;
+				border: 1px solid map.get($colors, accent);
+				z-index: 1;
+				pointer-events: none;
+			}
+
+			&:hover {
+				.offset-border {
+					opacity: 1;
+				}
+
+				transform: scale(120%);
+			}
+		}
+	}
+}
+
+// ========================================================================
+// 6. CLASSES SECTION (#classes)
+// ========================================================================
+
+#classes {
+	background-color: map.get($colors, l-neut-pink);
+	h2 {
+		font-family: map.get($fonts, heading);
+		font-size: map.get(map.get($text-styles, h1-cap), size);
+		font-weight: 400;
+		color: map.get($colors, bold-main);
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: map.get($spacing, sp-6);
+		text-align: center;
+	}
+
+	// Layout Container (1070px width, space-between)
+	#classes-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		max-width: 1070px;
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	// Left Side Wrapper
+	.classes-text-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	// The List of Classes
+	#all-classes {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		max-width: 586px;
+	}
+
+	.individual-class {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 12px 24px 16px 24px;
+		gap: 10px;
+		transition: map.get($transitions, default);
+
+		.class-info {
+			display: flex;
+			flex-direction: column;
+			gap: map.get($spacing, sp-2);
+		}
+
+		.class-title {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+
+			h4 {
+				font-family: map.get($fonts, heading);
+				font-size: map.get(map.get($text-styles, h4), size);
+				font-weight: map.get($weights, regular);
+				color: map.get($colors, bold-main);
+				line-height: 1.3;
+			}
+		}
+
+		p {
+			font-family: map.get($fonts, avenir-light);
+			font-size: 18px;
+			font-weight: 300;
+			line-height: 1.5;
+			color: map.get($colors, d-neut-dark-g);
+			padding-left: 48px;
+		}
+
+		&:hover {
+			background-color: #e3b6b19b;
+		}
+	}
+
+	.award-icon {
+		width: 32px;
+		height: 32px;
+	}
+	.arrow-icon {
+		width: 40px;
+		height: 40px;
+		opacity: 0.5;
+		transition: map.get($transitions, default);
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.classes-portrait {
+		position: relative;
+		width: 400px;
+		flex-shrink: 0;
+
+		.portrait-border {
+			position: absolute;
+			top: 18px;
+			bottom: 18px;
+			left: 18px;
+			right: 18px;
+			border: 1px solid #ffffff;
+			z-index: 2;
+			pointer-events: none;
+		}
+
+		img {
+			position: relative;
+			z-index: 1;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+			display: block;
+		}
+	}
+
+	.all-classes-btn {
+		display: block;
+		text-align: center;
+		width: 160px;
+		margin-top: map.get($spacing, sp-6);
+		padding: map.get($spacing, sp-3);
+		background: none;
+		border: 1px solid map.get($colors, d-neut-dark-g);
+		font-family: map.get($fonts, primary);
+		font-size: map.get(map.get($text-styles, body-sm), size);
+		color: map.get($colors, d-neut-dark-g);
+		cursor: pointer;
+		transition: map.get($transitions, default);
+		box-sizing: border-box;
+
+		&:hover {
+			background-color: map.get($colors, comp-dark-p);
+			border-color: map.get($colors, comp-dark-p);
+			color: #fff;
+		}
+	}
+}
+// ========================================================================
+// 7. BEAUTY TIPS SECTION (#beauty-tips)
+// ========================================================================
+
+#beauty-tips {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h3 {
+		font-family: map.get($fonts, heading);
+		font-size: map.get(map.get($text-styles, h3), size);
+		font-weight: 300;
+		color: map.get($colors, bold-main);
+		margin-bottom: map.get($spacing, sp-6);
+	}
+
+	#video-collection {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+
+		.video-item {
+			width: 297px;
+			height: 292px;
+			&:hover {
+				filter: brightness(0.7);
+			}
+		}
+	}
+
+	.beauty-tips-btn {
+		display: block;
+		text-align: center;
+		min-width: 160px;
+		margin-top: map.get($spacing, sp-6);
+		padding: map.get($spacing, sp-4) map.get($spacing, sp-5);
+		background: none;
+		border: 1px solid map.get($colors, d-neut-dark-g);
+		font-family: map.get($fonts, primary);
+		font-size: map.get(map.get($text-styles, body-sm), size);
+		color: map.get($colors, d-neut-dark-g);
+		cursor: pointer;
+		transition: map.get($transitions, default);
+		box-sizing: border-box;
+
+		&:hover {
+			background-color: map.get($colors, comp-dark-p);
+			border-color: map.get($colors, comp-dark-p);
+			color: #fff;
+		}
+	}
+}
+
+// ========================================================================
+// 8. FOOTER
+// ========================================================================
+
+footer {
+	// Add specific footer styles here
+}
+
+// ========================================================================
+// 9. MOBILE RESPONSIVE DESIGN (Media Queries)
+// ========================================================================
+
+@media (max-width: 768px) {
+	// --- GLOBAL MOBILE BUTTONS ---
+	.service-quote-btn,
+	.all-classes-btn {
+		width: 100%;
+	}
+
+	// --- 5. SERVICES SECTION MOBILE ---
+	#services {
+		h2 {
+			font-size: 40px;
+		}
+		#service-options {
+			flex-direction: column;
+			gap: map.get($spacing, sp-6);
+			margin-top: map.get($spacing, sp-6);
+
+			.service,
+			.service-wedding {
+				width: 100%;
+				max-width: 400px; // Standardizes the width for mobile
+			}
+		}
+	}
+
+	// --- 6. CLASSES SECTION MOBILE ---
+	#classes {
+		h2 {
+			font-size: 40px;
+		}
+
+		#classes-container {
+			flex-direction: column; // Stacks the text wrapper and the portrait image
+			align-items: center;
+			gap: map.get($spacing, sp-8);
+		}
+
+		.classes-text-wrapper {
+			align-items: center;
+			width: 100%;
+		}
+
+		#all-classes {
+			max-width: 100%;
+		}
+
+		.individual-class {
+			flex-direction: column;
+			text-align: center;
+			gap: map.get($spacing, sp-4);
+			padding: map.get($spacing, sp-5) 0;
+			border-bottom: none;
+
+			.class-info {
+				align-items: center;
+				gap: map.get($spacing, sp-3);
+			}
+
+			.class-title {
+				flex-direction: column;
+				gap: map.get($spacing, sp-2);
+
+				h4 {
+					font-size: 32px;
+					text-align: center;
+				}
+			}
+
+			p {
+				padding-left: 0;
+			}
+
+			// Centers the link/arrow at the bottom of the stack
+			> a {
+				margin-top: map.get($spacing, sp-2);
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		.all-classes-btn {
+			margin-left: 0; // Removes the desktop left margin
+			margin-top: map.get($spacing, sp-4);
+		}
+
+		.classes-portrait {
+			width: 100%;
+			max-width: 400px;
+			margin-top: map.get($spacing, sp-4);
+		}
+	}
 }

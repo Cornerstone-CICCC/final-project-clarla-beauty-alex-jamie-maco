@@ -1,6 +1,19 @@
 @use "./variables" as *;
 @use "sass:map";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
 // header
 .services__header {
   width: 100vw;

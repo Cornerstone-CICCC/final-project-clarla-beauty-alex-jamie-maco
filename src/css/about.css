@@ -5,6 +5,18 @@
   font-weight: 300;
   font-style: normal;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .about__header {
   text-align: center;
   width: 100vw;
@@ -98,11 +110,11 @@
   width: 160px;
   height: 62px;
   padding: 0;
-  border: 0.8px solid #5E4A49;
+  border: 0.8px solid #5e4a49;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #5E4A49;
+  color: #5e4a49;
   display: inline-flex;
   align-items: center;
   justify-content: center;
