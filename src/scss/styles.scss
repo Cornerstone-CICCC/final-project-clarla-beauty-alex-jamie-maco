@@ -41,17 +41,6 @@ h6 {
 	font-weight: map.get($weights, regular);
 }
 
-h2 {
-	font-size: map.get(map.get($text-styles, h2), size);
-	color: map.get($colors, bold-main);
-	margin-bottom: map.get($spacing, sp-4);
-}
-
-h3 {
-	font-size: map.get(map.get($text-styles, h3), size);
-	color: map.get($colors, bold-main);
-}
-
 p {
 	font-size: map.get(map.get($text-styles, body), size);
 	line-height: 1.6;
@@ -60,10 +49,39 @@ p {
 
 // Global Section Padding
 main > section {
-	padding: map.get($spacing, sp-10) map.get($spacing, sp-4);
+	padding: map.get($spacing, sp-8) map.get($spacing, sp-4);
 	max-width: 1200px;
 	margin: 0 auto;
 	text-align: center;
+}
+
+// ========================================================================
+// BUTTONS
+// ========================================================================
+.service-quote-btn,
+#home-wedding-next,
+#home-party-next,
+#home-photo-submit,
+#home-classes-submit {
+	display: block;
+	text-align: center;
+	width: 200px;
+	margin: map.get($spacing, sp-6) auto 0;
+	padding: map.get($spacing, sp-3);
+	background: none;
+	border: 1px solid map.get($colors, d-neut-dark-g);
+	font-family: map.get($fonts, primary);
+	font-size: map.get(map.get($text-styles, body-sm), size);
+	color: map.get($colors, d-neut-dark-g);
+	cursor: pointer;
+	transition: map.get($transitions, default);
+	box-sizing: border-box;
+
+	&:hover {
+		background-color: map.get($colors, comp-dark-p);
+		border-color: map.get($colors, comp-dark-p);
+		color: #fff;
+	}
 }
 
 // ========================================================================
@@ -103,20 +121,15 @@ header {
 // ========================================================================
 
 #classes {
-	background-color: map.get(
-		$colors,
-		l-neut-pink
-	); // Matches the soft pink background
-
-	// H2 Title Layout
+	background-color: map.get($colors, l-neut-pink);
 	h2 {
 		font-family: map.get($fonts, heading);
 		font-size: map.get(map.get($text-styles, h1-cap), size);
-		font-weight: map.get($weights, regular);
+		font-weight: 400;
 		color: map.get($colors, bold-main);
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-		margin-bottom: map.get($spacing, sp-8);
+		margin-bottom: map.get($spacing, sp-6);
 		text-align: center;
 	}
 
@@ -150,14 +163,9 @@ header {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 12px 24px 16px 24px; // Exact padding from specs
-		gap: 10px; // Exact gap from specs
-		border-bottom: 1px solid rgba(0, 0, 0, 0.05); // Subtle separator
+		padding: 12px 24px 16px 24px;
+		gap: 10px;
 		transition: map.get($transitions, default);
-
-		&:last-child {
-			border-bottom: none;
-		}
 
 		.class-info {
 			display: flex;
@@ -168,11 +176,11 @@ header {
 		.class-title {
 			display: flex;
 			align-items: center;
-			gap: 16px;
+			gap: 10px;
 
 			h4 {
 				font-family: map.get($fonts, heading);
-				font-size: 48px;
+				font-size: map.get(map.get($text-styles, h4), size);
 				font-weight: map.get($weights, regular);
 				color: map.get($colors, bold-main);
 				line-height: 1.3;
@@ -180,12 +188,16 @@ header {
 		}
 
 		p {
-			font-family: map.get($fonts, avenir-light); // Exact font from specs
+			font-family: map.get($fonts, avenir-light);
 			font-size: 18px;
 			font-weight: 300;
 			line-height: 1.5;
 			color: map.get($colors, d-neut-dark-g);
-			padding-left: 48px; // Aligns text under the heading (skipping the 32px icon + 16px gap)
+			padding-left: 48px;
+		}
+
+		&:hover {
+			background-color: #e3b6b19b;
 		}
 	}
 
@@ -203,48 +215,52 @@ header {
 			opacity: 1;
 		}
 	}
-	// "All Classes" Button
-	.all-classes-btn {
-		display: inline-block;
-		margin-top: map.get($spacing, sp-6);
-		margin-left: 24px; // Aligns visually with the individual class padding
-		padding: 12px 40px;
-		border: 1px solid map.get($colors, bold-main);
-		font-family: map.get($fonts, primary);
-		font-size: 18px;
-		color: map.get($colors, bold-main);
-		background-color: transparent;
-		transition: map.get($transitions, default);
 
-		&:hover {
-			background-color: map.get($colors, bold-main);
-			color: #fff;
-		}
-	}
-
-	// Right Side: Portrait Image with Offset Border
-	figure {
+	.classes-portrait {
 		position: relative;
 		width: 400px;
 		flex-shrink: 0;
 
 		.portrait-border {
 			position: absolute;
-			top: -16px;
-			left: -16px;
-			width: 100%;
-			height: 100%;
-			border: 1px solid #ffffff; // White offset border
-			z-index: 1;
+			top: 18px;
+			bottom: 18px;
+			left: 18px;
+			right: 18px;
+			border: 1px solid #ffffff;
+			z-index: 2;
 			pointer-events: none;
 		}
 
 		img {
 			position: relative;
-			z-index: 2;
+			z-index: 1;
 			width: 100%;
 			height: auto;
 			object-fit: cover;
+			display: block;
+		}
+	}
+
+	.all-classes-btn {
+		display: block;
+		text-align: center;
+		width: 160px;
+		margin-top: map.get($spacing, sp-6);
+		padding: map.get($spacing, sp-3);
+		background: none;
+		border: 1px solid map.get($colors, d-neut-dark-g);
+		font-family: map.get($fonts, primary);
+		font-size: map.get(map.get($text-styles, body-sm), size);
+		color: map.get($colors, d-neut-dark-g);
+		cursor: pointer;
+		transition: map.get($transitions, default);
+		box-sizing: border-box;
+
+		&:hover {
+			background-color: map.get($colors, comp-dark-p);
+			border-color: map.get($colors, comp-dark-p);
+			color: #fff;
 		}
 	}
 }

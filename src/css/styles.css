@@ -40,17 +40,6 @@ h6 {
   font-weight: 400;
 }
 
-h2 {
-  font-size: 68px;
-  color: #725a58;
-  margin-bottom: 24px;
-}
-
-h3 {
-  font-size: 48px;
-  color: #725a58;
-}
-
 p {
   font-size: 18px;
   line-height: 1.6;
@@ -58,10 +47,39 @@ p {
 }
 
 main > section {
-  padding: 192px 24px;
+  padding: 96px 24px;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+}
+
+.service-quote-btn,
+#home-wedding-next,
+#home-party-next,
+#home-photo-submit,
+#home-classes-submit {
+  display: block;
+  text-align: center;
+  width: 200px;
+  margin: 48px auto 0;
+  padding: 16px;
+  background: none;
+  border: 1px solid #535353;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  color: #535353;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+.service-quote-btn:hover,
+#home-wedding-next:hover,
+#home-party-next:hover,
+#home-photo-submit:hover,
+#home-classes-submit:hover {
+  background-color: #b99692;
+  border-color: #b99692;
+  color: #fff;
 }
 
 #classes {
@@ -74,7 +92,7 @@ main > section {
   color: #725a58;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 96px;
+  margin-bottom: 48px;
   text-align: center;
 }
 #classes #classes-container {
@@ -103,11 +121,7 @@ main > section {
   align-items: center;
   padding: 12px 24px 16px 24px;
   gap: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
-}
-#classes .individual-class:last-child {
-  border-bottom: none;
 }
 #classes .individual-class .class-info {
   display: flex;
@@ -117,11 +131,11 @@ main > section {
 #classes .individual-class .class-title {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 #classes .individual-class .class-title h4 {
   font-family: Baskervville, serif;
-  font-size: 48px;
+  font-size: 36px;
   font-weight: 400;
   color: #725a58;
   line-height: 1.3;
@@ -133,6 +147,9 @@ main > section {
   line-height: 1.5;
   color: #535353;
   padding-left: 48px;
+}
+#classes .individual-class:hover {
+  background-color: rgba(227, 182, 177, 0.6078431373);
 }
 #classes .award-icon {
   width: 32px;
@@ -147,42 +164,47 @@ main > section {
 #classes .arrow-icon:hover {
   opacity: 1;
 }
-#classes .all-classes-btn {
-  display: inline-block;
-  margin-top: 48px;
-  margin-left: 24px;
-  padding: 12px 40px;
-  border: 1px solid #725a58;
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 18px;
-  color: #725a58;
-  background-color: transparent;
-  transition: all 0.3s ease;
-}
-#classes .all-classes-btn:hover {
-  background-color: #725a58;
-  color: #fff;
-}
-#classes figure {
+#classes .classes-portrait {
   position: relative;
   width: 400px;
   flex-shrink: 0;
 }
-#classes figure .portrait-border {
+#classes .classes-portrait .portrait-border {
   position: absolute;
-  top: -16px;
-  left: -16px;
-  width: 100%;
-  height: 100%;
+  top: 18px;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
   border: 1px solid #ffffff;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
 }
-#classes figure img {
+#classes .classes-portrait img {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
+}
+#classes .all-classes-btn {
+  display: block;
+  text-align: center;
+  width: 160px;
+  margin-top: 48px;
+  padding: 16px;
+  background: none;
+  border: 1px solid #535353;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  color: #535353;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+#classes .all-classes-btn:hover {
+  background-color: #b99692;
+  border-color: #b99692;
+  color: #fff;
 }/*# sourceMappingURL=styles.css.map */
