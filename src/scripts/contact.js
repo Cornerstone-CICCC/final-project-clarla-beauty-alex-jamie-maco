@@ -127,8 +127,51 @@ $(document).ready(function () {
 		} else if ($(this).hasClass("btn-minus") && currentValue > parseInt($counterInput.attr("min"))) {
 			currentValue -= 1;
 		}
-		
+
 		$counterInput.val(currentValue);
+	});
+
+	// function initAutocomplete() {
+	// 	const input = document.querySelector('.location-input');
+
+	// 	const options = {
+	// 		componentRestrictions: { country: "ca" }, // Solo Canadá
+	// 		fields: ["address_components", "geometry", "name"],
+	// 		strictBounds: false,
+	// 	};
+
+	// 	const autocomplete = new google.maps.places.Autocomplete(input, options);
+
+	// 	autocomplete.addListener("place_changed", () => {
+	// 		const place = autocomplete.getPlace();
+	// 		if (!place.geometry) {
+	// 			console.log("No details available for input: '" + place.name + "'");
+	// 			return;
+	// 		}
+	// 		console.log("Selected Location:", place.name);
+	// 	});
+	// }
+
+	// window.onload = initAutocomplete;
+
+	// > Not decided checkbox logic for location input
+	$(".not-decided-check").on("change", function () {
+		const $parent = $(this).closest(".address-container");
+		const $locationInput = $parent.find(".location-input");
+
+		if ($(this).is(":checked")) {
+			$locationInput
+				.val("")
+				.prop("disabled", true)
+				.css("opacity", "0.5");
+
+			// ? Close maps dropdown if open 
+			$(".pac-container").hide();
+		} else {
+			$locationInput
+				.prop("disabled", false)
+				.css("opacity", "1");
+		}
 	});
 
 	// --- D. "Submit" Button Logic -> Services Thank You Screen ---

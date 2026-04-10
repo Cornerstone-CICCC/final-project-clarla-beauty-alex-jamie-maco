@@ -752,18 +752,35 @@ legend {
 }
 
 .date-input,
-.time-select {
+.time-select,
+.location-input {
   transition: opacity 0.5s ease, background-color 0.5s ease, filter 0.5s ease, border-color 0.5s ease;
   opacity: 1;
   filter: grayscale(0%);
 }
 .date-input:disabled,
-.time-select:disabled {
+.time-select:disabled,
+.location-input:disabled {
   opacity: 0.5;
   background-color: #f8f6f4;
   filter: grayscale(100%);
   cursor: not-allowed;
   border-color: #a3a3a3;
+}
+
+.address-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.location-input {
+  background-image: url("../assets/icons/search.svg");
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: right 16px center;
+  padding-right: 48px !important;
 }
 
 /*# sourceMappingURL=contact.css.map */
