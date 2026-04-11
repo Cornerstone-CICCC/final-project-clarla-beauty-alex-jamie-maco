@@ -72,8 +72,7 @@ body #class #class-details {
 body #class #class-details .class-image {
   width: 373px;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 body #class #info-class {
   display: flex;

@@ -52,7 +52,6 @@ header p {
   font-size: 20px;
   padding: 20px 30px;
   text-align: center;
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -110,8 +109,7 @@ main #video-showcase .video-card {
   width: 100%;
   max-width: 300px;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: all 0.3s ease;
   cursor: pointer;
 }

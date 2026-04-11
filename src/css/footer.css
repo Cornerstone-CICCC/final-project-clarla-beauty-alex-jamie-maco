@@ -75,6 +75,7 @@ footer #footer-bar ul li a:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
+    padding: 20px 40px !important;
   }
   footer #footer-bar ul li {
     display: flex;

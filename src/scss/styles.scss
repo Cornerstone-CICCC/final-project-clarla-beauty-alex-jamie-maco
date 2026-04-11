@@ -95,7 +95,70 @@ main > section {
 // ========================================================================
 
 header {
-	// Add specific header styles here
+	width: 100%;
+	min-height: 100vh;
+	background-image: url("../assets/imgs/home/header image.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+
+	padding-top: 320px;
+	padding-left: map.get($spacing, sp-4);
+	padding-right: map.get($spacing, sp-4);
+	padding-bottom: map.get($spacing, sp-10);
+	box-sizing: border-box;
+
+	> img:first-of-type {
+		display: none;
+	}
+
+	.header-logo {
+		display: block;
+		width: 100%;
+		max-width: 650px;
+		height: auto;
+		margin-bottom: map.get($spacing, sp-2);
+	}
+
+	p {
+		font-family: map.get($fonts, avenir-light);
+		font-weight: map.get($weights, light);
+		font-size: 18px;
+		line-height: 1.5;
+		letter-spacing: 0;
+		color: #ffffff;
+		max-width: 600px;
+		margin-bottom: map.get($spacing, sp-8);
+		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	}
+
+	#consultation-btn {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		padding: 16px 48px;
+		border: 1px solid #ffffff;
+		background-color: transparent;
+		color: #ffffff;
+
+		font-family: map.get($fonts, heading);
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 1.5;
+
+		transition: map.get($transitions, default);
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.25);
+			color: #ffffff;
+		}
+	}
 }
 
 // ========================================================================
@@ -306,7 +369,7 @@ header {
 		align-items: center;
 		gap: map.get($spacing, sp-6); // Distance between arrows and text
 		width: 100%;
-    margin-bottom: map.get($spacing, sp-8);
+		margin-bottom: map.get($spacing, sp-8);
 
 		.quote-left,
 		.quote-right {

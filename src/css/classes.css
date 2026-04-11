@@ -60,8 +60,7 @@ body main .class {
 body main .class .class-image {
   width: 328px;
   height: auto;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 body main .class .info-class {
   display: flex;
@@ -127,7 +126,6 @@ body main .class .info-class a {
   text-decoration: none;
   font-size: 20px;
   padding: 20px 30px;
-  width: -moz-fit-content;
   width: fit-content;
   transition: all 0.3s ease;
 }
