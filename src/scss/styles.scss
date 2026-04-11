@@ -103,7 +103,125 @@ header {
 // ========================================================================
 
 #about {
-	// Add specific about styles here
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: map.get($spacing, sp-8);
+	.about-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: map.get($spacing, sp-6);
+		max-width: 1000px;
+		width: 100%;
+		margin-bottom: map.get($spacing, sp-5);
+	}
+
+	// Left Side: Image
+	.about-image-wrapper {
+		position: relative;
+		flex-shrink: 0;
+		width: 300px;
+
+		.about-portrait {
+			position: relative;
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+
+	// Right Side: Text
+	.about-text-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		max-width: 500px;
+
+		.cb-icon-small {
+			width: 40px;
+			color: map.get($colors, accent);
+			margin-bottom: map.get($spacing, sp-4);
+		}
+
+		h2 {
+			text-align: left;
+			font-size: map.get(map.get($text-styles, h3), size);
+			text-transform: none; // Overrides the uppercase rule from Global h2
+			letter-spacing: normal;
+			line-height: 1.2;
+			margin-bottom: map.get($spacing, sp-3);
+		}
+
+		p {
+			text-align: left;
+			font-size: map.get(map.get($text-styles, body), size);
+			font-weight: map.get($weights, light);
+		}
+
+		// Button & Signature Row
+		.action-row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			.about-me-btn {
+				margin: 0;
+        margin-top: map.get($spacing, sp-4);
+				display: inline-block;
+				padding: 24px 32px;
+				background: none;
+				border: 1px solid map.get($colors, d-neut-dark-g);
+				font-family: map.get($fonts, heading);
+				font-size: 18px;
+				color: map.get($colors, d-neut-dark-g);
+				cursor: pointer;
+				transition: map.get($transitions, default);
+
+				&:hover {
+					background-color: map.get($colors, comp-dark-p);
+					border-color: map.get($colors, comp-dark-p);
+					color: #fff;
+				}
+			}
+
+			.signature-img {
+				height: 90px;
+				width: auto;
+        transform: rotate(-10deg);
+			}
+		}
+	}
+	.brands-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: map.get($spacing, sp-4);
+
+		.brands {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: map.get($spacing, sp-5);
+			max-width: 904px;
+			margin: 0 auto;
+			justify-items: center;
+			align-items: center;
+
+			img {
+				width: 100%;
+				max-width: 120px;
+				height: 40px;
+				object-fit: contain;
+				opacity: 0.7;
+			}
+
+			img:nth-child(7) {
+				transform: scale(1.3);
+				margin-top: 4px;
+			}
+		}
+	}
 }
 
 // ========================================================================
