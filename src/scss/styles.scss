@@ -19,6 +19,9 @@ body {
 	scroll-behavior: smooth;
 }
 
+nav {
+	font-family: map.get($fonts, heading);
+}
 nav img {
 	display: inline;
 }

@@ -18,6 +18,10 @@ body {
   scroll-behavior: smooth;
 }
 
+nav {
+  font-family: Baskervville, serif;
+}
+
 nav img {
   display: inline;
 }
