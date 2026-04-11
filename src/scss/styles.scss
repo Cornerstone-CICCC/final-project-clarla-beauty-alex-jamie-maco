@@ -713,6 +713,133 @@ header {
 		width: 100%;
 	}
 
+	@media (max-width: 768px) {
+		// --- グローバル：モバイル用ボタン共通スタイル ---
+		.about-me-btn,
+		.all-classes-btn,
+		#portfolio > a {
+			// My Work ボタン
+			width: 100%;
+			max-width: 400px;
+			display: inline-flex;
+			justify-content: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		// --- 3. ABOUT SECTION MOBILE ---
+		#about {
+			padding-top: map.get($spacing, sp-6);
+
+			.about-container {
+				flex-direction: column;
+				gap: map.get($spacing, sp-8);
+				align-items: center;
+			}
+
+			.about-image-wrapper {
+				width: 100%;
+				max-width: 320px;
+			}
+
+			// Text area
+			.about-text-wrapper {
+				align-items: center;
+				text-align: center;
+				max-width: 100%;
+
+				h2 {
+					text-align: center;
+					text-transform: none;
+					letter-spacing: normal;
+					margin-bottom: map.get($spacing, sp-3);
+				}
+
+				p {
+					text-align: center;
+					margin-bottom: map.get($spacing, sp-6);
+				}
+
+				// Button & Signature Row
+				.action-row {
+					flex-direction: column-reverse;
+					gap: map.get($spacing, sp-5);
+					width: 100%;
+					align-items: center;
+
+					.about-me-btn {
+						margin-top: 0;
+					}
+
+					.signature-img {
+						height: 50px;
+						width: auto;
+					}
+				}
+			}
+
+			// Brands
+			.brands-container {
+				gap: map.get($spacing, sp-6);
+
+				.brands-divider {
+					max-width: 90%;
+				}
+
+				// brands layout
+				.brands {
+					grid-template-columns: repeat(2, 1fr);
+					gap: map.get($spacing, sp-5);
+					max-width: 100%;
+					padding: 0 map.get($spacing, sp-4);
+
+					img {
+						max-width: 110px;
+						height: 40px;
+						opacity: 1;
+					}
+
+					img:nth-child(7) {
+						transform: scale(1.1);
+						margin-top: 0;
+					}
+				}
+			}
+		}
+
+		// --- 4. PORTFOLIO SECTION MOBILE ---
+		#portfolio {
+			h2 {
+				font-size: 40px;
+				margin-top: map.get($spacing, sp-6);
+			}
+
+			p {
+				padding: 0 map.get($spacing, sp-4);
+			}
+
+			#img-gallery {
+				margin-top: map.get($spacing, sp-6);
+				margin-bottom: map.get($spacing, sp-6);
+			}
+
+			// quotes row
+			.quotes {
+				padding: 0 map.get($spacing, sp-2);
+				gap: map.get($spacing, sp-4);
+
+				.quote-left,
+				.quote-right {
+					width: 20px;
+				}
+
+				.quote-default {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+
 	// --- 5. SERVICES SECTION MOBILE ---
 	#services {
 		h2 {

@@ -595,6 +595,103 @@ header #consultation-btn:hover {
   .all-classes-btn {
     width: 100%;
   }
+}
+@media (max-width: 768px) and (max-width: 768px) {
+  .about-me-btn,
+  .all-classes-btn,
+  #portfolio > a {
+    width: 100%;
+    max-width: 400px;
+    display: inline-flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #about {
+    padding-top: 48px;
+  }
+  #about .about-container {
+    flex-direction: column;
+    gap: 96px;
+    align-items: center;
+  }
+  #about .about-image-wrapper {
+    width: 100%;
+    max-width: 320px;
+  }
+  #about .about-text-wrapper {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+  #about .about-text-wrapper h2 {
+    text-align: center;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-bottom: 16px;
+  }
+  #about .about-text-wrapper p {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  #about .about-text-wrapper .action-row {
+    flex-direction: column-reverse;
+    gap: 32px;
+    width: 100%;
+    align-items: center;
+  }
+  #about .about-text-wrapper .action-row .about-me-btn {
+    margin-top: 0;
+  }
+  #about .about-text-wrapper .action-row .signature-img {
+    height: 50px;
+    width: auto;
+  }
+  #about .brands-container {
+    gap: 48px;
+  }
+  #about .brands-container .brands-divider {
+    max-width: 90%;
+  }
+  #about .brands-container .brands {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 100%;
+    padding: 0 24px;
+  }
+  #about .brands-container .brands img {
+    max-width: 110px;
+    height: 40px;
+    opacity: 1;
+  }
+  #about .brands-container .brands img:nth-child(7) {
+    transform: scale(1.1);
+    margin-top: 0;
+  }
+  #portfolio h2 {
+    font-size: 40px;
+    margin-top: 48px;
+  }
+  #portfolio p {
+    padding: 0 24px;
+  }
+  #portfolio #img-gallery {
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  #portfolio .quotes {
+    padding: 0 8px;
+    gap: 24px;
+  }
+  #portfolio .quotes .quote-left,
+  #portfolio .quotes .quote-right {
+    width: 20px;
+  }
+  #portfolio .quotes .quote-default {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
   #services h2 {
     font-size: 40px;
   }
